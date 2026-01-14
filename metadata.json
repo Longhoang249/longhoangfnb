@@ -1,0 +1,8 @@
+{
+  "name": "Coffee Marketing Expert Portfolio",
+  "description": "A modern, minimalist landing page for a coffee and milk tea marketing consultant, featuring AI-powered marketing advice, portfolio highlights, and educational resources.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

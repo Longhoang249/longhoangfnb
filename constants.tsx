@@ -114,7 +114,7 @@ export const STORY_TABS_CONTENT = {
           },
           {
             title: 'Ứng dụng AI vào tạo Web, App và Tools cho ngành FnB',
-            results: 'Vibe-coding và phát triển giao diện, nội dung cho App đào tạo ATS cho 100+ nhân sự, sản xuất 5+ Tools AI hỗ trợ làm marketing FnB',
+            results: 'Vibe-coding và phát triển giao diện, nội dung cho 5+ App đào tạo, công cụ AI hỗ trợ marketing FnB.',
             image: 'https://i.ibb.co/bR6R2jgb/ai.png',
             videoUrl: ''
           },
@@ -214,19 +214,6 @@ export const STORY_TABS_CONTENT = {
 
 export const OFFERINGS: Offering[] = [
   {
-    id: 'total-marketing',
-    title: 'Marketing Tổng Thể',
-    description: 'Thực hiện marketing tổng thể cho quán, bao gồm các hoạt động về định vị và tổ chức sự kiện.',
-    icon: '⚡',
-    details: [
-      'Nghiên cứu thị trường và đối thủ cạnh tranh',
-      'Xác định tệp khách hàng mục tiêu và Insight',
-      'Xây dựng Concept và định vị thương hiệu',
-      'Lên kế hoạch và triển khai các sự kiện bùng nổ (Grand Opening, Món mới...)',
-      'Vận hành quảng cáo đa kênh (FB, Tiktok) tối ưu chi phí'
-    ]
-  },
-  {
     id: 'brand-packaging',
     title: 'Đóng Gói Thương Hiệu',
     description: 'Bàn giao bộ định vị và kế hoạch truyền thông chạy được trong 3-6 tháng.',
@@ -237,6 +224,19 @@ export const OFFERINGS: Offering[] = [
       'Hướng dẫn quản trị và chăm sóc Fanpage chuyên nghiệp',
       'Cung cấp quy trình truyền thông bài bản để chủ quán tự vận hành',
       'Bàn giao bộ Template hình ảnh/video mẫu'
+    ]
+  },
+  {
+    id: 'total-marketing',
+    title: 'Marketing Tổng Thể',
+    description: 'Thực hiện marketing tổng thể cho quán, bao gồm các hoạt động về định vị và tổ chức sự kiện.',
+    icon: '⚡',
+    details: [
+      'Nghiên cứu thị trường và đối thủ cạnh tranh',
+      'Xác định tệp khách hàng mục tiêu và Insight',
+      'Xây dựng Concept và định vị thương hiệu',
+      'Lên kế hoạch và triển khai các sự kiện bùng nổ (Grand Opening, Món mới...)',
+      'Vận hành quảng cáo đa kênh (FB, Tiktok) tối ưu chi phí'
     ]
   }
 ];
@@ -360,6 +360,223 @@ export const THOUGHTS_CAROUSEL_ITEMS = [
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'goi-dong-goi-thuong-hieu',
+    title: 'ĐÓNG GÓI THƯƠNG HIỆU',
+    shortDescription: 'Bàn giao bộ định vị và kế hoạch truyền thông chạy được trong 3-6 tháng',
+    description: '',
+    thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
+    gallery: [
+      'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800'
+    ],
+    detailedServices: [
+      {
+        title: '',
+        type: 'comparison',
+        items: [
+          {
+            title: 'Gói này dành cho ai',
+            lists: [
+              'Chủ quán cà phê, trà sữa quy mô đầu tư từ 500 triệu - 1,5 tỷ',
+              'Muốn tự đăng bài Facebook, tự quay Tiktok, tổ chức sự kiện marketing',
+              'Đã từng thuê agency hoặc marketing nội bộ nhưng chi phí cao',
+              'Muốn tự triển khai marketing cho quán của mình để tối ưu ngân sách',
+              'Muốn đào tạo nhân viên nội bộ để có người cùng làm marketing'
+            ]
+          },
+          {
+            title: 'Đừng kỳ vọng nếu...',
+            lists: [
+              'Mua gói này tự nhiên giỏi marketing (nó không thần thánh tới vậy)',
+              'Cần kết quả đến ngay lập tức (quán tự nhiên đông, bài tự nhiên viral)',
+              'Quá bận rộn, không dành được tối thiểu 1 tiếng mỗi ngày cho marketing'
+            ]
+          }
+        ]
+      },
+      {
+        title: '01. Trò chuyện với chủ quán',
+        image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800',
+        description: `Chúng ta ngồi lại trò chuyện thật lòng để hiểu về quán, về anh chị, về những gì đang xảy ra. Không phải khảo sát suông rồi đưa giải pháp có sẵn.
+
+Chúng ta không cần phải là Starbucks hay Phúc Long. Một quán nhỏ với câu chuyện chân thành, ly cà phê pha bằng tâm huyết có thể chạm đến khách hàng hơn cả chiến dịch triệu đô. Giai đoạn này chúng ta tìm ra bản chất thực sự - những gì khiến khách hàng quay lại.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Bản khảo sát nhu cầu & mục tiêu kinh doanh chi tiết',
+            'Bản ghi chép insight về thương hiệu (những góc nhìn mà có thể anh chị chưa nhận ra)',
+            'Danh sách điểm mạnh thực sự & điểm cần cải thiện (không tô hồng, không phán xét)'
+          ]
+        }
+      },
+      {
+        title: '02. Phân tích nội tại thương hiệu',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
+        description: `Chúng ta cùng nhau tìm "linh hồn" của quán - không phải phân tích học thuật khô khan. Điều gì làm cho quán anh chị duy nhất? Cách pha chế đặc biệt? Không gian ấm cúng? Hay nụ cười chân thành mỗi khi tiếp khách? Khách hàng không thiếu chỗ uống cà phê, họ thiếu lý do để chọn quán của anh chị.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Bản phân tích SWOT chi tiết (nhưng viết bằng ngôn ngữ người, không phải thuật ngữ rườm rà)',
+            'Bản đánh giá cảm xúc thương hiệu (khách hàng cảm nhận gì khi nghĩ đến quán?)',
+            'Ma trận định vị cạnh tranh (chúng ta đứng ở đâu so với các quán xung quanh, và đó có phải là vị trí tốt?)'
+          ]
+        }
+      },
+      {
+        title: '03. Đưa ra đề xuất',
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+        description: `Chúng ta vẽ con đường mà anh chị **thực sự đi được** - không phải bản kế hoạch 50 trang chỉ để ngắm. Marketing tốt phải đơn giản, dễ thực hiện và bền vững. Chiến lược tập trung vào những gì anh chị làm được mỗi ngày, mỗi tuần mà không cần thuê cả đội quân marketing.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Bản chiến lược thương hiệu tổng quan (viết đơn giản, dễ hiểu, thực thi được)',
+            'Bản định vị thương hiệu - Brand Positioning (1 câu nói về quán làm khách hàng nhớ mãi)',
+            'Bản đề xuất hướng đi về visual & tone of voice (màu sắc, phong cách, giọng điệu giao tiếp)',
+            'Roadmap marketing 6 tháng với các milestone rõ ràng'
+          ]
+        }
+      },
+      {
+        title: '04. Đóng gói thương hiệu',
+        image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80&w=800',
+        description: `Chúng ta xây dựng bộ nhận diện thương hiệu để thực sự **phục vụ** kinh doanh. Logo dễ nhận diện, màu sắc gợi đúng cảm xúc, font chữ dễ đọc. Quan trọng nhất - đơn giản đến mức anh chị tự làm content mà không cần thuê designer. Mục tiêu: trao bộ công cụ để tự chủ, không phụ thuộc ai.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Bộ nhận diện thương hiệu hoàn chỉnh (Logo các phiên bản, file gốc .AI, .PNG, .SVG)',
+            'Bảng màu & font chữ chuẩn (đầy đủ mã màu cho in ấn lẫn digital)',
+            'Brand Guidelines đơn giản (30-50 trang, nhiều hình ảnh, ít chữ)',
+            'Bộ template thiết kế cơ bản (Menu, poster, story, banner...) sẵn sàng để dùng',
+            'Mockup ứng dụng thực tế (ly, túi, áo, bảng hiệu...) để anh chị hình dung'
+          ]
+        }
+      },
+      {
+        title: '05. Bàn giao công cụ & Hướng dẫn sử dụng',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+        description: `Đây là lúc chúng ta trao "vũ khí" thực sự. Không đưa một đống file rồi xong, mà ngồi lại hướng dẫn từng bước: Excel lên kế hoạch, viết prompt AI tạo ảnh, tạo caption. "Không rành công nghệ" không sao cả - ai cũng lo như vậy nhưng cuối cùng ai cũng làm được. Marketing không khó, chỉ cần được chỉ đúng cách.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Bộ file quản lý Marketing bằng Excel (Content calendar, KPI tracker, Budget planner)',
+            'Tool tạo content AI: Prompts & templates để viết caption, hashtag, slogan',
+            'Tool tạo ảnh AI cho menu & marketing (hướng dẫn từ A-Z, kèm ví dụ thực tế)',
+            'Bộ ý tưởng marketing 100+ ideas theo mùa/sự kiện (Valentine, 8/3, Tết, mưa...)',
+            'Video hướng dẫn chi tiết từng công cụ (quay màn hình, bấm từng bước)',
+            '3-4 buổi training 1-1 online qua Google Meet (90-120 phút/buổi)'
+          ]
+        }
+      },
+      {
+        title: '06. Đồng hành tư vấn ít nhất 6 tháng',
+        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800',
+        description: `Chúng ta không "giao hàng xong là bỏ chạy". Marketing cần thời gian, kiên trì, điều chỉnh liên tục. Sẽ có tuần engagement thấp, có lúc muốn bỏ cuộc - đó là lúc chúng ta cần nhau nhất. Long sẽ review từng bài, góp ý, động viên, điều chỉnh chiến lược. Không phải "khách hàng - nhà cung cấp", mà là đồng đội thực sự.`,
+        type: 'text',
+        note: {
+          title: 'Anh chị nhận được gì:',
+          items: [
+            'Group Telegram/Zalo hỗ trợ riêng (trả lời trong vòng 24h, kể cả cuối tuần)',
+            '2 buổi review chiến dịch mỗi tháng (check số liệu, điều chỉnh chiến lược)',
+            'Cập nhật ý tưởng marketing mới liên tục (trend mới, case study hay, lỗi cần tránh)',
+            'Feedback chi tiết cho mọi bài post/content anh chị tạo (nếu cần)',
+            'Điều chỉnh chiến lược không giới hạn (thị trường thay đổi, chúng ta cũng thay đổi)',
+            'Quyền ưu tiên khi cần hỗ trợ gấp (sự kiện đột xuất, khủng hoảng truyền thông...)'
+          ]
+        }
+      },
+      {
+        title: 'Tóm Lại, Chúng Ta Sẽ Cùng Làm Gì?',
+        type: 'text',
+        description: `Gói "Đóng Gói Thương Hiệu" không phải là một bản kế hoạch marketing rườm rà hay một bộ nhận diện đẹp mắt rồi để đó. Đây là hành trình **6 tháng** chúng ta cùng nhau xây dựng nền tảng marketing vững chắc, để anh chị **tự chủ** và **tự tin** làm marketing cho quán mình.
+
+**Hành trình 6 giai đoạn:**
+
+• **Trò chuyện thật lòng** → Tìm linh hồn thực sự của quán  
+• **Phân tích sâu** → Hiểu rõ điểm mạnh, điểm yếu, vị trí cạnh tranh  
+• **Vẽ lộ trình** → Chiến lược đơn giản, thực tế, làm được  
+• **Xây bộ công cụ** → Logo, màu sắc, template sẵn dùng  
+• **Trao vũ khí** → AI, Excel, Canva, 100+ ý tưởng content  
+• **Đồng hành dài hạn** → Review, góp ý, điều chỉnh liên tục
+
+**Sau 6 tháng, anh chị sẽ:**
+
+✓ Hiểu rõ thương hiệu của mình - không còn mơ hồ, lung tung  
+✓ Tự làm được content chất lượng mỗi ngày - không cần thuê designer  
+✓ Có kế hoạch marketing 6 tháng rõ ràng - biết làm gì, lúc nào  
+✓ Tiết kiệm 70-80% chi phí agency - tự chủ, không phụ thuộc  
+✓ Tự tin hơn khi nói về quán - vì đã hiểu rõ giá trị cốt lõi
+
+**Và quan trọng nhất:**
+
+Anh chị sẽ không cô đơn trên con đường làm marketing. Long sẽ ở đây, trả lời tin nhắn, review bài viết, động viên khi khó khăn, ăn mừng khi thành công. Không phải quan hệ "khách hàng - nhà cung cấp", mà là **đồng đội** đi cùng nhau.
+
+Marketing không phải là "bùng nổ một sớm một chiều". Marketing là **kiên trì mỗi ngày, điều chỉnh liên tục, và tin tưởng vào hành trình**. Và chúng ta sẽ cùng nhau đi hết con đường đó.`,
+        note: {
+          title: '💎 Giá trị tổng cộng anh chị nhận được:',
+          items: [
+            'Bộ nhận diện thương hiệu hoàn chỉnh (Logo, Guidelines, Templates)',
+            'Chiến lược marketing 6 tháng chi tiết với roadmap rõ ràng',
+            'Bộ công cụ AI, Excel, Canva để tự tạo content mỗi ngày',
+            '100+ ý tưởng marketing theo mùa và sự kiện',
+            '3-4 buổi training 1-1 online (6-8 tiếng)',
+            'Hỗ trợ tư vấn 6 tháng không giới hạn qua Telegram/Zalo',
+            'Review và feedback chi tiết cho mọi bài post',
+            '2 buổi review chiến dịch mỗi tháng (12 buổi)',
+            'Quyền ưu tiên khi cần hỗ trợ gấp'
+          ]
+        }
+      },
+      {
+        title: 'Bảng Giá Dịch Vụ',
+        type: 'pricing',
+        items: [
+          {
+            title: 'Gói 3 Tháng',
+            price: '18.000.000đ',
+            subtitle: 'Thanh toán 1 lần',
+            description: 'Phù hợp quán nhỏ',
+            isFeatured: false
+          },
+          {
+            title: 'Gói 6 Tháng',
+            price: '28.000.000đ',
+            subtitle: 'Thanh toán 1 lần',
+            description: 'Tiết kiệm 8.000.000đ',
+            isFeatured: true
+          }
+        ]
+      },
+      {
+        title: 'Câu Hỏi Thường Gặp',
+        type: 'faq',
+        items: [
+          {
+            title: 'Mình không rành công nghệ lắm có làm được không?',
+            description: 'Hoàn toàn được. Các công cụ mình hướng dẫn (Canva, AI) đều rất dễ dùng, kéo thả đơn giản. Chỉ cần bạn biết dùng Facebook cơ bản là làm được. Và Long sẽ training từng bước, chậm rãi, kiên nhẫn cho đến khi anh chị tự tin.'
+          },
+          {
+            title: 'Mình bận quản lý quán, không có nhiều thời gian?',
+            description: 'Mỗi ngày anh chị chỉ cần dành ra 15-30 phút. Vì kế hoạch và nội dung đã có sẵn sườn, anh chị chỉ cần điền vào chỗ trống hoặc chỉnh sửa nhẹ là xong. Marketing bền vững không phải làm nhiều, mà là làm đều đặn.'
+          },
+          {
+            title: 'Nếu làm theo mà không hiệu quả thì sao?',
+            description: 'Trong quá trình 3-6 tháng, chúng ta sẽ liên tục review. Nếu thấy chỉ số không tốt, mình sẽ cùng anh chị ngồi lại tìm nguyên nhân và điều chỉnh chiến lược kịp thời. Long không hứa kết quả thần kỳ, nhưng Long cam kết đồng hành đến cùng.'
+          },
+          {
+            title: 'Sau 6 tháng thì sao? Mình có tự làm được không?',
+            description: 'Đó chính là mục tiêu - giúp anh chị TỰ CHỦ. Sau 6 tháng, anh chị sẽ có đủ kỹ năng, công cụ và tự tin để tự vận hành marketing cho quán. Nhưng nếu vẫn muốn Long hỗ trợ thêm, chúng ta có thể kéo dài hoặc chuyển sang gói tư vấn nhẹ hơn.'
+          }
+        ]
+      }
+    ],
+    videos: []
+  },
+  {
     id: 'goi-marketing-tong-the',
     title: 'MARKETING TỔNG THỂ',
     shortDescription: 'Thực hiện marketing tổng thể cho quán, bao gồm các hoạt động về định vị và tổ chức sự kiện.',
@@ -457,29 +674,5 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ]
-  },
-  {
-    id: 'goi-dong-goi-thuong-hieu',
-    title: 'ĐÓNG GÓI THƯƠNG HIỆU',
-    shortDescription: 'Bàn giao bộ định vị và kế hoạch truyền thông chạy được trong 3-6 tháng',
-    description: `
-      <h3>Tổng quan</h3>
-      <p>Giải pháp dành cho các chủ quán ở xa hoặc muốn tự vận hành marketing nhưng cần một nền tảng chuyên nghiệp ban đầu. Long sẽ xây dựng "móng nhà" marketing vững chắc để bạn tự tin phát triển.</p>
-      
-      <h3>Hạng mục bàn giao</h3>
-      <ul>
-        <li><b>Bộ nhận diện cốt lõi (Core Identity):</b> Logo, Slogan, Brand Voice, USP...</li>
-        <li><b>Content Pillar:</b> Xương sống nội dung định hướng cho Fanpage/Tiktok.</li>
-        <li><b>Quy trình vận hành:</b> Hướng dẫn quản trị và chăm sóc Fanpage chuyên nghiệp.</li>
-        <li><b>Tài liệu mẫu:</b> Bàn giao bộ Template hình ảnh/video mẫu để dễ dàng chỉnh sửa.</li>
-        <li><b>Kế hoạch hành động:</b> Plan truyền thông chi tiết để chạy trong 3-6 tháng đầu.</li>
-      </ul>
-    `,
-    thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800'
-    ],
-    videos: []
   }
 ];

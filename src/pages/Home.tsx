@@ -80,10 +80,49 @@ const LearnedItem = ({ person }: { person: any }) => {
     </div>
   );
 };
+// Hook for scroll-triggered animations
+const useScrollAnimation = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Only animate once
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+};
+
+// Navigation items
+const NAV_ITEMS = [
+  { id: 'story', label: 'Hành trình' },
+  { id: 'offerings', label: 'Dịch vụ' },
+  { id: 'store', label: 'Quà tặng' },
+  { id: 'contact', label: 'Liên hệ' },
+];
+
 const Home: React.FC = () => {
   // Refs để cuộn trang
   const partRef = useRef<HTMLDivElement>(null);
   const windowTopRef = useRef<HTMLDivElement>(null);
+
+  // Restore scroll position when returning from product page
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem('homeScrollPosition');
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition, 10));
+      sessionStorage.removeItem('homeScrollPosition');
+    }
+  }, []);
 
   // States cho Story Section (Merged)
   const [activeTab, setActiveTab] = useState<'did' | 'dont' | 'learned' | 'mentored'>('did');
@@ -103,6 +142,17 @@ const Home: React.FC = () => {
   // State cho Offerings
   const [activeProductTab, setActiveProductTab] = useState<string>(PRODUCTS[0].id);
   const activeProduct = PRODUCTS.find(p => p.id === activeProductTab) || PRODUCTS[0];
+
+  // Removed scroll animations to fix flickering bug
+
+  // Removed sticky nav scroll handler to fix flickering bug
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
 
   const handleWhoIsLong = () => {
@@ -221,33 +271,22 @@ const Home: React.FC = () => {
                       </div>
                       <div className="space-y-4">
                         {section.logoGroups.map((group: any, gIdx: number) => {
-                          const selectedLogoIdInGroup = group.logos.find((l: any) => l.id === selectedLogoId);
                           return (
                             <div key={gIdx} className="space-y-3 bg-gray-50/30 p-5 rounded-[2.5rem] border border-gray-50">
                               <div className="text-center space-y-1.5"><p className="text-lg md:text-xl font-black text-black tracking-tighter whitespace-pre-line leading-tight w-full">{group.company}</p><div className="flex flex-col items-center gap-1 w-full">{group.roles.map((role: any, rIdx: number) => (<div key={rIdx} className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 text-center w-full"><span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wide">{role.title}</span><span className="hidden md:inline text-gray-200 max-h-3">•</span><span className="text-[10px] md:text-xs font-medium text-gray-400 italic">{role.time}</span></div>))}</div></div>
                               <div className="flex flex-col items-center gap-3 md:gap-4 px-4 w-full">
                                 <div className="flex flex-wrap md:flex-nowrap justify-center gap-3 md:gap-4 w-full overflow-x-auto pb-2 custom-scrollbar">
                                   {group.logos.map((logo: any) => {
-                                    const isInteractive = !!logo.note;
                                     return (
-                                      <button
+                                      <div
                                         key={logo.id}
-                                        onClick={(e) => {
-                                          e.stopPropagation();
-                                          if (isInteractive) setSelectedLogoId(logo.id === selectedLogoId ? null : logo.id);
-                                        }}
-                                        className={`relative flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 transition-all duration-300 overflow-hidden ${isInteractive
-                                          ? (selectedLogoId && selectedLogoId !== logo.id ? 'opacity-30 grayscale scale-90' : 'opacity-100 grayscale-0 scale-100 hover:scale-110 hover:shadow-md cursor-pointer')
-                                          : 'opacity-100 grayscale-0 scale-100 cursor-default'
-                                          }`}
+                                        className="relative flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 overflow-hidden"
                                       >
                                         <img src={logo.src} alt={logo.name} className={logo.fill ? "w-full h-full object-cover" : "w-7 h-7 md:w-9 md:h-9 object-contain"} />
-                                        {isInteractive && selectedLogoId === logo.id && (<div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full" />)}
-                                      </button>
+                                      </div>
                                     );
                                   })}
                                 </div>
-                                <div className={`grid transition-all duration-500 ease-in-out ${selectedLogoIdInGroup ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}><div className="overflow-hidden">{selectedLogoIdInGroup && (<div className="text-center p-4 bg-black text-white rounded-[1rem] shadow-xl max-w-sm mx-auto relative mt-3"><div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-black rotate-45"></div><p className="text-[9px] font-black uppercase tracking-[0.2em] mb-0.5 opacity-50">{selectedLogoIdInGroup.name}</p><p className="text-xs font-medium">{selectedLogoIdInGroup.note}</p></div>)}</div></div>
                               </div>
                               {group.featuredImage && (
                                 <div className="w-full max-w-3xl mx-auto mt-6 bg-gray-50/50 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 p-1.5 md:p-2.5">
@@ -369,33 +408,62 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen font-sans bg-white text-[#1a1a1a]" onClick={() => { setSelectedLogoId(null); }}>
       {/* Hero Section */}
-      <section id="about" className="pt-16 md:pt-24 pb-16 md:pb-16 px-6">
+      <section id="about" className="pt-16 md:pt-24 pb-6 md:pb-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:pl-16">
             <span className="inline-block px-3 py-1 bg-gray-100 text-gray-500 rounded-full text-[10px] font-bold mb-6 uppercase tracking-wider">Truyền thông chuyên biệt ngành FnB</span>
             <h1 className="text-[9.5vw] sm:text-5xl md:text-7xl font-bold leading-none mb-8 tracking-tighter">Hoàng Duy Long</h1>
-            <div className="text-sm md:text-lg text-gray-500 mb-10 leading-relaxed max-w-lg mx-auto md:mx-0 space-y-4">
+            <div className="text-sm md:text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0 space-y-4">
               <p>Một người tin vào IKIGAI, thành công với Long chỉ đơn giản là được học thứ mình thích, làm thứ mình giỏi và kiếm đủ thu nhập bằng đam mê đó.</p>
-              <p>Và IKIGAI của Long là Marketing F&B Expert - Người làm truyền thông chuyên biệt ngành Ẩm thực và Đồ uống.</p>
+              <p>Và IKIGAI của Long là Marketing F&B Expert - <strong>Người làm truyền thông chuyên biệt ngành Ẩm thực và Đồ uống.</strong></p>
             </div>
+
+            {/* Navigation - Inside Hero, below text on desktop - Full width matching text */}
+            <nav className="hidden md:block">
+              <div className="bg-gray-100 px-1.5 py-1.5 rounded-full border border-gray-200 flex items-center justify-between max-w-lg shadow-inner">
+                {NAV_ITEMS.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="flex-1 px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wide text-gray-500 hover:text-black hover:bg-white hover:shadow-sm transition-all active:scale-95 text-center"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </nav>
           </div>
-          <div className="relative">
+          <div className="relative md:w-3/4 md:mx-auto">
             <div className="w-full aspect-[4/5] bg-gray-100 rounded-[2.5rem] overflow-hidden shadow-2xl">
               <SmartImage src="https://i.ibb.co/3m8sdk0j/6330560-A-04-F3-40-B6-913-D-B853-DFB2-CDBF-1-105-c.jpg" alt="Hoàng Duy Long" className="w-full h-full" priority />
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm py-3 px-5 rounded-xl shadow-lg border border-gray-100 z-10 flex flex-col items-start transition-all hover:scale-105 max-w-[200px]"><p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest leading-none mb-1">Kinh nghiệm</p><h4 className="text-[10px] md:text-xs font-black leading-tight text-black">Bao nhiêu lần thất bại không đếm được, không đếm được</h4></div>
+            <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm py-4 px-5 rounded-2xl shadow-xl border border-gray-100 z-10 flex flex-col items-start transition-all hover:scale-105 max-w-[260px]">
+              <p className="text-[10px] md:text-xs font-medium text-gray-500 italic leading-relaxed">
+                "Chào bạn đến nhà Long - nơi mình khoe ra những thành tựu đáng để khoe nhưng giấu nhẹm mấy thất bại ê chề."
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Navigation - Full width, more spacing from image */}
+        <nav className="md:hidden mt-12 -mx-6 px-4">
+          <div className="flex justify-center">
+            <div className="bg-gray-100 px-3 py-2.5 rounded-full border border-gray-200 flex items-center justify-center gap-1 shadow-inner mb-2">
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="px-3 py-2 rounded-full text-[10px] font-bold uppercase tracking-wide text-gray-500 hover:text-black hover:bg-white hover:shadow-sm transition-all active:scale-95 whitespace-nowrap"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </nav>
       </section>
 
-      {/* Welcome Section */}
-      <section className="py-10 md:py-16 bg-white px-6">
-        <div className="max-w-2xl mx-auto text-center space-y-6 animate-fadeIn">
-          <div className="w-px h-8 bg-gradient-to-b from-transparent to-gray-200 mx-auto mb-6"></div>
-          <p className="text-base md:text-xl font-light italic text-gray-400 leading-relaxed tracking-tight">Chào bạn đến nhà Long - nơi mình khoe ra những thành tựu đáng để khoe nhưng giấu nhẹm mấy thất bại ê chề.</p>
-          <div className="flex justify-center pt-2"><div className="w-1.5 h-1.5 rounded-full bg-black/5"></div></div>
-        </div>
-      </section>
+
 
       {/* Hành trình của Long Section */}
       <section id="story" className="py-20 md:py-28 bg-gray-50 overflow-hidden">
@@ -410,6 +478,7 @@ const Home: React.FC = () => {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white p-1.5 rounded-[2.5rem] shadow-sm border border-gray-100">
                 <div className="grid grid-cols-3 gap-1 md:gap-1.5">
+                  {/* Temporarily hiding 'mentored' tab - data still exists in constants */}
                   {(['did', 'dont', 'learned'] as const).map((key) => (
                     <button
                       key={key}
@@ -440,8 +509,9 @@ const Home: React.FC = () => {
                     {/* 3 Suggestions Section */}
                     <div className="mt-20 pt-10 border-t border-gray-100">
                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6 text-center">Khám phá tiếp</p>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        {(['did', 'dont', 'learned', 'mentored'] as const)
+                      <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                        {/* Only showing did, dont, learned tabs - mentored is temporarily hidden */}
+                        {(['did', 'dont', 'learned'] as const)
                           .filter(k => k !== activeTab)
                           .map(k => (
                             <button
@@ -451,7 +521,7 @@ const Home: React.FC = () => {
                                 setActiveTab(k);
                                 windowTopRef.current?.scrollIntoView({ behavior: 'smooth' });
                               }}
-                              className="py-3 px-5 rounded-full bg-white border border-gray-100 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all text-center group"
+                              className="py-3 px-8 rounded-full bg-white border border-gray-100 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all text-center group min-w-[200px]"
                             >
                               <span className="text-xs font-bold tracking-tight text-gray-400 group-hover:text-black transition-colors">{STORY_TABS_CONTENT[k].label}</span>
                             </button>
@@ -499,9 +569,19 @@ const Home: React.FC = () => {
 
             <div className="max-w-4xl mx-auto bg-white rounded-[3rem] border border-gray-200 shadow-xl p-8 md:p-16 text-center animate-fadeIn group">
               <p className="text-base md:text-xl font-medium text-gray-500 mb-10 italic leading-relaxed max-w-2xl mx-auto">{activeProduct.shortDescription}</p>
-              <Link to={`/product/${activeProduct.id}`} className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto w-fit">
-                Khám phá <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </Link>
+              {activeProduct.id === 'goi-marketing-tong-the' ? (
+                <button disabled className="bg-gray-400 text-white px-10 py-4 rounded-full text-sm font-bold cursor-not-allowed shadow-none flex items-center gap-3 mx-auto w-fit">
+                  Sorry bạn, Long kín lịch rùi
+                </button>
+              ) : (
+                <Link
+                  to={`/product/${activeProduct.id}`}
+                  onClick={() => sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())}
+                  className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto w-fit"
+                >
+                  Khám phá <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -611,10 +691,11 @@ const Home: React.FC = () => {
             <p className="text-gray-400 text-xs md:text-sm font-normal tracking-normal">Biết đâu chúng ta có thể đồng hành</p>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto mb-12">
-            <a href="https://www.facebook.com/Long2492/" target="_blank" rel="noopener noreferrer" className="aspect-square rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gray-50 group-hover:bg-[#1877F2] transition-colors flex items-center justify-center">
-                <svg className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          {/* Improved mobile touch targets - min 44x44px */}
+          <div className="grid grid-cols-4 gap-3 md:gap-8 max-w-lg mx-auto mb-12">
+            <a href="https://www.facebook.com/Long2492/" target="_blank" rel="noopener noreferrer" className="aspect-square min-w-[72px] rounded-[1.5rem] md:rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group active:scale-95">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-50 group-hover:bg-[#1877F2] transition-colors flex items-center justify-center">
+                <svg className="w-7 h-7 md:w-8 md:h-8 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
               </div>
             </a>
 
@@ -670,7 +751,7 @@ const Home: React.FC = () => {
       </section>
 
       <footer className="py-10 border-t border-gray-100 px-6 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div className="text-lg font-bold tracking-tighter uppercase">DUYLONG<span className="text-gray-400">.F&B</span></div><div className="text-gray-300 text-[10px] uppercase tracking-widest font-bold">© 2024 Hoang Duy Long</div><div className="flex gap-4"><a href="#" className="hover:opacity-75"><img src="https://img.icons8.com/material-sharp/20/000000/facebook-new.png" alt="FB" /></a><a href="#" className="hover:opacity-75"><img src="https://img.icons8.com/material-sharp/20/000000/instagram-new.png" alt="IG" /></a></div></div>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div className="text-lg font-bold tracking-tighter uppercase">LONGHOANG<span className="text-gray-400">.FnB</span></div><div className="text-gray-300 text-[10px] uppercase tracking-widest font-bold">© 2026 Hoang Duy Long</div></div>
       </footer>
 
       <AIConsultant />

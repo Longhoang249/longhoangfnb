@@ -87,12 +87,34 @@ export interface BlogPost {
   image: string;
 }
 
+
+export type SectionType = 'default' | 'grid' | 'timeline' | 'pricing' | 'comparison' | 'faq' | 'checklist' | 'intro' | 'text';
+
 export interface ServiceSection {
   title: string;
-  description: string;
+  description?: string;
+  type?: SectionType;
+  image?: string;
+  items?: {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    icon?: string;
+    image?: string;
+    price?: string;
+    tags?: string[];
+    isFeatured?: boolean;
+    lists?: string[]; // For checklists inside items
+    pros?: string[];
+    cons?: string[];
+  }[];
   gallery?: string[];
   videos?: { url: string; isVertical?: boolean }[];
   subSections?: ServiceSection[];
+  note?: {
+    title: string;
+    items: string[];
+  };
 }
 
 export interface Product {

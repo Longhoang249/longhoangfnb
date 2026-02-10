@@ -215,24 +215,31 @@ const BrandPackagingPage: React.FC = () => {
             <section className="py-24 px-6 lg:px-8 bg-[#05080F]">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Deliverables</h2>
-                        <h3 className="text-white font-serif-display text-3xl">Bộ tài liệu nhận được</h3>
+                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Chủ quán</h2>
+                        <h3 className="text-white font-serif-display text-3xl">Nhận Được Gì?</h3>
                     </div>
-                    <div className="relative space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+                    <div className="relative space-y-12 md:grid md:grid-cols-3 md:gap-8 md:space-y-0">
                         {[
                             {
                                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAU1xfTkNwNjttJddUKRwJGMUsmJBx9pRjdx_xrTuJY3Z_J_jXHIR7bN_uzBhDooMAjA44c0FXGBHgYg08zPFja8PsXuxsx9L04gSY7OOEFGVLFw9awY71PrNUTNDn9WQA6B2FXQLSPzrui9U51IPQ9i80rzN_ogtWwpwoHHzonuE0Im13axPwhK7_l5Ov46Vz-ntZi9qjZPCn35Zwiwfm0AGIO7DCmk5RZznTg1O4xHD2GQ3YyfLPZ6SV-MD1-55cxa26uawCcQtWJ',
                                 alt: 'Premium brand guidelines PDF on a modern tablet mockup with dark theme',
-                                title: 'Brand Guidelines',
+                                title: 'Bộ Nhận Diện Thương Hiệu',
                                 icon: 'description',
-                                desc: 'Cuốn cẩm nang "Kinh thánh" thương hiệu, chuẩn hóa mọi quy tắc sử dụng logo, màu sắc.',
+                                desc: 'Cẩm nang giúp chủ quán biết mình nên chụp ảnh như thế nào, viết bài Facebook ra sao và chọn màu gì cho thiết kế thì đẹp.',
                             },
                             {
                                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOwHS633sDWpilos1wGfis_PMCNjvVVBxfc8ZR04uK7qoFIfJffYeFpRRNhHePn7i48E_p72Rq5wDFtz84kHgLdCFt_Jz3gvLlk8famaVNXfZhn8BDJWdvtaei50kd2hw8P9KTDis5OUn5FDVRaW3JG-BrInKkZzX9MDFJ97k2vGynI8g5qT6hgBHjsveqT589LL4A_VW2cU-J7iI55zev3QGmnqSD0CE2D0SOxXFskTs4uITFYoaRkG_pPh4qGA8_qOJo8ZzmjxFt',
                                 alt: 'Social media templates for Canva on a smartphone screen dark mode',
-                                title: 'Canva Templates',
+                                title: 'Bộ Công Cụ Excel Marketing',
                                 icon: 'dashboard',
-                                desc: 'Bộ mẫu thiết kế Social Media chuyên nghiệp, tối ưu hóa cho đội ngũ in-house.',
+                                desc: 'Bao gồm biểu mẫu, kế hoạch, tài liệu Excel giúp chủ quán biết cách lên kế hoạch nội dung cho một tuần, tìm mẫu thiết kế menu mới hay ý tưởng để làm một mini game tại quán.',
+                            },
+                            {
+                                img: 'https://placehold.co/600x400/121826/B87333?text=AI+Tools',
+                                alt: 'AI Marketing Tools interface',
+                                title: 'Bộ Công Cụ AI Marketing',
+                                icon: 'smart_toy',
+                                desc: 'Bao gồm các ứng dụng AI giúp chủ quán viết bài, lên kịch bản video, tạo ảnh, lập kế hoạch marketing, tính toán chi phí marketing...',
                             },
                         ].map((item, idx) => (
                             <div key={idx} className="group relative">

@@ -84,7 +84,7 @@ const BrandPackagingPage: React.FC = () => {
                         "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
                     </p>
                     <p className="text-gray-400 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
-                        "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu, nên đăng cái gì và làm như thế nào..."
+                        "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu,<br />nên đăng cái gì và làm như thế nào..."
                     </p>
                     <div className="flex flex-wrap gap-3 pt-6">
                         {[

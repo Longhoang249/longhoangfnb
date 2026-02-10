@@ -78,7 +78,7 @@ const BrandPackagingPage: React.FC = () => {
                         <span className="italic font-normal text-[#C0C0C0]">Thương Hiệu</span>
                     </h1>
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
-                        Kiến tạo vị thế độc bản cho mô hình F&B của bạn bằng tư duy chiến lược và ngôn ngữ thiết kế sắc sảo.
+                        "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
                     </p>
                     <div className="pt-8">
                         <a
@@ -94,6 +94,39 @@ const BrandPackagingPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* GIẢI PHÁP */}
+            <section className="py-24 px-6 lg:px-8 bg-[#0A0F1E]">
+                <div className="max-w-5xl mx-auto">
+                    <div className="mb-14">
+                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Giải Pháp</h2>
+                        <h3 className="text-white font-serif-display text-3xl">Đóng Gói Thương Hiệu và Quy Trình Marketing Tự Vận Hành</h3>
+                        <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="p-8 border border-white/5 rounded-lg bg-[#121826]/50 hover:bg-[#121826] transition-colors group">
+                            <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
+                                <span className="material-icons text-[#B87333] text-3xl">rocket_launch</span>
+                            </div>
+                            <p className="text-gray-300 text-lg font-light leading-relaxed">
+                                Xây dựng hệ thống nhận diện thương hiệu thực dụng kèm kế hoạch truyền thông chạy được trong 3 tháng.
+                            </p>
+                        </div>
+
+                        <div className="p-8 border border-white/5 rounded-lg bg-[#121826]/50 hover:bg-[#121826] transition-colors group">
+                            <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
+                                <span className="material-icons text-[#B87333] text-3xl">smart_toy</span>
+                            </div>
+                            <div className="text-gray-300 text-lg font-light leading-relaxed space-y-4">
+                                <p>Bàn giao quy trình marketing tự vận hành với sự hỗ trợ của công cụ AI và tài nguyên marketing đã thiết kế sẵn.</p>
+                                <p className="text-base text-gray-500 border-l-2 border-[#B87333]/30 pl-4 py-1">
+                                    Chủ quán có thể tự làm truyền thông hoặc đào tạo chính nhân sự quán để thực thi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ĐỐI TƯỢNG */}
             <section className="py-24 px-6 lg:px-8 bg-[#05080F]">
                 <div className="max-w-5xl mx-auto">
@@ -104,9 +137,9 @@ const BrandPackagingPage: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {[
-                            { icon: 'storefront', title: 'Chủ quán mới', desc: 'Khởi tạo nền móng vững chắc với bộ nhận diện chuyên nghiệp, sẵn sàng cạnh tranh sòng phẳng.' },
-                            { icon: 'auto_graph', title: 'Mô hình mở rộng', desc: 'Chuẩn hóa hệ thống hình ảnh và quy trình vận hành để nhân bản chuỗi không gãy đổ.', featured: true },
-                            { icon: 'refresh', title: 'Tái cấu trúc', desc: 'Lột xác thương hiệu cũ kỹ, định vị lại phân khúc khách hàng cao cấp và hiện đại hơn.' },
+                            { icon: 'storefront', title: 'Chủ quán mới', desc: 'Khởi đầu vững chắc với ấn tượng đẹp với những khách hàng đầu tiên. Để họ ghi nhớ và muốn quay trở lại.' },
+                            { icon: 'refresh', title: 'Tái định vị thương hiệu', desc: 'Lột xác thương hiệu cũ kỹ, xây dựng lại bản sắc thương hiệu mới mẻ, có chiều sâu và điểm chạm thực tế.' },
+                            { icon: 'auto_graph', title: 'Nhân bản thương hiệu', desc: 'Chuẩn hóa hệ thống hình ảnh và tính cách thương hiệu để nhân bản chuỗi không đánh mất bản sắc.', featured: true },
                         ].map((item, idx) => (
                             <div
                                 key={idx}

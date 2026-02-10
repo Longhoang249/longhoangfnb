@@ -354,17 +354,7 @@ const BrandPackagingPage: React.FC = () => {
                                 <p className="text-[#B87333] text-[10px] uppercase tracking-widest">Marketing F&B Expert</p>
                             </div>
                         </div>
-                        <div className="pt-8 relative z-10">
-                            <a
-                                href="https://www.facebook.com/Long2492/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-[#B87333] hover:bg-[#D98C45] text-white font-bold px-8 py-4 rounded flex items-center gap-3 transition-all shadow-[0_4px_20px_-5px_rgba(184,115,51,0.4)] group border border-white/10 w-fit"
-                            >
-                                NHẬN TƯ VẤN
-                                <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </section>

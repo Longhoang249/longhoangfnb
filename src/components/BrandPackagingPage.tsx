@@ -102,7 +102,7 @@ const BrandPackagingPage: React.FC = () => {
                 <div className="max-w-5xl mx-auto">
                     <div className="mb-14">
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Giải Pháp</h2>
-                        <h3 className="text-white font-serif-display text-3xl">Đóng Gói Thương Hiệu và Quy Trình Marketing Tự Vận Hành</h3>
+                        <h3 className="text-white font-serif-display text-3xl">Đóng Gói Thương Hiệu & quy trình Marketing Tự Vận Hành</h3>
                         <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
@@ -138,17 +138,14 @@ const BrandPackagingPage: React.FC = () => {
                         <h3 className="text-white font-serif-display text-3xl">Ai cần gói này?</h3>
                         <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {[
-                            { icon: 'storefront', title: 'Chủ quán mới', desc: 'Khởi đầu vững chắc với ấn tượng đẹp với những khách hàng đầu tiên. Để họ ghi nhớ và muốn quay trở lại.' },
-                            { icon: 'refresh', title: 'Tái định vị thương hiệu', desc: 'Lột xác thương hiệu cũ kỹ, xây dựng lại bản sắc thương hiệu mới mẻ, có chiều sâu và điểm chạm thực tế.' },
-                            { icon: 'auto_graph', title: 'Nhân bản thương hiệu', desc: 'Chuẩn hóa hệ thống hình ảnh và tính cách thương hiệu để nhân bản chuỗi không đánh mất bản sắc.', featured: true },
+                            { icon: 'storefront', title: 'Chủ quán tự doanh', desc: 'Xây dựng hình ảnh thương hiệu phù hợp, dễ dàng áp dụng, giúp chủ quán tự đăng bài, xây kênh và chia sẻ câu chuyện thương hiệu của mình.' },
+                            { icon: 'refresh', title: 'Chủ Quán Tay Trái', desc: 'Chuyển giao quy trình tự làm marketing cho chính nhân sự của quán, giúp mô hình marketing vẫn hoạt động mà không cần chủ quán trực tiếp tham gia.' },
                         ].map((item, idx) => (
                             <div
                                 key={idx}
-                                className="bg-[#121826] border border-white/5 p-8 rounded hover:border-[#B87333]/40 transition-colors duration-300 relative overflow-hidden"
                             >
-                                {item.featured && <div className="absolute top-0 right-0 w-20 h-20 bg-[#B87333]/5 rounded-bl-full -mr-10 -mt-10"></div>}
                                 <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center mb-6 relative z-10">
                                     <span className="material-icons text-[#B87333] text-2xl">{item.icon}</span>
                                 </div>

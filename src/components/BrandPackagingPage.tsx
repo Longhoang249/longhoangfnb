@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const BrandPackagingPage: React.FC = () => {
-    const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(1);
+    const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
     const [activeContact, setActiveContact] = useState<'facebook' | 'tiktok' | 'gmail' | 'phone' | null>(null);
 
     useEffect(() => {

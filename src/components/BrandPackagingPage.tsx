@@ -167,24 +167,26 @@ const BrandPackagingPage: React.FC = () => {
                     <div className="space-y-0">
                         {[
                             {
-                                num: '01', title: 'Nghiên Cứu & Chiến Lược',
+                                num: '01', title: 'Phân tích nội tại thương hiệu',
                                 steps: [
                                     { id: '1.1', text: 'Phân tích thị trường, đối thủ cạnh tranh và insight khách hàng mục tiêu.' },
                                     { id: '1.2', text: 'Xác định Brand DNA, tính cách thương hiệu và chiến lược định vị.' },
+                                    { id: '1.3', text: 'Xác định nguồn lực và tính thực dụng trong khả năng tự triển khai marketing cho quán để ra kế hoạch phù hợp.' },
                                 ]
                             },
                             {
-                                num: '02', title: 'Thiết Kế Sáng Tạo',
+                                num: '02', title: 'Thiết kế hệ thống',
                                 steps: [
-                                    { id: '2.1', text: 'Phát triển Concept Logo và Moodboard định hướng thị giác.' },
-                                    { id: '2.2', text: 'Thiết kế Typography, Key Visual và hệ thống ứng dụng nhận diện.' },
+                                    { id: '2.1', text: 'Xây dựng và đóng gói bộ nhận diện thương hiệu.' },
+                                    { id: '2.2', text: 'Xây dựng hệ thống công cụ, biểu bảng, quy trình marketing phù hợp với nguồn lực thương hiệu.' },
                                 ]
                             },
                             {
                                 num: '03', title: 'Hoàn Thiện & Bàn Giao',
                                 steps: [
-                                    { id: '3.1', text: 'Đóng gói Brand Guidelines (PDF) và Template Canva chuẩn chỉnh.' },
-                                    { id: '3.2', text: 'Đào tạo chuyển giao và hướng dẫn ứng dụng thực tế tại điểm bán.' },
+                                    { id: '3.1', text: 'Hoàn thiện Bộ Nhận Diện Thương Hiệu và Quy Trình Marketing Tự Vận Hành.' },
+                                    { id: '3.2', text: 'Đào tạo chuyển giao và hướng dẫn ứng dụng thực tế.' },
+                                    { id: '3.3', text: 'Đồng hành ít nhất 6 tháng để hỗ trợ hướng dẫn, tư vấn thực hành sử dụng Gói.' },
                                 ]
                             },
                         ].map((phase, idx) => (

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../../constants';
 import BrandPackagingQuiz from '../components/BrandPackagingQuiz';
+import BrandPackagingLayout from '../components/BrandPackagingLayout';
+import BrandPackagingPage from '../components/BrandPackagingPage';
 
 const ProductDetail = () => {
     const { id } = useParams<{ id: string }>();
@@ -22,6 +24,11 @@ const ProductDetail = () => {
                 <Link to="/" className="bg-black text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">Về trang chủ</Link>
             </div>
         );
+    }
+
+    // Render dedicated Brand Packaging page
+    if (product.id === 'goi-dong-goi-thuong-hieu') {
+        return <BrandPackagingPage />;
     }
 
     return (
@@ -57,9 +64,9 @@ const ProductDetail = () => {
                             <div className="w-full">
                                 {product.detailedServices.map((service, index) => (
                                     <div key={index} className={`py-12 md:py-20 scroll-mt-32 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-                                        <div className={`mx-auto px-6 ${service.type === 'text' ? 'max-w-7xl' : 'max-w-3xl'}`}>
+                                        <div className={`mx-auto px-6 ${service.type === 'text' || service.type === 'comparison' ? 'max-w-7xl' : 'max-w-3xl'}`}>
 
-                                            {/* Section Header - Skip for 'text' type to render custom layout */}
+                                            {/* Section Header - Skip for 'text' and 'comparison' type to render custom layout */}
                                             {service.type !== 'intro' && service.type !== 'text' && (
                                                 <div className="mb-12 md:mb-16">
                                                     <div className="flex flex-col gap-4 mb-6">
@@ -72,8 +79,8 @@ const ProductDetail = () => {
                                                         <p className="text-lg text-gray-600 font-medium leading-relaxed text-pretty">{service.description}</p>
                                                     )}
 
-                                                    {/* Consistent Section Image (Placeholder if needed) - Skip for FAQ */}
-                                                    {service.type !== 'faq' && service.type !== 'text' && (
+                                                    {/* Consistent Section Image (Placeholder if needed) - Skip for FAQ & Comparison */}
+                                                    {service.type !== 'faq' && service.type !== 'text' && service.type !== 'comparison' && (
                                                         <div className="mt-8 mb-12 rounded-2xl overflow-hidden shadow-sm aspect-[21/9] bg-gray-100">
                                                             <img
                                                                 src={service.image || `https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&idx=${index}`}
@@ -148,30 +155,87 @@ const ProductDetail = () => {
                                                 </div>
                                             )}
 
-                                            {/* --- TYPE: COMPARISON → Interactive Quiz for first section, Clean Two Columns for others --- */}
+                                            {/* --- TYPE: COMPARISON → Interactive Quiz for first section, Enhanced Cards for others --- */}
                                             {service.type === 'comparison' && (
                                                 <>
                                                     {/* Show Quiz only for first section (index === 0) of brand-packaging product */}
                                                     {product.id === 'goi-dong-goi-thuong-hieu' && index === 0 ? (
                                                         <BrandPackagingQuiz />
-                                                    ) : service.items ? (
-                                                        <div className="grid md:grid-cols-2 gap-8">
-                                                            {service.items.map((item, idx) => {
-                                                                const isPositive = idx === 0;
+                                                    ) : service.title?.includes('Cam Kết') ? (
+                                                        /* Minimalist Card Style for Commitments - Full Width */
+                                                        <div className="grid md:grid-cols-3 gap-6 w-full max-w-7xl mx-auto">
+                                                            {service.items?.map((item, idx) => {
+                                                                // Clean title - remove emoji
+                                                                const cleanTitle = item.title?.replace(/^[\p{Emoji}\s]+/u, '').trim();
+
                                                                 return (
-                                                                    <div key={idx} className={`p-6 rounded-xl ${isPositive ? 'bg-gray-50' : 'bg-white border border-gray-100'}`}>
-                                                                        <div className="flex items-center gap-3 mb-6">
-                                                                            <span className="text-xl">{isPositive ? '✓' : '✗'}</span>
-                                                                            <h4 className="text-lg font-bold text-gray-900">{item.title}</h4>
-                                                                        </div>
-                                                                        <ul className="space-y-3">
+                                                                    <div
+                                                                        key={idx}
+                                                                        className="p-8 rounded-2xl bg-gray-50 hover:bg-gray-100 border border-gray-100 transition-all"
+                                                                    >
+                                                                        {/* Title */}
+                                                                        <h4 className="text-lg font-bold text-gray-900 mb-4">
+                                                                            {cleanTitle}
+                                                                        </h4>
+
+                                                                        {/* Content items - simple paragraphs */}
+                                                                        <div className="space-y-3">
                                                                             {item.lists?.map((li, i) => (
-                                                                                <li key={i} className="flex items-start gap-3 text-gray-600">
-                                                                                    <span className="text-gray-300 mt-1">—</span>
-                                                                                    <span>{li}</span>
-                                                                                </li>
+                                                                                <p key={i} className="text-gray-600 text-sm leading-relaxed">
+                                                                                    {li}
+                                                                                </p>
                                                                             ))}
-                                                                        </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    ) : service.items ? (
+                                                        <div className="grid md:grid-cols-2 gap-6">
+                                                            {service.items.map((item, idx) => {
+                                                                const isPositive = item.title?.includes('✅') || idx === 0;
+                                                                return (
+                                                                    <div
+                                                                        key={idx}
+                                                                        className={`p-6 rounded-2xl transition-all hover:shadow-lg ${isPositive
+                                                                            ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200'
+                                                                            : 'bg-white border-2 border-gray-200'
+                                                                            }`}
+                                                                    >
+                                                                        <div className="flex items-center gap-3 mb-6">
+                                                                            <span className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg shadow-md ${isPositive
+                                                                                ? 'bg-green-500 text-white'
+                                                                                : 'bg-gray-100 text-gray-500'
+                                                                                }`}>
+                                                                                {isPositive ? '✓' : '✗'}
+                                                                            </span>
+                                                                            <h4 className="text-lg font-bold text-gray-900">
+                                                                                {item.title?.replace(/[✅❌]/g, '').trim()}
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div className="space-y-2">
+                                                                            {item.lists?.map((li, i) => (
+                                                                                <div
+                                                                                    key={i}
+                                                                                    className={`flex items-start gap-3 p-3 rounded-lg transition-all ${isPositive ? 'bg-white/70 hover:bg-white' : 'bg-gray-50 hover:bg-gray-100'
+                                                                                        }`}
+                                                                                >
+                                                                                    <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${isPositive ? 'bg-green-100 text-green-600' : 'bg-gray-200 text-gray-400'
+                                                                                        }`}>
+                                                                                        {isPositive ? (
+                                                                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                                                            </svg>
+                                                                                        ) : (
+                                                                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                                                            </svg>
+                                                                                        )}
+                                                                                    </span>
+                                                                                    <span className="text-gray-700 text-sm leading-relaxed">{li}</span>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
                                                                     </div>
                                                                 );
                                                             })}
@@ -210,65 +274,84 @@ const ProductDetail = () => {
                                             )}
 
 
-                                            {/* --- TYPE: TEXT → Journey Narrative with Deliverables --- */}
+                                            {/* --- TYPE: TEXT → Enhanced Layout with BrandPackagingLayout --- */}
                                             {service.type === 'text' && (
-                                                <div className={`grid md:grid-cols-12 gap-12 lg:gap-20 items-center ${service.image ? '' : 'max-w-4xl mx-auto'}`}>
+                                                <>
+                                                    {/* Use BrandPackagingLayout for Phase sections */}
+                                                    {product.id === 'goi-dong-goi-thuong-hieu' &&
+                                                        (service.title?.includes('Giai đoạn') || service.title === 'Cam kết của Long' || service.title === 'Sẵn sàng bắt đầu?') ? (
+                                                        <BrandPackagingLayout service={service as any} index={index} />
+                                                    ) : (
+                                                        <div className={`grid md:grid-cols-12 gap-12 lg:gap-16 items-start ${service.image ? '' : 'max-w-4xl mx-auto'}`}>
 
-                                                    {/* Text Column */}
-                                                    <div className={`${service.image ? 'md:col-span-7' : 'md:col-span-12'} space-y-8 ${index % 2 !== 0 && service.image ? 'md:order-2' : 'md:order-1'}`}>
+                                                            {/* Text Column */}
+                                                            <div className={`${service.image ? 'md:col-span-7' : 'md:col-span-12'} space-y-6 ${index % 2 !== 0 && service.image ? 'md:order-2' : 'md:order-1'}`}>
 
-                                                        {/* Custom Title rendering for Text type */}
-                                                        <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-gray-900 mb-6 text-balance">
-                                                            {service.title}
-                                                        </h3>
+                                                                {/* Custom Title rendering for Text type */}
+                                                                {service.title && (
+                                                                    <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-gray-900 mb-4 text-balance">
+                                                                        {service.title}
+                                                                    </h3>
+                                                                )}
 
-                                                        {/* Narrative Description */}
-                                                        {service.description && (
-                                                            <div
-                                                                className="text-gray-700 leading-relaxed text-lg whitespace-pre-line text-pretty"
-                                                                dangerouslySetInnerHTML={{
-                                                                    __html: service.description
-                                                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                                                        .replace(/\n/g, '<br />')
-                                                                }}
-                                                            />
-                                                        )}
+                                                                {/* Narrative Description - improved readability */}
+                                                                {service.description && (
+                                                                    <div
+                                                                        className="text-gray-600 leading-relaxed text-base md:text-lg space-y-4"
+                                                                        dangerouslySetInnerHTML={{
+                                                                            __html: service.description
+                                                                                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 font-semibold">$1</strong>')
+                                                                                .replace(/\n\n---\n\n/g, '<hr class="my-6 border-gray-200"/>')
+                                                                                .replace(/\n\n/g, '</p><p class="mt-4">')
+                                                                                .replace(/\n•/g, '</p><div class="flex items-start gap-3 mt-2"><span class="text-gray-400 shrink-0">•</span><span>')
+                                                                                .replace(/•/g, '</span></div><div class="flex items-start gap-3 mt-2"><span class="text-gray-400 shrink-0">•</span><span>')
+                                                                        }}
+                                                                    />
+                                                                )}
 
-                                                        {/* Deliverables Note Card */}
-                                                        {service.note && (
-                                                            <div className="mt-8 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200 shadow-lg relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-                                                                {/* Decorative background element */}
-                                                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 group-hover:scale-110 transition-transform"></div>
-
-                                                                <h5 className="relative text-base font-black uppercase tracking-wider text-blue-900 mb-6 flex items-center gap-3">
-                                                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-200 text-blue-700 text-sm">✨</span>
-                                                                    {service.note.title}
-                                                                </h5>
-                                                                <ul className="relative space-y-4">
-                                                                    {service.note.items.map((item, i) => (
-                                                                        <li key={i} className="flex items-start gap-4 text-gray-800 font-medium">
-                                                                            <span className="text-green-600 mt-1 font-black text-lg shrink-0">✓</span>
-                                                                            <span className="leading-relaxed">{item}</span>
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
+                                                                {/* Deliverables Note Card - Grid Layout */}
+                                                                {service.note && (
+                                                                    <div className="mt-8 p-6 md:p-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl border border-blue-200 shadow-lg">
+                                                                        <h5 className="text-base font-black text-blue-900 mb-6 flex items-center gap-3">
+                                                                            <span className="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center shadow-md text-lg">
+                                                                                ✨
+                                                                            </span>
+                                                                            {service.note.title}
+                                                                        </h5>
+                                                                        <div className="grid sm:grid-cols-2 gap-3">
+                                                                            {service.note.items.map((item, i) => (
+                                                                                <div
+                                                                                    key={i}
+                                                                                    className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all group"
+                                                                                >
+                                                                                    <span className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                                                                                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                                                        </svg>
+                                                                                    </span>
+                                                                                    <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
+                                                                )}
                                                             </div>
-                                                        )}
-                                                    </div>
 
-                                                    {/* Image Column */}
-                                                    {service.image && (
-                                                        <div className={`md:col-span-5 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
-                                                            <div className="rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 max-h-[600px]">
-                                                                <img
-                                                                    src={service.image}
-                                                                    alt={service.title}
-                                                                    className="w-full h-full object-cover"
-                                                                />
-                                                            </div>
+                                                            {/* Image Column */}
+                                                            {service.image && (
+                                                                <div className={`md:col-span-5 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                                                                    <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3] sticky top-24">
+                                                                        <img
+                                                                            src={service.image}
+                                                                            alt={service.title}
+                                                                            className="w-full h-full object-cover"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     )}
-                                                </div>
+                                                </>
                                             )}
 
                                             {/* --- TYPE: CHECKLIST → Clean Summary --- */}

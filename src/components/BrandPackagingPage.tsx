@@ -1,0 +1,304 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+const BrandPackagingPage: React.FC = () => {
+    const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(1);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        // Load external fonts and icons
+        const links = [
+            { href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap', rel: 'stylesheet' },
+            { href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet' },
+        ];
+        const addedLinks: HTMLLinkElement[] = [];
+        links.forEach(({ href, rel }) => {
+            if (!document.querySelector(`link[href="${href}"]`)) {
+                const link = document.createElement('link');
+                link.href = href;
+                link.rel = rel;
+                document.head.appendChild(link);
+                addedLinks.push(link);
+            }
+        });
+        return () => { addedLinks.forEach(l => l.remove()); };
+    }, []);
+
+    const toggleFaq = (index: number) => {
+        setOpenFaqIndex(openFaqIndex === index ? null : index);
+    };
+
+    const faqData = [
+        { question: 'Thời gian hoàn thiện dự án?', answer: 'Thông thường từ 4-8 tuần tùy theo quy mô và mức độ phức tạp của thương hiệu. Chúng tôi luôn cam kết bám sát timeline đã thống nhất.' },
+        { question: 'Chính sách chỉnh sửa thiết kế?', answer: 'Chúng tôi cam kết hỗ trợ chỉnh sửa tối đa 3 vòng (round) sau mỗi giai đoạn để đảm bảo sản phẩm cuối cùng sắc nét nhất và đúng ý đồ chiến lược.' },
+        { question: 'Chi phí đã bao gồm in ấn chưa?', answer: 'Chi phí gói dịch vụ chưa bao gồm in ấn. Tuy nhiên, chúng tôi sẽ hỗ trợ báo giá và kiểm soát chất lượng in ấn từ các đối tác uy tín.' },
+    ];
+
+    return (
+        <div className="bg-[#05080F] text-gray-200 antialiased overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <style>{`
+                .glass-panel {
+                    background: rgba(18, 24, 38, 0.7);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                }
+                .font-serif-display {
+                    font-family: 'Playfair Display', serif;
+                }
+            `}</style>
+
+            {/* NAV */}
+            <nav className="fixed top-0 w-full z-50 glass-panel px-6 py-4 flex justify-between items-center border-b border-white/5">
+                <div className="max-w-5xl mx-auto w-full flex justify-between items-center">
+                    <Link to="/" className="text-white font-serif-display italic text-xl font-bold tracking-tight">LH.</Link>
+                    <Link to="/" className="text-white hover:text-[#B87333] transition-colors">
+                        <span className="material-icons">arrow_back</span>
+                    </Link>
+                </div>
+            </nav>
+
+            {/* HERO */}
+            <section className="relative h-screen flex flex-col justify-end pb-20 px-6 lg:px-8 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        className="w-full h-full object-cover brightness-[0.4] grayscale-[0.3]"
+                        alt="Dark wood and steel minimalist cafe interior architecture"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_kVZdb2O5xBQ_SXBd2y0VPXVb78kKJseaY_LXNlDqwmoiJdDWE9LN8_GAvh8GgOPIbP_tnnx36S26-jEtSIi3payXLPgEEfIZjA1vz2hjYFIheJm5OkpigUxKoWD98SmywTcx1gmBHJRc9KT44c5VJVAaEUftAUDKHfBn-fbs4PcFOZQbv-hkzrKOHQymFyGyfvQ2XpkSw8Z0APzNqY5BiFkO7CGLaQNn3j_eEIAqBWPvDmGXOqL_q-0-3-UxQVLqfKkPiuzQxEgJ"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] via-[#05080F]/60 to-transparent"></div>
+                </div>
+                <div className="relative z-10 space-y-5 max-w-5xl mx-auto w-full">
+                    <div className="flex items-center gap-3">
+                        <div className="h-[1px] w-8 bg-[#B87333]"></div>
+                        <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Strategic Branding</span>
+                    </div>
+                    <h1 className="text-white font-serif-display text-5xl leading-[1.1] tracking-tight">
+                        GÓI ĐÓNG GÓI <br />
+                        <span className="italic font-normal text-[#C0C0C0]">Thương Hiệu</span>
+                    </h1>
+                    <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
+                        Kiến tạo vị thế độc bản cho mô hình F&B của bạn bằng tư duy chiến lược và ngôn ngữ thiết kế sắc sảo.
+                    </p>
+                    <div className="pt-8">
+                        <a
+                            href="https://www.facebook.com/Long2492/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#B87333] hover:bg-[#D98C45] text-white font-bold px-8 py-4 rounded flex items-center gap-3 transition-all shadow-[0_4px_20px_-5px_rgba(184,115,51,0.4)] group border border-white/10 w-fit"
+                        >
+                            NHẬN TƯ VẤN
+                            <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* ĐỐI TƯỢNG */}
+            <section className="py-24 px-6 lg:px-8 bg-[#05080F]">
+                <div className="max-w-5xl mx-auto">
+                    <div className="mb-14">
+                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Đối Tượng</h2>
+                        <h3 className="text-white font-serif-display text-3xl">Ai cần gói này?</h3>
+                        <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {[
+                            { icon: 'storefront', title: 'Chủ quán mới', desc: 'Khởi tạo nền móng vững chắc với bộ nhận diện chuyên nghiệp, sẵn sàng cạnh tranh sòng phẳng.' },
+                            { icon: 'auto_graph', title: 'Mô hình mở rộng', desc: 'Chuẩn hóa hệ thống hình ảnh và quy trình vận hành để nhân bản chuỗi không gãy đổ.', featured: true },
+                            { icon: 'refresh', title: 'Tái cấu trúc', desc: 'Lột xác thương hiệu cũ kỹ, định vị lại phân khúc khách hàng cao cấp và hiện đại hơn.' },
+                        ].map((item, idx) => (
+                            <div
+                                key={idx}
+                                className="bg-[#121826] border border-white/5 p-8 rounded hover:border-[#B87333]/40 transition-colors duration-300 relative overflow-hidden"
+                            >
+                                {item.featured && <div className="absolute top-0 right-0 w-20 h-20 bg-[#B87333]/5 rounded-bl-full -mr-10 -mt-10"></div>}
+                                <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center mb-6 relative z-10">
+                                    <span className="material-icons text-[#B87333] text-2xl">{item.icon}</span>
+                                </div>
+                                <h4 className="text-white font-bold text-xl mb-3 tracking-tight relative z-10">{item.title}</h4>
+                                <p className="text-gray-500 font-light text-sm leading-relaxed relative z-10">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* QUY TRÌNH */}
+            <section className="py-24 bg-[#0A0F1E]">
+                <div className="max-w-5xl mx-auto">
+                    <div className="px-6 lg:px-8 mb-16">
+                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Quy Trình</h2>
+                        <h3 className="text-white font-serif-display text-3xl">3 Giai Đoạn Thực Thi</h3>
+                    </div>
+                    <div className="space-y-0">
+                        {[
+                            {
+                                num: '01', title: 'Nghiên Cứu & Chiến Lược',
+                                steps: [
+                                    { id: '1.1', text: 'Phân tích thị trường, đối thủ cạnh tranh và insight khách hàng mục tiêu.' },
+                                    { id: '1.2', text: 'Xác định Brand DNA, tính cách thương hiệu và chiến lược định vị.' },
+                                ]
+                            },
+                            {
+                                num: '02', title: 'Thiết Kế Sáng Tạo',
+                                steps: [
+                                    { id: '2.1', text: 'Phát triển Concept Logo và Moodboard định hướng thị giác.' },
+                                    { id: '2.2', text: 'Thiết kế Typography, Key Visual và hệ thống ứng dụng nhận diện.' },
+                                ]
+                            },
+                            {
+                                num: '03', title: 'Hoàn Thiện & Bàn Giao',
+                                steps: [
+                                    { id: '3.1', text: 'Đóng gói Brand Guidelines (PDF) và Template Canva chuẩn chỉnh.' },
+                                    { id: '3.2', text: 'Đào tạo chuyển giao và hướng dẫn ứng dụng thực tế tại điểm bán.' },
+                                ]
+                            },
+                        ].map((phase, idx) => (
+                            <div key={idx} className={`relative flex border-t ${idx === 2 ? 'border-y' : ''} border-white/10 group hover:bg-white/[0.02] transition-colors`}>
+                                <div className="w-[28%] sticky top-24 h-fit py-8 pl-6 pr-2">
+                                    <span className="text-white/20 font-serif-display text-5xl font-bold group-hover:text-[#B87333]/40 transition-colors">{phase.num}</span>
+                                </div>
+                                <div className="w-[72%] py-8 pr-6 pl-4 space-y-6 border-l border-white/10">
+                                    <h4 className="text-white font-bold text-xl uppercase tracking-tight">{phase.title}</h4>
+                                    <div className="space-y-4">
+                                        {phase.steps.map((step, sIdx) => (
+                                            <div key={sIdx} className="flex gap-4 items-start">
+                                                <span className="text-[#B87333] font-mono text-sm pt-1">{step.id}</span>
+                                                <p className="text-gray-400 text-sm">{step.text}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* DELIVERABLES */}
+            <section className="py-24 px-6 lg:px-8 bg-[#05080F]">
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Deliverables</h2>
+                        <h3 className="text-white font-serif-display text-3xl">Bộ tài liệu nhận được</h3>
+                    </div>
+                    <div className="relative space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+                        {[
+                            {
+                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAU1xfTkNwNjttJddUKRwJGMUsmJBx9pRjdx_xrTuJY3Z_J_jXHIR7bN_uzBhDooMAjA44c0FXGBHgYg08zPFja8PsXuxsx9L04gSY7OOEFGVLFw9awY71PrNUTNDn9WQA6B2FXQLSPzrui9U51IPQ9i80rzN_ogtWwpwoHHzonuE0Im13axPwhK7_l5Ov46Vz-ntZi9qjZPCn35Zwiwfm0AGIO7DCmk5RZznTg1O4xHD2GQ3YyfLPZ6SV-MD1-55cxa26uawCcQtWJ',
+                                alt: 'Premium brand guidelines PDF on a modern tablet mockup with dark theme',
+                                title: 'Brand Guidelines',
+                                icon: 'description',
+                                desc: 'Cuốn cẩm nang "Kinh thánh" thương hiệu, chuẩn hóa mọi quy tắc sử dụng logo, màu sắc.',
+                            },
+                            {
+                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOwHS633sDWpilos1wGfis_PMCNjvVVBxfc8ZR04uK7qoFIfJffYeFpRRNhHePn7i48E_p72Rq5wDFtz84kHgLdCFt_Jz3gvLlk8famaVNXfZhn8BDJWdvtaei50kd2hw8P9KTDis5OUn5FDVRaW3JG-BrInKkZzX9MDFJ97k2vGynI8g5qT6hgBHjsveqT589LL4A_VW2cU-J7iI55zev3QGmnqSD0CE2D0SOxXFskTs4uITFYoaRkG_pPh4qGA8_qOJo8ZzmjxFt',
+                                alt: 'Social media templates for Canva on a smartphone screen dark mode',
+                                title: 'Canva Templates',
+                                icon: 'dashboard',
+                                desc: 'Bộ mẫu thiết kế Social Media chuyên nghiệp, tối ưu hóa cho đội ngũ in-house.',
+                            },
+                        ].map((item, idx) => (
+                            <div key={idx} className="group relative">
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B87333]/30 to-white/5 rounded blur opacity-20 transition duration-1000 group-hover:opacity-50"></div>
+                                <div className="relative bg-[#121826] rounded overflow-hidden shadow-2xl border border-white/5">
+                                    <img className="w-full h-64 object-cover brightness-75 grayscale-[0.2]" alt={item.alt} src={item.img} />
+                                    <div className="p-8">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h4 className="text-white font-bold text-lg uppercase tracking-wide">{item.title}</h4>
+                                            <span className="material-icons text-[#B87333]/70">{item.icon}</span>
+                                        </div>
+                                        <p className="text-gray-500 text-sm font-light">{item.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ & CAM KẾT */}
+            <section className="py-24 px-6 lg:px-8 bg-[#0A0F1E]">
+                <div className="max-w-5xl mx-auto grid gap-12">
+                    <div>
+                        <h3 className="text-white font-serif-display text-3xl mb-10">FAQ & Cam Kết</h3>
+                        <div className="space-y-4">
+                            {faqData.map((faq, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`group border ${openFaqIndex === idx ? 'border-[#B87333]/30 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.5)]' : 'border-white/5 hover:border-white/10'} bg-[#121826] p-1 rounded transition-all`}
+                                >
+                                    <button
+                                        onClick={() => toggleFaq(idx)}
+                                        className="w-full flex justify-between items-center p-4 text-left"
+                                    >
+                                        <span className={`${openFaqIndex === idx ? 'text-[#B87333] font-bold' : 'text-white font-medium'} text-sm`}>
+                                            {faq.question}
+                                        </span>
+                                        <span className="material-icons text-[#B87333] text-lg">
+                                            {openFaqIndex === idx ? 'remove' : 'add'}
+                                        </span>
+                                    </button>
+                                    {openFaqIndex === idx && (
+                                        <div className="px-4 pb-4">
+                                            <p className="text-gray-400 text-xs leading-relaxed border-l-2 border-[#B87333]/20 pl-3">
+                                                {faq.answer}
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Cam kết */}
+                    <div className="mt-8 p-8 bg-gradient-to-br from-[#121826] to-black rounded border border-white/5 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8 opacity-10">
+                            <span className="material-icons text-6xl text-white">format_quote</span>
+                        </div>
+                        <h4 className="font-serif-display text-2xl text-white mb-6 italic relative z-10">Lời cam kết</h4>
+                        <p className="text-gray-400 font-light leading-relaxed mb-8 relative z-10 text-sm">
+                            "Tôi không bán những bản vẽ vô hồn. Tôi bán giải pháp thị giác để doanh nghiệp của bạn vận hành hiệu quả và chuyên nghiệp hơn. Thành công của bạn là thước đo năng lực của tôi."
+                        </p>
+                        <div className="flex items-center gap-4 relative z-10">
+                            <div className="w-14 h-14 rounded grayscale overflow-hidden border border-white/20">
+                                <img
+                                    className="w-full h-full object-cover"
+                                    alt="Professional portrait of Long Hoang branding consultant"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgy_UboMaOLEMjRJZ7I7fLolHsNHsx12MRsO_1zk2aa2toTmCJhL1pl3ZZQoIPzeaxKiafIoxD0M6cwv3lcYYXYc-0I-5yvKVIjBOqDnu-yXYTLiaS7TtgFupsRWhZ4dnHcXfE94BGoJHl_d-N2-OxmV_yIvapq9UZo2laxaS0gs4ov_HecMYD-_LJ5VWmRlidBNE9ccSz_dTAO7ne4M_lYULlaEEfWX83oXO8y2x5JVb05Bvsm0kkIGzOzt5wOcRVtYa_c3z4qhdR"
+                                />
+                            </div>
+                            <div>
+                                <p className="text-white font-bold uppercase text-xs tracking-wider mb-1">Long Hoang</p>
+                                <p className="text-[#B87333] text-[10px] uppercase tracking-widest">Founder & Lead Strategist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FOOTER */}
+            <footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10">
+                <div className="flex flex-col items-center text-center space-y-8">
+                    <div className="text-white font-serif-display italic text-3xl font-bold tracking-tighter">LH.</div>
+                    <div className="flex gap-8">
+                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="https://www.facebook.com/Long2492/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="https://www.tiktok.com/@long.moquancaphe" target="_blank" rel="noopener noreferrer">TikTok</a>
+                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="#">LinkedIn</a>
+                    </div>
+                    <div className="w-12 h-[1px] bg-white/10"></div>
+                    <p className="text-gray-600 text-[10px] tracking-widest uppercase">
+                        © 2024 Long Hoang Branding. All rights reserved.
+                    </p>
+                    <div className="pt-4 opacity-30 pointer-events-none select-none">
+                        <span className="font-serif-display italic text-xl text-white">Long Hoang</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    );
+};
+
+export default BrandPackagingPage;

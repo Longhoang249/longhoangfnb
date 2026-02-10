@@ -80,6 +80,9 @@ const BrandPackagingPage: React.FC = () => {
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
                         "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
                     </p>
+                    <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
+                        "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu, nên đăng cái gì và làm như thế nào..."
+                    </p>
                     <div className="pt-8">
                         <a
                             href="https://www.facebook.com/Long2492/"

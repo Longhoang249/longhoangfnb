@@ -259,6 +259,32 @@ const BrandPackagingPage: React.FC = () => {
                             </div>
                         ))}
                     </div>
+
+                    <div className="mt-12 relative group">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B87333] to-[#F59E0B] rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                        <div className="relative bg-[#0A0F1E] border border-[#B87333]/50 rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start shadow-2xl">
+                            <div className="md:w-1/3 flex-shrink-0 w-full">
+                                <div className="aspect-video rounded-lg overflow-hidden border border-white/10 relative group-hover:scale-[1.02] transition-transform duration-500">
+                                    <div className="absolute inset-0 bg-[#B87333]/10 mix-blend-overlay z-10"></div>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop"
+                                        alt="Customer experience in coffee shop"
+                                        className="w-full h-full object-cover grayscale-[0.3]"
+                                    />
+                                    <div className="absolute top-4 left-4 bg-[#B87333] text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-20 flex items-center gap-1">
+                                        <span className="material-icons text-[14px]">card_giftcard</span>
+                                        QUÀ TẶNG KÈM
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:w-2/3 space-y-4">
+                                <h4 className="text-white font-serif-display text-2xl md:text-3xl leading-tight">Đề Xuất Các Hoạt Động Tăng Trải Nghiệm Khách Hàng Tại Quán</h4>
+                                <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base">
+                                    Marketing không chỉ nằm ở màu sắc, logo hay các bài đăng trên mạng xã hội, nó còn hiện hữu ở ngay những điểm chạm nhỏ nhất tính từ cửa quán tới tận nơi đi nặng nhẹ. Một tờ giấy note với lời nhắn đủ "chạm" cũng có thể trở thành lý do để vị khách quay lại quán hàng chục lần tiếp theo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -320,10 +346,10 @@ const BrandPackagingPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* FOOTER */}
-            <footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10">
+            < footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10" >
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="text-white font-serif-display italic text-3xl font-bold tracking-tighter">LH.</div>
                     <div className="flex gap-8">
@@ -339,9 +365,9 @@ const BrandPackagingPage: React.FC = () => {
                         <span className="font-serif-display italic text-xl text-white">Long Hoang</span>
                     </div>
                 </div>
-            </footer>
+            </footer >
 
-        </div>
+        </div >
     );
 };
 

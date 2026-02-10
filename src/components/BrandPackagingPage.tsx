@@ -29,8 +29,8 @@ const BrandPackagingPage: React.FC = () => {
     };
 
     const faqData = [
-        { question: 'Bao lâu Long làm xong một gói?', answer: 'Thông thường từ 2-4 tuần tùy theo quy mô và mức độ phức tạp của thương hiệu.' },
         { question: 'Làm việc với Long thế nào?', answer: 'Chúng ta chủ yếu sẽ làm việc online qua Zoom hoặc video call. Nếu anh chị ở Hà Nội, Long có thể qua trực tiếp quán để đồng hành.' },
+        { question: 'Bao lâu Long làm xong một gói?', answer: 'Thông thường từ 2-4 tuần tùy theo quy mô và mức độ phức tạp của thương hiệu.' },
         { question: 'Long tính phí như nào?', answer: 'Trò chuyện với Long là miễn phí. Long chỉ báo giá và nhận thanh toán sau khi anh chị đồng ý với phương án Long đưa ra. Giá gói sẽ dao động từ 15 - 30 triệu tuỳ vào đề bài cần giải.' },
         { question: 'Quá trình thanh toán ra sao?', answer: 'Long sẽ nhận 50% thanh toán để bắt đầu đi vào xây dựng Gói cho quán. 50% còn lại sẽ nhận nốt khi Gói hoàn thiện và sẵn sàng bàn giao.' },
         { question: 'Nếu Long không làm đúng như đã nói?', answer: 'Trong quá trình đồng hành cho tới trước khi hoàn tất bàn giao, chủ quán có thể dừng hợp tác bất kỳ lúc nào và nhận lại toàn bộ tiền cọc mà không cần lý do. (Việc đặt cọc chỉ như một phần tăng cam kết cho đôi bên. Long sẽ trân trọng những người phù hợp với mình hơn là cố gắng chiều lòng tất cả).' },
@@ -61,7 +61,7 @@ const BrandPackagingPage: React.FC = () => {
             </nav>
 
             {/* HERO */}
-            <section className="relative h-screen flex flex-col justify-end pb-20 px-6 lg:px-8 overflow-hidden">
+            <section className="relative h-screen flex flex-col justify-end pb-20 pt-28 px-6 lg:px-8 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
                         className="w-full h-full object-cover brightness-[0.4] grayscale-[0.3]"
@@ -76,8 +76,8 @@ const BrandPackagingPage: React.FC = () => {
                         <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
                     </div>
                     <h1 className="text-white font-serif-display text-5xl leading-[1.1] tracking-tight">
-                        LÀM MARKETING <br />
-                        <span className="italic font-normal text-[#C0C0C0]">Cho Quán của Mình</span>
+                        <span className="whitespace-nowrap">LÀM MARKETING</span> <br />
+                        <span className="italic font-normal text-[#C0C0C0] whitespace-nowrap">Cho Quán của Mình</span>
                     </h1>
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
                         "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
@@ -104,13 +104,13 @@ const BrandPackagingPage: React.FC = () => {
                 <div className="max-w-5xl mx-auto">
                     <div className="mb-14">
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Giải Pháp</h2>
-                        <h3 className="text-white font-serif-display text-3xl">Đóng Gói Thương Hiệu & quy trình Marketing Tự Vận Hành</h3>
+                        <h3 className="text-white font-serif-display text-3xl">Đóng Gói Thương Hiệu <br />& quy trình <br />Marketing Tự Vận Hành</h3>
                         <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="p-8 border border-white/5 rounded-lg bg-[#121826]/50 hover:bg-[#121826] transition-colors group">
                             <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
-                                <span className="material-icons text-[#B87333] text-3xl">rocket_launch</span>
+                                <span className="material-icons text-[#B87333] text-3xl">palette</span>
                             </div>
                             <p className="text-gray-300 text-lg font-light leading-relaxed">
                                 Xây dựng hệ thống nhận diện thương hiệu thực dụng kèm kế hoạch truyền thông chạy được trong 3 tháng.
@@ -119,7 +119,7 @@ const BrandPackagingPage: React.FC = () => {
 
                         <div className="p-8 border border-white/5 rounded-lg bg-[#121826]/50 hover:bg-[#121826] transition-colors group">
                             <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
-                                <span className="material-icons text-[#B87333] text-3xl">smart_toy</span>
+                                <span className="material-icons text-[#B87333] text-3xl">precision_manufacturing</span>
                             </div>
                             <div className="text-gray-300 text-lg font-light leading-relaxed space-y-4">
                                 <p>Bàn giao quy trình marketing tự vận hành với sự hỗ trợ của công cụ AI và tài nguyên marketing đã thiết kế sẵn.</p>
@@ -322,34 +322,37 @@ const BrandPackagingPage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Cam kết */}
+                    {/* Lời nhắn */}
                     <div className="mt-8 p-8 bg-gradient-to-br from-[#121826] to-black rounded border border-white/5 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-8 opacity-10">
                             <span className="material-icons text-6xl text-white">format_quote</span>
                         </div>
-                        <h4 className="font-serif-display text-2xl text-white mb-6 italic relative z-10">Lời cam kết</h4>
-                        <p className="text-gray-400 font-light leading-relaxed mb-8 relative z-10 text-sm">
-                            "Tôi không bán những bản vẽ vô hồn. Tôi bán giải pháp thị giác để doanh nghiệp của bạn vận hành hiệu quả và chuyên nghiệp hơn. Thành công của bạn là thước đo năng lực của tôi."
-                        </p>
+                        <h4 className="font-serif-display text-2xl text-white mb-6 italic relative z-10">Lời nhắn:</h4>
+                        <div className="text-gray-400 font-light leading-relaxed mb-8 relative z-10 text-sm space-y-4">
+                            <p>"Mỗi sản phẩm được đóng gói và bàn giao cho chủ quán đều là thành quả của quá trình trò chuyện, thấu hiểu và xác định rõ đề bài.</p>
+                            <p>Vì vậy yếu tố tiên quyết để có được sự hợp tác thành công là chúng ta hãy trò chuyện thật nhiều và trung thực.</p>
+                            <p>Sẽ là tuyệt vời nhất nếu Long và chủ quán có được tiếng nói chung về mục tiêu và kỳ vọng của nhau trước khi bắt đầu.</p>
+                            <p>Vậy nên, đừng ngại nhắn cho Long nha!"</p>
+                        </div>
                         <div className="flex items-center gap-4 relative z-10">
-                            <div className="w-14 h-14 rounded grayscale overflow-hidden border border-white/20">
+                            <div className="w-14 h-14 rounded-full overflow-hidden border border-white/20">
                                 <img
                                     className="w-full h-full object-cover"
-                                    alt="Professional portrait of Long Hoang branding consultant"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgy_UboMaOLEMjRJZ7I7fLolHsNHsx12MRsO_1zk2aa2toTmCJhL1pl3ZZQoIPzeaxKiafIoxD0M6cwv3lcYYXYc-0I-5yvKVIjBOqDnu-yXYTLiaS7TtgFupsRWhZ4dnHcXfE94BGoJHl_d-N2-OxmV_yIvapq9UZo2laxaS0gs4ov_HecMYD-_LJ5VWmRlidBNE9ccSz_dTAO7ne4M_lYULlaEEfWX83oXO8y2x5JVb05Bvsm0kkIGzOzt5wOcRVtYa_c3z4qhdR"
+                                    alt="Long Hoang Marketing FnB Expert"
+                                    src="https://i.ibb.co/3m8sdk0j/6330560-A-04-F3-40-B6-913-D-B853-DFB2-CDBF-1-105-c.jpg"
                                 />
                             </div>
                             <div>
                                 <p className="text-white font-bold uppercase text-xs tracking-wider mb-1">Long Hoang</p>
-                                <p className="text-[#B87333] text-[10px] uppercase tracking-widest">Founder & Lead Strategist</p>
+                                <p className="text-[#B87333] text-[10px] uppercase tracking-widest">Marketing F&B Expert</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
             {/* FOOTER */}
-            < footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10" >
+            <footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10">
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="text-white font-serif-display italic text-3xl font-bold tracking-tighter">LH.</div>
                     <div className="flex gap-8">
@@ -365,9 +368,9 @@ const BrandPackagingPage: React.FC = () => {
                         <span className="font-serif-display italic text-xl text-white">Long Hoang</span>
                     </div>
                 </div>
-            </footer >
+            </footer>
 
-        </div >
+        </div>
     );
 };
 

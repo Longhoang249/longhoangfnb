@@ -48,6 +48,7 @@ const BrandPackagingPage: React.FC = () => {
                 .font-serif-display {
                     font-family: 'Playfair Display', serif;
                 }
+                html { scroll-behavior: smooth; }
             `}</style>
 
             {/* NAV */}
@@ -85,11 +86,27 @@ const BrandPackagingPage: React.FC = () => {
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
                         "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu, nên đăng cái gì và làm như thế nào..."
                     </p>
+                    <div className="flex flex-wrap gap-3 pt-6">
+                        {[
+                            { label: 'Thông tin gói', href: '#giai-phap' },
+                            { label: 'Quy trình hợp tác', href: '#quy-trinh' },
+                            { label: 'Sản phẩm nhận về', href: '#san-pham' },
+                            { label: 'Q&A', href: '#qa' },
+                        ].map((item) => (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                className="px-4 py-2 text-xs md:text-sm font-medium rounded-full border border-white/15 text-gray-300 hover:text-white hover:bg-white/10 hover:border-[#B87333]/50 transition-all duration-300 backdrop-blur-sm bg-white/5"
+                            >
+                                {item.label}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* GIẢI PHÁP */}
-            <section className="py-24 px-6 lg:px-8 bg-[#0A0F1E]">
+            <section id="giai-phap" className="py-24 px-6 lg:px-8 bg-[#0A0F1E] scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="mb-14">
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Giải Pháp</h2>
@@ -149,7 +166,7 @@ const BrandPackagingPage: React.FC = () => {
             </section>
 
             {/* QUY TRÌNH */}
-            <section className="py-24 bg-[#0A0F1E]">
+            <section id="quy-trinh" className="py-24 bg-[#0A0F1E] scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="px-6 lg:px-8 mb-16">
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Quy Trình</h2>
@@ -203,7 +220,7 @@ const BrandPackagingPage: React.FC = () => {
             </section>
 
             {/* DELIVERABLES */}
-            <section className="py-24 px-6 lg:px-8 bg-[#05080F]">
+            <section id="san-pham" className="py-24 px-6 lg:px-8 bg-[#05080F] scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Chủ quán</h2>
@@ -278,7 +295,7 @@ const BrandPackagingPage: React.FC = () => {
             </section>
 
             {/* FAQ & CAM KẾT */}
-            <section className="py-24 px-6 lg:px-8 bg-[#0A0F1E]">
+            <section id="qa" className="py-24 px-6 lg:px-8 bg-[#0A0F1E] scroll-mt-20">
                 <div className="max-w-5xl mx-auto grid gap-12">
                     <div>
                         <h3 className="text-white font-serif-display text-3xl mb-10">Có Thể Chủ Quán Thắc Mắc</h3>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BrandPackagingPage: React.FC = () => {
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(1);
+    const [activeContact, setActiveContact] = useState<'facebook' | 'tiktok' | 'gmail' | 'phone' | null>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -369,20 +370,66 @@ const BrandPackagingPage: React.FC = () => {
             </section>
 
             {/* FOOTER */}
-            <footer className="bg-black py-16 px-6 lg:px-8 border-t border-white/10">
-                <div className="flex flex-col items-center text-center space-y-8">
-                    <div className="text-white font-serif-display italic text-3xl font-bold tracking-tighter">LH.</div>
-                    <div className="flex gap-8">
-                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="https://www.facebook.com/Long2492/" target="_blank" rel="noopener noreferrer">Facebook</a>
-                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="https://www.tiktok.com/@long.moquancaphe" target="_blank" rel="noopener noreferrer">TikTok</a>
-                        <a className="text-gray-500 hover:text-white transition-colors text-xs uppercase tracking-widest" href="#">LinkedIn</a>
+            <footer className="py-20 px-6 lg:px-8 bg-black border-t border-white/10">
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-10">
+                        <h3 className="text-white font-serif-display text-2xl md:text-3xl mb-2">Kết Bạn Với Long</h3>
+                        <p className="text-gray-500 text-xs tracking-widest uppercase">Biết đâu chúng ta có thể đồng hành</p>
                     </div>
-                    <div className="w-12 h-[1px] bg-white/10"></div>
-                    <p className="text-gray-600 text-[10px] tracking-widest uppercase">
-                        © 2024 Long Hoang Branding. All rights reserved.
-                    </p>
-                    <div className="pt-4 opacity-30 pointer-events-none select-none">
-                        <span className="font-serif-display italic text-xl text-white">Long Hoang</span>
+
+                    <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-md mx-auto mb-10">
+                        <a href="https://www.facebook.com/Long2492/" target="_blank" rel="noopener noreferrer" className="aspect-square rounded-2xl md:rounded-[1.5rem] bg-[#121826] border border-white/10 hover:border-[#B87333]/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group active:scale-95">
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 group-hover:bg-[#1877F2] transition-colors flex items-center justify-center">
+                                <svg className="w-6 h-6 md:w-7 md:h-7 text-gray-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+                            </div>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@long.moquancaphe" target="_blank" rel="noopener noreferrer" className="aspect-square rounded-2xl md:rounded-[1.5rem] bg-[#121826] border border-white/10 hover:border-[#B87333]/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group">
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 group-hover:bg-white transition-colors flex items-center justify-center">
+                                <svg className="w-6 h-6 md:w-7 md:h-7 text-gray-500 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
+                            </div>
+                        </a>
+
+                        <button onClick={() => setActiveContact(activeContact === 'gmail' ? null : 'gmail')} className={`aspect-square rounded-2xl md:rounded-[1.5rem] bg-[#121826] border border-white/10 hover:border-[#B87333]/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group ${activeContact === 'gmail' ? 'ring-2 ring-[#B87333] -translate-y-1 shadow-xl' : ''}`}>
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 group-hover:bg-red-500 transition-colors flex items-center justify-center">
+                                <svg className="w-6 h-6 md:w-7 md:h-7 text-gray-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" /></svg>
+                            </div>
+                        </button>
+
+                        <button onClick={() => setActiveContact(activeContact === 'phone' ? null : 'phone')} className={`aspect-square rounded-2xl md:rounded-[1.5rem] bg-[#121826] border border-white/10 hover:border-[#B87333]/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group ${activeContact === 'phone' ? 'ring-2 ring-[#B87333] -translate-y-1 shadow-xl' : ''}`}>
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 group-hover:bg-green-500 transition-colors flex items-center justify-center">
+                                <svg className="w-6 h-6 md:w-7 md:h-7 text-gray-500 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.28 1.12.27 2.33.39 3.57.39.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.13 2.45.4 3.57.08.35-.01.74-.29 1.02l-2.2 2.2z" /></svg>
+                            </div>
+                        </button>
+                    </div>
+
+                    {activeContact === 'gmail' && (
+                        <div className="bg-[#121826] p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10 max-w-md mx-auto mb-8 relative overflow-hidden animate-fadeIn">
+                            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-400 to-red-600"></div>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-4">Gmail</p>
+                            <div className="text-lg md:text-xl font-bold text-white tracking-tight mb-6 break-all">Long2492000@gmail.com</div>
+                            <button onClick={() => navigator.clipboard.writeText('Long2492000@gmail.com')} className="bg-[#B87333] hover:bg-[#D98C45] text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg">
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                Sao chép
+                            </button>
+                        </div>
+                    )}
+
+                    {activeContact === 'phone' && (
+                        <div className="bg-[#121826] p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10 max-w-md mx-auto mb-8 relative overflow-hidden animate-fadeIn">
+                            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-400 to-green-600"></div>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-4">Phone / Zalo</p>
+                            <div className="text-lg md:text-xl font-bold text-white tracking-tight mb-6">0528 442 530</div>
+                            <button onClick={() => navigator.clipboard.writeText('0528442530')} className="bg-[#B87333] hover:bg-[#D98C45] text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg">
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                Sao chép
+                            </button>
+                        </div>
+                    )}
+
+                    <div className="text-center mt-10">
+                        <div className="w-12 h-[1px] bg-white/10 mx-auto mb-6"></div>
+                        <p className="text-gray-600 text-[10px] tracking-widest uppercase">© 2026 Long Hoang. All rights reserved.</p>
                     </div>
                 </div>
             </footer>

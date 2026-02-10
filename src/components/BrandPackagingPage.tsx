@@ -29,9 +29,11 @@ const BrandPackagingPage: React.FC = () => {
     };
 
     const faqData = [
-        { question: 'Thời gian hoàn thiện dự án?', answer: 'Thông thường từ 4-8 tuần tùy theo quy mô và mức độ phức tạp của thương hiệu. Chúng tôi luôn cam kết bám sát timeline đã thống nhất.' },
-        { question: 'Chính sách chỉnh sửa thiết kế?', answer: 'Chúng tôi cam kết hỗ trợ chỉnh sửa tối đa 3 vòng (round) sau mỗi giai đoạn để đảm bảo sản phẩm cuối cùng sắc nét nhất và đúng ý đồ chiến lược.' },
-        { question: 'Chi phí đã bao gồm in ấn chưa?', answer: 'Chi phí gói dịch vụ chưa bao gồm in ấn. Tuy nhiên, chúng tôi sẽ hỗ trợ báo giá và kiểm soát chất lượng in ấn từ các đối tác uy tín.' },
+        { question: 'Bao lâu Long làm xong một gói?', answer: 'Thông thường từ 2-4 tuần tùy theo quy mô và mức độ phức tạp của thương hiệu.' },
+        { question: 'Làm việc với Long thế nào?', answer: 'Chúng ta chủ yếu sẽ làm việc online qua Zoom hoặc video call. Nếu anh chị ở Hà Nội, Long có thể qua trực tiếp quán để đồng hành.' },
+        { question: 'Long tính phí như nào?', answer: 'Trò chuyện với Long là miễn phí. Long chỉ báo giá và nhận thanh toán sau khi anh chị đồng ý với phương án Long đưa ra. Giá gói sẽ dao động từ 15 - 30 triệu tuỳ vào đề bài cần giải.' },
+        { question: 'Quá trình thanh toán ra sao?', answer: 'Long sẽ nhận 50% thanh toán để bắt đầu đi vào xây dựng Gói cho quán. 50% còn lại sẽ nhận nốt khi Gói hoàn thiện và sẵn sàng bàn giao.' },
+        { question: 'Nếu Long không làm đúng như đã nói?', answer: 'Trong quá trình đồng hành cho tới trước khi hoàn tất bàn giao, chủ quán có thể dừng hợp tác bất kỳ lúc nào và nhận lại toàn bộ tiền cọc mà không cần lý do. (Việc đặt cọc chỉ như một phần tăng cam kết cho đôi bên. Long sẽ trân trọng những người phù hợp với mình hơn là cố gắng chiều lòng tất cả).' },
     ];
 
     return (
@@ -264,7 +266,7 @@ const BrandPackagingPage: React.FC = () => {
             <section className="py-24 px-6 lg:px-8 bg-[#0A0F1E]">
                 <div className="max-w-5xl mx-auto grid gap-12">
                     <div>
-                        <h3 className="text-white font-serif-display text-3xl mb-10">FAQ & Cam Kết</h3>
+                        <h3 className="text-white font-serif-display text-3xl mb-10">Có Thể Chủ Quán Thắc Mắc</h3>
                         <div className="space-y-4">
                             {faqData.map((faq, idx) => (
                                 <div

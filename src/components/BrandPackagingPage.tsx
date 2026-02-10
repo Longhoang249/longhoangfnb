@@ -75,7 +75,7 @@ const BrandPackagingPage: React.FC = () => {
                         <div className="h-[1px] w-8 bg-[#B87333]"></div>
                         <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
                     </div>
-                    <h1 className="text-white font-serif-display text-5xl leading-[1.1] tracking-tight">
+                    <h1 className="text-white font-serif-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
                         <span className="whitespace-nowrap">LÀM MARKETING</span> <br />
                         <span className="italic font-normal text-[#C0C0C0] whitespace-nowrap">Cho Quán của Mình</span>
                     </h1>
@@ -85,17 +85,6 @@ const BrandPackagingPage: React.FC = () => {
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
                         "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu, nên đăng cái gì và làm như thế nào..."
                     </p>
-                    <div className="pt-8">
-                        <a
-                            href="https://www.facebook.com/Long2492/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#B87333] hover:bg-[#D98C45] text-white font-bold px-8 py-4 rounded flex items-center gap-3 transition-all shadow-[0_4px_20px_-5px_rgba(184,115,51,0.4)] group border border-white/10 w-fit"
-                        >
-                            NHẬN TƯ VẤN
-                            <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
                 </div>
             </section>
 
@@ -346,6 +335,17 @@ const BrandPackagingPage: React.FC = () => {
                                 <p className="text-white font-bold uppercase text-xs tracking-wider mb-1">Long Hoang</p>
                                 <p className="text-[#B87333] text-[10px] uppercase tracking-widest">Marketing F&B Expert</p>
                             </div>
+                        </div>
+                        <div className="pt-8 relative z-10">
+                            <a
+                                href="https://www.facebook.com/Long2492/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-[#B87333] hover:bg-[#D98C45] text-white font-bold px-8 py-4 rounded flex items-center gap-3 transition-all shadow-[0_4px_20px_-5px_rgba(184,115,51,0.4)] group border border-white/10 w-fit"
+                            >
+                                NHẬN TƯ VẤN
+                                <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
                         </div>
                     </div>
                 </div>

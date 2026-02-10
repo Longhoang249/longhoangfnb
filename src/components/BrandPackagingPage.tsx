@@ -73,11 +73,11 @@ const BrandPackagingPage: React.FC = () => {
                 <div className="relative z-10 space-y-5 max-w-5xl mx-auto w-full">
                     <div className="flex items-center gap-3">
                         <div className="h-[1px] w-8 bg-[#B87333]"></div>
-                        <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Strategic Branding</span>
+                        <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
                     </div>
                     <h1 className="text-white font-serif-display text-5xl leading-[1.1] tracking-tight">
-                        GÓI ĐÓNG GÓI <br />
-                        <span className="italic font-normal text-[#C0C0C0]">Thương Hiệu</span>
+                        LÀM MARKETING <br />
+                        <span className="italic font-normal text-[#C0C0C0]">Cho Quán của Mình</span>
                     </h1>
                     <p className="text-gray-400 text-lg max-w-sm font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
                         "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."

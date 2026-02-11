@@ -75,12 +75,12 @@ const ProductDetail = () => {
                                                         </h3>
                                                     </div>
                                                     {/* Skip description for 'text' type since it renders in its own block */}
-                                                    {service.description && service.type !== 'text' && (
+                                                    {service.description && (service.type as string) !== 'text' && (
                                                         <p className="text-lg text-gray-600 font-medium leading-relaxed text-pretty">{service.description}</p>
                                                     )}
 
                                                     {/* Consistent Section Image (Placeholder if needed) - Skip for FAQ & Comparison */}
-                                                    {service.type !== 'faq' && service.type !== 'text' && service.type !== 'comparison' && (
+                                                    {service.type !== 'faq' && (service.type as string) !== 'text' && service.type !== 'comparison' && (
                                                         <div className="mt-8 mb-12 rounded-2xl overflow-hidden shadow-sm aspect-[21/9] bg-gray-100">
                                                             <img
                                                                 src={service.image || `https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&idx=${index}`}

@@ -106,7 +106,6 @@ const useScrollAnimation = () => {
 const NAV_ITEMS = [
   { id: 'story', label: 'Hành trình' },
   { id: 'offerings', label: 'Dịch vụ' },
-  { id: 'store', label: 'Quà tặng' },
   { id: 'contact', label: 'Liên hệ' },
 ];
 
@@ -646,23 +645,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section id="store" className="py-20 md:py-32 bg-white overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12 md:mb-16"><h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-2">Quà Tặng Làm Quen</h2><p className="text-gray-400 text-xs md:text-sm font-normal tracking-normal">Kho tài nguyên, bảng biểu, công thức marketing fnb Long đã tạo ra hoặc sưu tầm. Có thể sẽ hữu ích với ai đó.</p></div>
-          <div className="max-w-4xl mx-auto">
-            {isResourcesExpanded ? (
-              <div className="bg-white rounded-[3rem] md:rounded-[4rem] border border-gray-200 shadow-2xl flex flex-col h-auto animate-fadeIn" onClick={(e) => e.stopPropagation()}>
-                <div className="px-8 py-4 border-b border-gray-50 flex items-center justify-between bg-gray-50/50"><div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-red-400"></div><div className="w-3 h-3 rounded-full bg-yellow-400"></div><div className="w-3 h-3 rounded-full bg-green-400"></div></div><div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest leading-none">Tài nguyên FnB</div></div>
-                <div className="p-4 md:p-8"><h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-300 mb-8 ml-2">Available Resources</h4><div className="space-y-2">{RESOURCES.map((res) => (<div key={res.id} className="flex items-center gap-4 md:gap-6 p-3 md:p-6 rounded-[1.5rem] hover:bg-gray-50 transition-all group"><div className="w-24 h-20 md:w-56 md:h-auto md:aspect-[16/10] flex-shrink-0 overflow-hidden rounded-xl md:rounded-2xl bg-gray-100"><SmartImage src={res.image} alt={res.title} className="w-full h-full" /></div><div className="flex flex-col justify-center min-w-0 flex-1"><h3 className="text-sm md:text-xl font-bold text-black leading-tight group-hover:text-gray-700 transition-colors line-clamp-2 mb-1">{res.title}</h3><p className="text-[11px] md:text-sm text-gray-500 line-clamp-2 leading-relaxed font-medium opacity-80 mb-3">{res.description}</p><button className="w-fit bg-black text-white px-4 md:px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all">Nhận ngay</button></div></div>))}</div></div>
-                <div className="p-8 border-t border-gray-50 bg-gray-50/30 flex justify-center"><button onClick={handleCollapseResources} className="text-[10px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">rút gọn</button></div>
-              </div>
-            ) : (
-              <div className="max-w-2xl mx-auto bg-white rounded-[3rem] border border-gray-200 shadow-xl p-8 md:p-16 text-center animate-fadeIn group" onClick={(e) => e.stopPropagation()}><p className="text-base md:text-lg font-normal text-gray-500 mb-10 italic leading-relaxed">Nếu hữu ích chủ quán cứ dùng tự nhiên, có gì khó nhắn hỏi Long nha</p><button onClick={() => setIsResourcesExpanded(true)} className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto">Nhận ngay <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button></div>
-            )}
-          </div>
-        </div>
-      </section>
+
 
       {/* Blog Section */}
       <section id="blog" className="py-20 md:py-32 bg-gray-50/50 overflow-hidden border-y border-gray-100">

@@ -215,8 +215,8 @@ export const STORY_TABS_CONTENT = {
 export const OFFERINGS: Offering[] = [
   {
     id: 'brand-packaging',
-    title: 'Đóng Gói Thương Hiệu',
-    description: 'Bàn giao bộ định vị và kế hoạch truyền thông chạy được trong 3-6 tháng.',
+    title: 'GÓI MARKETING TỰ VẬN HÀNH',
+    description: 'Đóng gói thương hiệu và xây dựng quy trình marketing đơn giản hoá, giúp chủ quán tự triển khai marketing nhờ công cụ AI và tài nguyên marketing đã thiết kế sẵn.',
     icon: '📦',
     details: [
       'Xây dựng bộ nhận diện cốt lõi (Core Identity)',
@@ -361,8 +361,8 @@ export const THOUGHTS_CAROUSEL_ITEMS = [
 export const PRODUCTS: Product[] = [
   {
     id: 'goi-dong-goi-thuong-hieu',
-    title: 'GÓI ĐÓNG GÓI THƯƠNG HIỆU',
-    shortDescription: 'Giúp anh chị trả lời 3 câu: Quán mình là ai? Bán cho ai? Khác người ta chỗ nào? - Rồi biến nó thành kế hoạch marketing chạy được 6 tháng.',
+    title: 'GÓI MARKETING TỰ VẬN HÀNH',
+    shortDescription: 'Đóng gói thương hiệu và xây dựng quy trình marketing đơn giản hoá, giúp chủ quán tự triển khai marketing nhờ công cụ AI và tài nguyên marketing đã thiết kế sẵn.',
     description: '',
     thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
     gallery: [

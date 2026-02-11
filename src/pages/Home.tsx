@@ -106,6 +106,7 @@ const useScrollAnimation = () => {
 const NAV_ITEMS = [
   { id: 'story', label: 'Hành trình' },
   { id: 'offerings', label: 'Dịch vụ' },
+  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Liên hệ' },
 ];
 

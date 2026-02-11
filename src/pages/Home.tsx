@@ -408,7 +408,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen font-sans bg-white text-[#1a1a1a]" onClick={() => { setSelectedLogoId(null); }}>
       {/* Hero Section */}
-      <section id="about" className="pt-16 md:pt-24 pb-6 md:pb-16 px-6">
+      <section id="about" className="pt-16 md:pt-24 pb-6 md:pb-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="text-center md:text-left md:pl-16">
             <span className="inline-block px-3 py-1 bg-gray-100 text-gray-500 rounded-full text-[10px] font-bold mb-6 uppercase tracking-wider">Truyền thông chuyên biệt ngành FnB</span>
@@ -544,7 +544,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Offerings Section */}
-      <section id="offerings" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-y border-gray-100">
+      <section id="offerings" className="py-24 md:py-32 bg-white relative overflow-hidden border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-2">Long bán gì không?</h2>
@@ -590,7 +590,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Thoughts Section */}
-      <section id="thoughts" className="py-20 md:py-28 bg-white overflow-hidden">
+      <section id="thoughts" className="py-20 md:py-28 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12 md:mb-16"><h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Long và vài tâm sự</h2><p className="text-gray-400 text-xs md:text-sm font-normal leading-relaxed italic max-w-sm mx-auto">Hơi dài, mong là không lê thê</p></div>
           <div className="max-w-4xl mx-auto">
@@ -649,7 +649,7 @@ const Home: React.FC = () => {
 
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 md:py-32 bg-gray-50/50 overflow-hidden border-y border-gray-100">
+      <section id="blog" className="py-20 md:py-32 bg-white overflow-hidden border-y border-gray-100">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12 md:mb-16"><h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Blog Của Long</h2><p className="text-gray-400 text-xs md:text-sm font-normal leading-relaxed italic max-sm mx-auto">Nơi chứa mấy thứ linh tinh có thể Long sẽ viết, hoặc không</p></div>
           <div className="max-w-4xl mx-auto">
@@ -668,7 +668,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 md:py-32 px-6 bg-gray-50">
+      <section id="contact" className="py-20 md:py-32 px-6 bg-gray-50/80">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Kết Bạn Với Long</h2>

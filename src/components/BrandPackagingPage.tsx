@@ -137,6 +137,23 @@ const BrandPackagingPage: React.FC = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* NEW VIDEO SECTION */}
+                    <div className="mt-12 group relative">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-[#B87333]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className="relative glass-panel rounded-2xl overflow-hidden shadow-2xl border border-black/5 animate-fadeIn">
+                            <div className="aspect-video w-full bg-gray-900 flex items-center justify-center">
+                                <iframe
+                                    className="w-full h-full"
+                                    src="https://www.youtube.com/embed/S_vG-O8_rNo"
+                                    title="LH. Brand Packaging Solution"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

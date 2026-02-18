@@ -4,6 +4,7 @@ import { PRODUCTS } from '../../constants';
 import BrandPackagingQuiz from '../components/BrandPackagingQuiz';
 import BrandPackagingLayout from '../components/BrandPackagingLayout';
 import BrandPackagingPage from '../components/BrandPackagingPage';
+import SmartImage from '../../components/SmartImage';
 
 const ProductDetail = () => {
     const { id } = useParams<{ id: string }>();
@@ -82,7 +83,7 @@ const ProductDetail = () => {
                                                     {/* Consistent Section Image (Placeholder if needed) - Skip for FAQ & Comparison */}
                                                     {service.type !== 'faq' && (service.type as string) !== 'text' && service.type !== 'comparison' && (
                                                         <div className="mt-8 mb-12 rounded-2xl overflow-hidden shadow-sm aspect-[21/9] bg-gray-100">
-                                                            <img
+                                                            <SmartImage
                                                                 src={service.image || `https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200&idx=${index}`}
                                                                 alt={service.title}
                                                                 className="w-full h-full object-cover"
@@ -111,7 +112,7 @@ const ProductDetail = () => {
                                                             )}
                                                             {item.image && (
                                                                 <div className="mt-6 rounded-xl overflow-hidden">
-                                                                    <img src={item.image} alt={item.title} className="w-full h-auto" />
+                                                                    <SmartImage src={item.image} alt={item.title} className="w-full h-auto" />
                                                                 </div>
                                                             )}
                                                         </div>
@@ -341,7 +342,7 @@ const ProductDetail = () => {
                                                             {service.image && (
                                                                 <div className={`md:col-span-5 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
                                                                     <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3] sticky top-24">
-                                                                        <img
+                                                                        <SmartImage
                                                                             src={service.image}
                                                                             alt={service.title}
                                                                             className="w-full h-full object-cover"
@@ -396,7 +397,7 @@ const ProductDetail = () => {
                                                                 <div className={`grid gap-6 mt-16 ${service.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                                                                     {service.gallery.map((img, idx) => (
                                                                         <div key={idx} className="aspect-[4/3] bg-gray-100 overflow-hidden rounded-[2rem] shadow-lg hover:scale-[1.02] transition-transform duration-500">
-                                                                            <img src={img} alt={`${service.title} ${idx}`} className="w-full h-full object-cover" />
+                                                                            <SmartImage src={img} alt={`${service.title} ${idx}`} className="w-full h-full object-cover" />
                                                                         </div>
                                                                     ))}
                                                                 </div>
@@ -422,7 +423,7 @@ const ProductDetail = () => {
                                                                             <div className="grid grid-cols-2 gap-4">
                                                                                 {sub.gallery.map((img, idx) => (
                                                                                     <div key={idx} className="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-md">
-                                                                                        <img src={img} className="w-full h-full object-cover" />
+                                                                                        <SmartImage src={img} alt="" className="w-full h-full object-cover" />
                                                                                     </div>
                                                                                 ))}
                                                                             </div>
@@ -517,7 +518,7 @@ const ProductDetail = () => {
                             {/* ... (Existing Media Gallery Code) ... */}
                             {/* Main Image */}
                             <div className="aspect-[4/3] bg-gray-100 rounded-[2.5rem] overflow-hidden shadow-2xl relative group">
-                                <img src={product.thumbnail} alt={product.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <SmartImage src={product.thumbnail} alt={product.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
 
                             {/* Videos if available */}
@@ -541,7 +542,7 @@ const ProductDetail = () => {
                                     <div className="grid grid-cols-2 gap-4">
                                         {product.gallery.map((img, idx) => (
                                             <div key={idx} className="aspect-square bg-gray-100 rounded-[2rem] overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500 group cursor-pointer">
-                                                <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
+                                                <SmartImage src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
                                             </div>
                                         ))}
                                     </div>

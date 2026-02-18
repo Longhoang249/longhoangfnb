@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SmartImage from '../../components/SmartImage';
 
 const BrandPackagingPage: React.FC = () => {
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -65,10 +66,11 @@ const BrandPackagingPage: React.FC = () => {
             {/* HERO */}
             <section className="relative h-screen flex flex-col justify-end pb-20 pt-28 px-6 lg:px-8 overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <SmartImage
                         className="w-full h-full object-cover brightness-[0.85] grayscale-[0.1]"
                         alt="Bright minimalist cafe interior architecture"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_kVZdb2O5xBQ_SXBd2y0VPXVb78kKJseaY_LXNlDqwmoiJdDWE9LN8_GAvh8GgOPIbP_tnnx36S26-jEtSIi3payXLPgEEfIZjA1vz2hjYFIheJm5OkpigUxKoWD98SmywTcx1gmBHJRc9KT44c5VJVAaEUftAUDKHfBn-fbs4PcFOZQbv-hkzrKOHQymFyGyfvQ2XpkSw8Z0APzNqY5BiFkO7CGLaQNn3j_eEIAqBWPvDmGXOqL_q-0-3-UxQVLqfKkPiuzQxEgJ"
+                        priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
                 </div>
@@ -272,7 +274,7 @@ const BrandPackagingPage: React.FC = () => {
                             <div key={idx} className="group relative">
                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B87333]/10 to-gray-100 rounded blur opacity-0 transition duration-1000 group-hover:opacity-50"></div>
                                 <div className="relative bg-white rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-                                    <img className="w-full h-64 object-cover" alt={item.alt} src={item.img} />
+                                    <SmartImage className="w-full h-64 object-cover" alt={item.alt} src={item.img} />
                                     <div className="p-8">
                                         <div className="flex items-center justify-between mb-2">
                                             <h4 className="text-gray-900 font-bold text-lg uppercase tracking-wide">{item.title}</h4>
@@ -291,7 +293,7 @@ const BrandPackagingPage: React.FC = () => {
                             <div className="md:w-1/3 flex-shrink-0 w-full">
                                 <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 relative group-hover:scale-[1.02] transition-transform duration-500">
                                     <div className="absolute inset-0 bg-[#B87333]/5 mix-blend-overlay z-10"></div>
-                                    <img
+                                    <SmartImage
                                         src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop"
                                         alt="Customer experience in coffee shop"
                                         className="w-full h-full object-cover"
@@ -361,7 +363,7 @@ const BrandPackagingPage: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-4 relative z-10">
                             <div className="w-14 h-14 rounded-full overflow-hidden border border-gray-200">
-                                <img
+                                <SmartImage
                                     className="w-full h-full object-cover"
                                     alt="Long Hoang Marketing FnB Expert"
                                     src="https://i.ibb.co/3m8sdk0j/6330560-A-04-F3-40-B6-913-D-B853-DFB2-CDBF-1-105-c.jpg"

@@ -140,20 +140,15 @@ const BrandPackagingPage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* NEW VIDEO SECTION */}
+                    {/* IMAGE SHOWCASE */}
                     <div className="mt-12 group relative">
                         <div className="absolute -inset-1 bg-gradient-to-r from-[#B87333]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                         <div className="relative glass-panel rounded-2xl overflow-hidden shadow-2xl border border-black/5 animate-fadeIn">
-                            <div className="aspect-video w-full bg-gray-900 flex items-center justify-center">
-                                <iframe
-                                    className="w-full h-full"
-                                    src="https://www.youtube.com/embed/S_vG-O8_rNo"
-                                    title="LH. Brand Packaging Solution"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </div>
+                            <SmartImage
+                                className="w-full h-auto object-contain"
+                                alt="Đóng gói thương hiệu và marketing tự vận hành"
+                                src="https://i.ibb.co/FbW1gQbT/Untitled-1200-x-800-px.png"
+                            />
                         </div>
                     </div>
                 </div>
@@ -247,70 +242,88 @@ const BrandPackagingPage: React.FC = () => {
                         <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Chủ quán</h2>
                         <h3 className="text-gray-900 font-serif-display text-3xl">Nhận Được Gì?</h3>
                     </div>
-                    <div className="relative space-y-12 md:grid md:grid-cols-3 md:gap-8 md:space-y-0">
+                    <div className="relative space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
                         {[
                             {
-                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAU1xfTkNwNjttJddUKRwJGMUsmJBx9pRjdx_xrTuJY3Z_J_jXHIR7bN_uzBhDooMAjA44c0FXGBHgYg08zPFja8PsXuxsx9L04gSY7OOEFGVLFw9awY71PrNUTNDn9WQA6B2FXQLSPzrui9U51IPQ9i80rzN_ogtWwpwoHHzonuE0Im13axPwhK7_l5Ov46Vz-ntZi9qjZPCn35Zwiwfm0AGIO7DCmk5RZznTg1O4xHD2GQ3YyfLPZ6SV-MD1-55cxa26uawCcQtWJ',
+                                img: 'https://i.ibb.co/LDCXCQXk/17.png',
                                 alt: 'Premium brand guidelines PDF on a modern tablet mockup with dark theme',
                                 title: 'Bộ Nhận Diện Thương Hiệu',
                                 icon: 'description',
-                                desc: 'Cẩm nang giúp chủ quán biết mình nên chụp ảnh như thế nào, viết bài Facebook ra sao và chọn màu gì cho thiết kế thì đẹp.',
+                                desc: 'Cẩm nang giúp chủ quán xây dựng hình ảnh thương hiệu bài bản, từ câu chuyện thương hiệu đến ngôn ngữ hình ảnh chuẩn hoá.',
+                                bullets: [
+                                    'Câu chuyện thương hiệu có chiều sâu',
+                                    'Ngôn ngữ, màu sắc, phong cách chuẩn hoá',
+                                    'Thể hiện thương hiệu đa giác quan (thị giác, âm thanh, mùi hương, ánh sáng...)',
+                                ],
                             },
                             {
-                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOwHS633sDWpilos1wGfis_PMCNjvVVBxfc8ZR04uK7qoFIfJffYeFpRRNhHePn7i48E_p72Rq5wDFtz84kHgLdCFt_Jz3gvLlk8famaVNXfZhn8BDJWdvtaei50kd2hw8P9KTDis5OUn5FDVRaW3JG-BrInKkZzX9MDFJ97k2vGynI8g5qT6hgBHjsveqT589LL4A_VW2cU-J7iI55zev3QGmnqSD0CE2D0SOxXFskTs4uITFYoaRkG_pPh4qGA8_qOJo8ZzmjxFt',
-                                alt: 'Social media templates for Canva on a smartphone screen dark mode',
-                                title: 'Bộ Công Cụ Excel Marketing',
+                                img: 'https://i.ibb.co/KxL5CZtJ/18.png',
+                                alt: 'Định hướng và ý tưởng marketing cho quán',
+                                title: 'Định Hướng Và Ý Tưởng Marketing',
                                 icon: 'dashboard',
-                                desc: 'Bao gồm biểu mẫu, kế hoạch, tài liệu Excel giúp chủ quán biết cách lên kế hoạch nội dung cho một tuần, tìm mẫu thiết kế menu mới hay ý tưởng để làm một mini game tại quán.',
+                                desc: 'Kế hoạch marketing chuẩn hoá cho 6 tháng, đã bao gồm những hoạt động cụ thể kèm hướng dẫn từng hoạt động. Giúp chủ quán biết cách lên kế hoạch nội dung cho một tuần, hay ý tưởng để làm một mini game tại quán.',
+                                bullets: [
+                                    'Kế hoạch marketing 6 tháng',
+                                    'Kho 100+ Ý tưởng marketing',
+                                    'Kho 100+ mẫu content và mẫu ảnh concept',
+                                    'Kho 24+ điểm chạm khách hàng từ online đến khi ra về',
+                                    'Lịch sự kiện 12 tháng cho ngành FnB',
+                                ],
                             },
                             {
-                                img: 'https://placehold.co/600x400/f9fafb/B87333?text=AI+Tools',
-                                alt: 'AI Marketing Tools interface',
-                                title: 'Bộ Công Cụ AI Marketing',
+                                img: 'https://i.ibb.co/gFtkdHp4/19.png',
+                                alt: 'Hỗ trợ marketing bằng trợ lý AI',
+                                title: 'Hỗ Trợ Marketing Bằng Trợ Lý AI',
                                 icon: 'smart_toy',
-                                desc: 'Bao gồm các ứng dụng AI giúp chủ quán viết bài, lên kịch bản video, tạo ảnh, lập kế hoạch marketing, tính toán chi phí marketing...',
+                                desc: 'Bao gồm các ứng dụng AI giúp chủ quán viết bài, tạo ảnh món đồ uống, ảnh poster, banner quảng cáo, lập kế hoạch marketing.',
+                                bullets: [
+                                    'AI viết bài cho chủ quán',
+                                    'AI tạo ảnh theo yêu cầu',
+                                    'AI tổ chức sự kiện',
+                                    'AI thiết kế điểm chạm khách hàng',
+                                ],
+                            },
+                            {
+                                img: 'https://i.ibb.co/kVfcbCVS/11.png',
+                                alt: 'Customer experience in coffee shop',
+                                title: 'Đề Xuất Các Hoạt Động Tăng Trải Nghiệm Khách Hàng Tại Quán',
+                                icon: 'local_activity',
+                                desc: 'Marketing không chỉ nằm ở màu sắc, logo hay các bài đăng trên mạng xã hội, nó còn hiện hữu ở ngay những điểm chạm nhỏ nhất tính từ cửa quán tới tận nơi đi nặng nhẹ. Một tờ giấy note với lời nhắn đủ "chạm" cũng có thể trở thành lý do để vị khách quay lại quán hàng chục lần tiếp theo.',
+                                isGift: true,
                             },
                         ].map((item, idx) => (
                             <div key={idx} className="group relative">
                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B87333]/10 to-gray-100 rounded blur opacity-0 transition duration-1000 group-hover:opacity-50"></div>
                                 <div className="relative bg-white rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-                                    <SmartImage className="w-full h-64 object-cover" alt={item.alt} src={item.img} />
+                                    <div className="relative">
+                                        <SmartImage className="w-full h-auto object-contain bg-gray-50" alt={item.alt} src={item.img} />
+                                        {item.isGift && (
+                                            <div className="absolute top-4 left-4 bg-[#B87333] text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-20 flex items-center gap-1">
+                                                <span className="material-icons text-[14px]">card_giftcard</span>
+                                                QUÀ TẶNG KÈM
+                                            </div>
+                                        )}
+                                    </div>
                                     <div className="p-8">
                                         <div className="flex items-center justify-between mb-2">
                                             <h4 className="text-gray-900 font-bold text-lg uppercase tracking-wide">{item.title}</h4>
                                             <span className="material-icons text-[#B87333]/70">{item.icon}</span>
                                         </div>
-                                        <p className="text-gray-600 text-sm font-light">{item.desc}</p>
+                                        <p className="text-gray-600 text-sm font-light mb-3">{item.desc}</p>
+                                        {item.bullets && (
+                                            <ul className="space-y-1.5">
+                                                {item.bullets.map((b, bIdx) => (
+                                                    <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-500 font-light">
+                                                        <span className="text-[#B87333] mt-0.5">•</span>
+                                                        <span>{b}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </div>
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    <div className="mt-12 relative group">
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B87333]/20 to-[#F59E0B]/10 rounded-lg blur opacity-0 group-hover:opacity-40 transition duration-1000"></div>
-                        <div className="relative bg-gray-50 border border-[#B87333]/20 rounded-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start shadow-md">
-                            <div className="md:w-1/3 flex-shrink-0 w-full">
-                                <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 relative group-hover:scale-[1.02] transition-transform duration-500">
-                                    <div className="absolute inset-0 bg-[#B87333]/5 mix-blend-overlay z-10"></div>
-                                    <SmartImage
-                                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop"
-                                        alt="Customer experience in coffee shop"
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute top-4 left-4 bg-[#B87333] text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-20 flex items-center gap-1">
-                                        <span className="material-icons text-[14px]">card_giftcard</span>
-                                        QUÀ TẶNG KÈM
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="md:w-2/3 space-y-4">
-                                <h4 className="text-gray-900 font-serif-display text-2xl md:text-3xl leading-tight">Đề Xuất Các Hoạt Động Tăng Trải Nghiệm Khách Hàng Tại Quán</h4>
-                                <p className="text-gray-600 font-light leading-relaxed text-sm md:text-base">
-                                    Marketing không chỉ nằm ở màu sắc, logo hay các bài đăng trên mạng xã hội, nó còn hiện hữu ở ngay những điểm chạm nhỏ nhất tính từ cửa quán tới tận nơi đi nặng nhẹ. Một tờ giấy note với lời nhắn đủ "chạm" cũng có thể trở thành lý do để vị khách quay lại quán hàng chục lần tiếp theo.
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

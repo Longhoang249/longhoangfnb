@@ -115,8 +115,12 @@ export const STORY_TABS_CONTENT = {
           {
             title: 'Ứng dụng AI vào tạo Web, App và Tools cho ngành FnB',
             results: 'Vibe-coding và phát triển giao diện, nội dung cho 5+ App đào tạo, công cụ AI hỗ trợ marketing FnB.',
-            image: 'https://i.ibb.co/bR6R2jgb/ai.png',
-            videoUrl: ''
+            image: '',
+            videoUrl: '',
+            subItems: [
+              { name: 'Webapp đóng gói thương hiệu và định hướng marketing toàn diện cho chủ quán FnB', image: 'https://i.ibb.co/FbW1gQbT/Untitled-1200-x-800-px.png' },
+              { name: 'Webapp đào tạo nội bộ công ty Autoshop - Vuamayphache', image: 'https://i.ibb.co/bR6R2jgb/ai.png' }
+            ]
           },
           {
             title: 'Xây kênh Tiktok',

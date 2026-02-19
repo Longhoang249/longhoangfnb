@@ -8,10 +8,10 @@ const BrandPackagingPage: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // Load external fonts and icons
         const links = [
             { href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap', rel: 'stylesheet' },
             { href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet' },
+            { href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Round', rel: 'stylesheet' },
         ];
         const addedLinks: HTMLLinkElement[] = [];
         links.forEach(({ href, rel }) => {
@@ -23,7 +23,27 @@ const BrandPackagingPage: React.FC = () => {
                 addedLinks.push(link);
             }
         });
-        return () => { addedLinks.forEach(l => l.remove()); };
+
+        // Mouse tilt for phone mockup
+        const wrap = document.getElementById('heroPhoneWrap');
+        let cleanup = () => { };
+        if (wrap) {
+            const inner = wrap.querySelector('.hero-phone-inner') as HTMLElement | null;
+            const onMove = (e: MouseEvent) => {
+                const rect = wrap.getBoundingClientRect();
+                const dx = (e.clientX - rect.left - rect.width / 2) / rect.width;
+                const dy = (e.clientY - rect.top - rect.height / 2) / rect.height;
+                if (inner) inner.style.transform = `rotateY(${-18 + dx * 20}deg) rotateX(${6 - dy * 14}deg) rotateZ(2deg)`;
+            };
+            const onLeave = () => { if (inner) inner.style.transform = ''; };
+            wrap.addEventListener('mousemove', onMove);
+            wrap.addEventListener('mouseleave', onLeave);
+            cleanup = () => {
+                wrap.removeEventListener('mousemove', onMove);
+                wrap.removeEventListener('mouseleave', onLeave);
+            };
+        }
+        return () => { addedLinks.forEach(l => l.remove()); cleanup(); };
     }, []);
 
     const toggleFaq = (index: number) => {
@@ -51,20 +71,161 @@ const BrandPackagingPage: React.FC = () => {
                     font-family: 'Playfair Display', serif;
                 }
                 html { scroll-behavior: smooth; }
+
+                /* === PHONE MOCKUP === */
+                .hero-phone-wrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    perspective: 1200px;
+                    perspective-origin: 50% 50%;
+                }
+                .hero-phone-inner {
+                    position: relative;
+                    transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg);
+                    transform-style: preserve-3d;
+                    transition: transform 0.5s cubic-bezier(.22,.68,0,1.2);
+                    filter: drop-shadow(0 40px 60px rgba(0,0,0,0.45));
+                    animation: phoneFloat 4s ease-in-out infinite;
+                }
+                @keyframes phoneFloat {
+                    0%, 100% { transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg) translateY(0); }
+                    50%       { transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg) translateY(-14px); }
+                }
+                .hero-phone-wrap:hover .hero-phone-inner {
+                    animation-play-state: paused;
+                }
+                .hphone-frame {
+                    width: 260px;
+                    height: 520px;
+                    background: #1a1008;
+                    border-radius: 46px;
+                    padding: 12px;
+                    position: relative;
+                    box-shadow:
+                        inset 0 0 0 1px rgba(255,255,255,0.08),
+                        0 2px 0 2px #0a0804,
+                        0 6px 20px rgba(0,0,0,0.4);
+                }
+                .hphone-notch {
+                    position: absolute;
+                    top: 12px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 90px;
+                    height: 26px;
+                    background: #1a1008;
+                    border-radius: 0 0 16px 16px;
+                    z-index: 10;
+                }
+                .hphone-screen {
+                    width: 100%;
+                    height: 100%;
+                    background: #FDFBF7;
+                    border-radius: 36px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .hphone-app-header {
+                    padding: 32px 16px 8px;
+                    background: #FDFBF7;
+                    border-bottom: 1px solid rgba(44,27,24,0.06);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .hphone-icon { color: #2C1B18; font-size: 18px !important; }
+                .hphone-app-title {
+                    font-size: 10px;
+                    font-weight: 800;
+                    color: #2C1B18;
+                    letter-spacing: -0.01em;
+                    font-family: 'Inter', sans-serif;
+                }
+                .hphone-body { flex: 1; overflow: hidden; padding: 10px 14px; }
+                .hphone-label {
+                    font-size: 7.5px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: rgba(44,27,24,0.35);
+                    letter-spacing: 0.1em;
+                    margin-bottom: 6px;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                    font-family: 'Inter', sans-serif;
+                }
+                .hphone-card {
+                    background: #fff;
+                    border-radius: 12px;
+                    padding: 10px;
+                    border: 1px solid rgba(44,27,24,0.06);
+                    margin-bottom: 8px;
+                }
+                .hphone-swatches { display: flex; gap: 5px; margin-bottom: 8px; }
+                .hphone-swatch { flex: 1; height: 30px; border-radius: 8px; }
+                .hphone-font-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 4px 6px;
+                    background: rgba(44,27,24,0.03);
+                    border-radius: 6px;
+                    margin-top: 4px;
+                }
+                .hphone-font-label { font-size: 7px; font-weight: 700; color: rgba(44,27,24,0.4); text-transform: uppercase; font-family: 'Inter', sans-serif; }
+                .hphone-font-name { font-size: 8.5px; color: #2C1B18; font-family: 'Inter', sans-serif; }
+                .hphone-slogan-card {
+                    background: #FFF8EC;
+                    border-radius: 12px;
+                    padding: 10px;
+                    border: 1px solid rgba(200,134,10,0.15);
+                    margin-bottom: 8px;
+                }
+                .hphone-slogan-eyebrow { font-size: 7px; color: rgba(200,134,10,0.7); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+                .hphone-slogan-text { font-size: 10px; font-weight: 700; color: #2C1B18; font-family: 'Playfair Display', serif; line-height: 1.3; }
+                .hphone-pill-row { display: flex; gap: 4px; margin-bottom: 7px; }
+                .hphone-pill { padding: 3px 8px; border-radius: 99px; font-size: 8px; font-weight: 600; background: rgba(44,27,24,0.06); color: #2C1B18; font-family: 'Inter', sans-serif; }
+                .hphone-pill.active { background: #2C1B18; color: #fff; }
+                .hphone-story-card { background: rgba(255,248,236,0.6); border-radius: 8px; padding: 8px; border: 1px solid rgba(200,134,10,0.12); }
+                .hphone-story-title { font-size: 8px; font-weight: 700; color: #2C1B18; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+                .hphone-story-body { font-size: 7.5px; color: #7A6055; line-height: 1.5; font-family: 'Inter', sans-serif; }
+                .hphone-bottom { padding: 10px 14px; background: #FDFBF7; border-top: 1px solid rgba(44,27,24,0.06); }
+                .hphone-cta-btn {
+                    background: #2C1B18;
+                    border-radius: 10px;
+                    padding: 9px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: 700;
+                    font-family: 'Inter', sans-serif;
+                }
+                .hphone-blob { position: absolute; border-radius: 50%; pointer-events: none; z-index: -1; }
+                .blob-1 { width: 160px; height: 160px; background: radial-gradient(circle, rgba(200,134,10,0.28), transparent 70%); bottom: -40px; left: -50px; }
+                .blob-2 { width: 120px; height: 120px; background: radial-gradient(circle, rgba(44,27,24,0.3), transparent 70%); top: -30px; right: -40px; }
+                .blob-3 { width: 80px; height: 80px; background: radial-gradient(circle, rgba(200,134,10,0.18), transparent 70%); top: 50%; right: -55px; }
+                @media (max-width: 1023px) {
+                    .hero-phone-inner {
+                        transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg) scale(0.72) !important;
+                        animation: phoneFloatMobile 4s ease-in-out infinite !important;
+                        transform-origin: center top;
+                    }
+                    @keyframes phoneFloatMobile {
+                        0%, 100% { transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg) scale(0.72) translateY(0); }
+                        50%       { transform: rotateY(-18deg) rotateX(6deg) rotateZ(2deg) scale(0.72) translateY(-10px); }
+                    }
+                }
             `}</style>
 
-            {/* NAV */}
-            <nav className="fixed top-0 w-full z-50 glass-panel px-6 py-4 flex justify-between items-center border-b border-black/5">
-                <div className="max-w-5xl mx-auto w-full flex justify-between items-center">
-                    <Link to="/" className="text-gray-900 font-serif-display italic text-xl font-bold tracking-tight">LH.</Link>
-                    <Link to="/" className="text-gray-900 hover:text-[#B87333] transition-colors">
-                        <span className="material-icons">arrow_back</span>
-                    </Link>
-                </div>
-            </nav>
 
             {/* HERO */}
-            <section className="relative h-screen flex flex-col justify-end pb-20 pt-28 px-6 lg:px-8 overflow-hidden">
+
+            <section className="relative min-h-screen flex flex-col justify-center py-10 px-8 sm:px-12 lg:px-8 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <SmartImage
                         className="w-full h-full object-cover brightness-[0.55]"
@@ -74,36 +235,121 @@ const BrandPackagingPage: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10"></div>
                 </div>
-                <div className="relative z-10 space-y-5 max-w-5xl mx-auto w-full">
-                    <div className="flex items-center gap-3">
-                        <div className="h-[1px] w-8 bg-[#F5C97B]"></div>
-                        <span className="text-[#F5C97B] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
+
+                <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+                    {/* LEFT: Original text content */}
+                    <div className="flex-1 space-y-4 lg:space-y-5">
+                        <div className="flex items-center gap-3">
+                            <div className="h-[1px] w-8 bg-[#F5C97B]"></div>
+                            <span className="text-[#F5C97B] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
+                        </div>
+                        <h1 className="text-white font-serif-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
+                            <span className="whitespace-nowrap font-black">LÀM MARKETING</span> <br />
+                            <span className="italic font-normal text-[#F5C97B] whitespace-nowrap">Cho Quán của Mình</span>
+                        </h1>
+                        <p className="text-white/85 text-base md:text-lg max-w-none md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
+                            "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
+                        </p>
+                        <p className="text-white/85 text-base md:text-lg max-w-none md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
+                            "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu,<br />nên đăng cái gì và làm như thế nào..."
+                        </p>
+                        <div className="flex flex-wrap gap-3 pt-2">
+                            {[
+                                { label: 'Thông tin gói', href: '#giai-phap' },
+                                { label: 'Quy trình hợp tác', href: '#quy-trinh' },
+                                { label: 'Sản phẩm nhận về', href: '#san-pham' },
+                                { label: 'Q&A', href: '#qa' },
+                            ].map((item) => (
+                                <a
+                                    key={item.href}
+                                    href={item.href}
+                                    className="px-4 py-2 text-xs md:text-sm font-semibold rounded-full border border-white/30 text-white hover:bg-[#F5C97B] hover:text-gray-900 hover:border-[#F5C97B] transition-all duration-300 backdrop-blur-md bg-white/10"
+                                >
+                                    {item.label}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                    <h1 className="text-white font-serif-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-                        <span className="whitespace-nowrap font-black">LÀM MARKETING</span> <br />
-                        <span className="italic font-normal text-[#F5C97B] whitespace-nowrap">Cho Quán của Mình</span>
-                    </h1>
-                    <p className="text-white/85 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
-                        "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
-                    </p>
-                    <p className="text-white/85 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
-                        "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu,<br />nên đăng cái gì và làm như thế nào..."
-                    </p>
-                    <div className="flex flex-wrap gap-3 pt-6">
-                        {[
-                            { label: 'Thông tin gói', href: '#giai-phap' },
-                            { label: 'Quy trình hợp tác', href: '#quy-trinh' },
-                            { label: 'Sản phẩm nhận về', href: '#san-pham' },
-                            { label: 'Q&A', href: '#qa' },
-                        ].map((item) => (
-                            <a
-                                key={item.href}
-                                href={item.href}
-                                className="px-4 py-2 text-xs md:text-sm font-semibold rounded-full border border-white/30 text-white hover:bg-[#F5C97B] hover:text-gray-900 hover:border-[#F5C97B] transition-all duration-300 backdrop-blur-md bg-white/10"
-                            >
-                                {item.label}
-                            </a>
-                        ))}
+
+                    {/* RIGHT: Floating Phone Mockup — desktop right, mobile below */}
+                    <div className="flex justify-center lg:justify-end">
+                        <div className="hero-phone-wrap" id="heroPhoneWrap">
+                            <div className="hero-phone-inner">
+                                {/* Phone Frame */}
+                                <div className="hphone-frame">
+                                    <div className="hphone-notch"></div>
+                                    <div className="hphone-screen">
+
+                                        {/* App Header */}
+                                        <div className="hphone-app-header">
+                                            <span className="material-icons-round hphone-icon">arrow_back</span>
+                                            <span className="hphone-app-title">Hồ Sơ Thương Hiệu</span>
+                                            <span className="material-icons-round hphone-icon">more_horiz</span>
+                                        </div>
+
+                                        {/* Scrollable Body */}
+                                        <div className="hphone-body">
+
+                                            {/* Color Palette */}
+                                            <div className="hphone-label">
+                                                <span className="material-icons-round" style={{ fontSize: '9px' }}>palette</span>
+                                                Hệ màu &amp; Font
+                                            </div>
+                                            <div className="hphone-card">
+                                                <div className="hphone-swatches">
+                                                    <div className="hphone-swatch" style={{ background: '#3E2723' }}></div>
+                                                    <div className="hphone-swatch" style={{ background: '#8D6E63' }}></div>
+                                                    <div className="hphone-swatch" style={{ background: '#D7CCC8' }}></div>
+                                                    <div className="hphone-swatch" style={{ background: '#FDFBF7', border: '1px solid rgba(0,0,0,0.1)' }}></div>
+                                                    <div className="hphone-swatch" style={{ background: '#C8860A' }}></div>
+                                                </div>
+                                                <div className="hphone-font-row">
+                                                    <span className="hphone-font-label">Tiêu đề</span>
+                                                    <span className="hphone-font-name" style={{ fontFamily: 'serif' }}>Playfair Display</span>
+                                                </div>
+                                                <div className="hphone-font-row">
+                                                    <span className="hphone-font-label">Nội dung</span>
+                                                    <span className="hphone-font-name">Be Vietnam Pro</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Slogan */}
+                                            <div className="hphone-slogan-card">
+                                                <div className="hphone-slogan-eyebrow">Slogan</div>
+                                                <div className="hphone-slogan-text">&ldquo;Mỗi quán — một câu chuyện&rdquo;</div>
+                                            </div>
+
+                                            {/* Voice samples */}
+                                            <div className="hphone-label">Giọng văn mẫu</div>
+                                            <div className="hphone-pill-row">
+                                                <span className="hphone-pill active">Kể chuyện</span>
+                                                <span className="hphone-pill">Món mới</span>
+                                                <span className="hphone-pill">Mini game</span>
+                                            </div>
+                                            <div className="hphone-story-card">
+                                                <div className="hphone-story-title">Câu chuyện: Ly cà phê muối đầu tiên</div>
+                                                <div className="hphone-story-body">Có một buổi chiều mưa Sài Gòn, mình ngồi ở góc quán nhỏ, tay ôm ly cà phê muối nóng...</div>
+                                            </div>
+
+                                        </div>
+
+                                        {/* Bottom CTA */}
+                                        <div className="hphone-bottom">
+                                            <div className="hphone-cta-btn">
+                                                <span className="material-icons-round" style={{ fontSize: '13px' }}>edit</span>
+                                                Chỉnh Sửa Hồ Sơ
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                {/* Decorative blobs */}
+                                <div className="hphone-blob blob-1"></div>
+                                <div className="hphone-blob blob-2"></div>
+                                <div className="hphone-blob blob-3"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

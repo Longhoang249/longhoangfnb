@@ -67,26 +67,26 @@ const BrandPackagingPage: React.FC = () => {
             <section className="relative h-screen flex flex-col justify-end pb-20 pt-28 px-6 lg:px-8 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <SmartImage
-                        className="w-full h-full object-cover brightness-[0.85] grayscale-[0.1]"
+                        className="w-full h-full object-cover brightness-[0.55]"
                         alt="Bright minimalist cafe interior architecture"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_kVZdb2O5xBQ_SXBd2y0VPXVb78kKJseaY_LXNlDqwmoiJdDWE9LN8_GAvh8GgOPIbP_tnnx36S26-jEtSIi3payXLPgEEfIZjA1vz2hjYFIheJm5OkpigUxKoWD98SmywTcx1gmBHJRc9KT44c5VJVAaEUftAUDKHfBn-fbs4PcFOZQbv-hkzrKOHQymFyGyfvQ2XpkSw8Z0APzNqY5BiFkO7CGLaQNn3j_eEIAqBWPvDmGXOqL_q-0-3-UxQVLqfKkPiuzQxEgJ"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10"></div>
                 </div>
                 <div className="relative z-10 space-y-5 max-w-5xl mx-auto w-full">
                     <div className="flex items-center gap-3">
-                        <div className="h-[1px] w-8 bg-[#B87333]"></div>
-                        <span className="text-[#B87333] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
+                        <div className="h-[1px] w-8 bg-[#F5C97B]"></div>
+                        <span className="text-[#F5C97B] tracking-[0.2em] text-xs font-bold uppercase">Chủ quán tự tay</span>
                     </div>
-                    <h1 className="text-gray-900 font-serif-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-                        <span className="whitespace-nowrap">LÀM MARKETING</span> <br />
-                        <span className="italic font-normal text-gray-600 whitespace-nowrap">Cho Quán của Mình</span>
+                    <h1 className="text-white font-serif-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
+                        <span className="whitespace-nowrap font-black">LÀM MARKETING</span> <br />
+                        <span className="italic font-normal text-[#F5C97B] whitespace-nowrap">Cho Quán của Mình</span>
                     </h1>
-                    <p className="text-gray-600 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
+                    <p className="text-white/85 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
                         "Tôi có sản phẩm tốt, không gian đẹp, nhưng khách hàng vẫn không nhớ tôi là ai giữa hàng ngàn thương hiệu khác..."
                     </p>
-                    <p className="text-gray-600 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-2 border-[#B87333]/30 pl-4">
+                    <p className="text-white/85 text-lg max-w-sm md:max-w-xl font-light leading-relaxed border-l-4 border-[#F5C97B]/70 pl-4 py-2 bg-white/5 rounded-r-xl">
                         "Tôi muốn tự làm marketing nhưng không biết bắt đầu từ đâu,<br />nên đăng cái gì và làm như thế nào..."
                     </p>
                     <div className="flex flex-wrap gap-3 pt-6">
@@ -99,7 +99,7 @@ const BrandPackagingPage: React.FC = () => {
                             <a
                                 key={item.href}
                                 href={item.href}
-                                className="px-4 py-2 text-xs md:text-sm font-medium rounded-full border border-gray-200 text-gray-600 hover:text-[#B87333] hover:bg-[#B87333]/5 hover:border-[#B87333]/50 transition-all duration-300 backdrop-blur-sm bg-white/60"
+                                className="px-4 py-2 text-xs md:text-sm font-semibold rounded-full border border-white/30 text-white hover:bg-[#F5C97B] hover:text-gray-900 hover:border-[#F5C97B] transition-all duration-300 backdrop-blur-md bg-white/10"
                             >
                                 {item.label}
                             </a>
@@ -112,28 +112,28 @@ const BrandPackagingPage: React.FC = () => {
             <section id="giai-phap" className="py-24 px-6 lg:px-8 bg-gray-50 scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="mb-14">
-                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Giải Pháp</h2>
-                        <h3 className="text-gray-900 font-serif-display text-3xl">Đóng Gói Thương Hiệu <br />& quy trình <br />Marketing Tự Vận Hành</h3>
-                        <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
+                        <span className="inline-block text-[#B87333] text-sm tracking-[0.15em] font-bold uppercase bg-[#B87333]/10 px-3 py-1 rounded-full mb-4">Giải Pháp</span>
+                        <h3 className="text-gray-900 font-serif-display text-3xl font-black">Đóng Gói Thương Hiệu <br />& quy trình <br />Marketing Tự Vận Hành</h3>
+                        <div className="h-1 w-20 bg-[#B87333] mt-4"></div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="p-8 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-all group">
-                            <div className="w-14 h-14 bg-[#B87333]/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
+                        <div className="p-8 border-l-4 border-[#B87333] border border-[#B87333]/20 rounded-lg bg-white hover:shadow-lg transition-all group">
+                            <div className="w-14 h-14 bg-[#B87333]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/20 transition-colors">
                                 <span className="material-icons text-[#B87333] text-3xl">palette</span>
                             </div>
-                            <p className="text-gray-600 text-lg font-light leading-relaxed">
+                            <p className="text-gray-700 text-lg font-light leading-relaxed">
                                 Xây dựng hệ thống nhận diện thương hiệu thực dụng kèm kế hoạch truyền thông chạy được trong 6
                                 tháng.
                             </p>
                         </div>
 
-                        <div className="p-8 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-all group">
-                            <div className="w-14 h-14 bg-[#B87333]/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/10 transition-colors">
+                        <div className="p-8 border-l-4 border-[#B87333] border border-[#B87333]/20 rounded-lg bg-white hover:shadow-lg transition-all group">
+                            <div className="w-14 h-14 bg-[#B87333]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#B87333]/20 transition-colors">
                                 <span className="material-icons text-[#B87333] text-3xl">precision_manufacturing</span>
                             </div>
-                            <div className="text-gray-600 text-lg font-light leading-relaxed space-y-4">
+                            <div className="text-gray-700 text-lg font-light leading-relaxed space-y-4">
                                 <p>Bàn giao quy trình marketing tự vận hành với sự hỗ trợ của công cụ AI và tài nguyên marketing đã thiết kế sẵn.</p>
-                                <p className="text-base text-gray-500 border-l-2 border-[#B87333]/30 pl-4 py-1">
+                                <p className="text-base text-gray-600 border-l-2 border-[#B87333]/50 pl-4 py-1">
                                     Chủ quán có thể tự làm truyền thông hoặc đào tạo chính nhân sự quán để thực thi.
                                 </p>
                             </div>
@@ -158,23 +158,21 @@ const BrandPackagingPage: React.FC = () => {
             <section className="py-24 px-6 lg:px-8 bg-white">
                 <div className="max-w-5xl mx-auto">
                     <div className="mb-14">
-                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Đối Tượng</h2>
-                        <h3 className="text-gray-900 font-serif-display text-3xl">Ai cần gói này?</h3>
-                        <div className="h-1 w-20 bg-[#B87333]/50 mt-4"></div>
+                        <span className="inline-block text-[#B87333] text-sm tracking-[0.15em] font-bold uppercase bg-[#B87333]/10 px-3 py-1 rounded-full mb-4">Đối Tượng</span>
+                        <h3 className="text-gray-900 font-serif-display text-3xl font-black">Ai cần gói này?</h3>
+                        <div className="h-1 w-20 bg-[#B87333] mt-4"></div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {[
                             { icon: 'storefront', title: 'Chủ quán tự doanh', desc: 'Xây dựng hình ảnh thương hiệu phù hợp, dễ dàng áp dụng, giúp chủ quán tự đăng bài, xây kênh và chia sẻ câu chuyện thương hiệu của mình.' },
                             { icon: 'refresh', title: 'Chủ Quán Tay Trái', desc: 'Chuyển giao quy trình tự làm marketing cho chính nhân sự của quán, giúp mô hình marketing vẫn hoạt động mà không cần chủ quán trực tiếp tham gia.' },
                         ].map((item, idx) => (
-                            <div
-                                key={idx}
-                            >
-                                <div className="w-12 h-12 bg-[#B87333]/5 rounded flex items-center justify-center mb-6 relative z-10">
+                            <div key={idx} className="p-8 rounded-xl bg-gray-50 border border-gray-200 hover:border-[#B87333]/30 hover:shadow-md transition-all">
+                                <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-6">
                                     <span className="material-icons text-[#B87333] text-2xl">{item.icon}</span>
                                 </div>
-                                <h4 className="text-gray-900 font-bold text-xl mb-3 tracking-tight relative z-10">{item.title}</h4>
-                                <p className="text-gray-600 font-light text-sm leading-relaxed relative z-10">{item.desc}</p>
+                                <h4 className="text-gray-900 font-bold text-xl mb-3 tracking-tight">{item.title}</h4>
+                                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -185,8 +183,8 @@ const BrandPackagingPage: React.FC = () => {
             <section id="quy-trinh" className="py-24 bg-gray-50 scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="px-6 lg:px-8 mb-16">
-                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Quy Trình</h2>
-                        <h3 className="text-gray-900 font-serif-display text-3xl">3 Giai Đoạn Thực Thi</h3>
+                        <span className="inline-block text-[#B87333] text-sm tracking-[0.15em] font-bold uppercase bg-[#B87333]/10 px-3 py-1 rounded-full mb-4">Quy Trình</span>
+                        <h3 className="text-gray-900 font-serif-display text-3xl font-black">3 Giai Đoạn Thực Thi</h3>
                     </div>
                     <div className="space-y-0">
                         {[
@@ -214,17 +212,17 @@ const BrandPackagingPage: React.FC = () => {
                                 ]
                             },
                         ].map((phase, idx) => (
-                            <div key={idx} className={`relative flex border-t ${idx === 2 ? 'border-y' : ''} border-gray-200 group hover:bg-[#B87333]/[0.02] transition-colors`}>
+                            <div key={idx} className={`relative flex border-t ${idx === 2 ? 'border-y' : ''} border-gray-200 group hover:bg-[#B87333]/[0.03] transition-colors`}>
                                 <div className="w-[28%] sticky top-24 h-fit py-8 pl-6 pr-2">
-                                    <span className="text-gray-200 font-serif-display text-5xl font-bold group-hover:text-[#B87333]/40 transition-colors">{phase.num}</span>
+                                    <span className="text-[#B87333]/25 font-serif-display text-5xl font-bold group-hover:text-[#B87333]/50 transition-colors">{phase.num}</span>
                                 </div>
-                                <div className="w-[72%] py-8 pr-6 pl-4 space-y-6 border-l border-gray-200">
+                                <div className="w-[72%] py-8 pr-6 pl-4 space-y-6 border-l-2 border-[#B87333]/20 group-hover:border-[#B87333]/50 transition-colors">
                                     <h4 className="text-gray-900 font-bold text-xl uppercase tracking-tight">{phase.title}</h4>
                                     <div className="space-y-4">
                                         {phase.steps.map((step, sIdx) => (
                                             <div key={sIdx} className="flex gap-4 items-start">
-                                                <span className="text-[#B87333] font-mono text-sm pt-1">{step.id}</span>
-                                                <p className="text-gray-600 text-sm">{step.text}</p>
+                                                <span className="text-[#B87333] font-mono text-sm font-bold pt-1">{step.id}</span>
+                                                <p className="text-gray-700 text-sm">{step.text}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -239,8 +237,9 @@ const BrandPackagingPage: React.FC = () => {
             <section id="san-pham" className="py-24 px-6 lg:px-8 bg-white scroll-mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-[#B87333] text-xs tracking-[0.2em] font-bold mb-3 uppercase">Chủ quán</h2>
-                        <h3 className="text-gray-900 font-serif-display text-3xl">Nhận Được Gì?</h3>
+                        <span className="inline-block text-[#B87333] text-sm tracking-[0.15em] font-bold uppercase bg-[#B87333]/10 px-3 py-1 rounded-full mb-4">Chủ quán</span>
+                        <h3 className="text-gray-900 font-serif-display text-3xl font-black">Nhận Được Gì?</h3>
+                        <div className="h-1 w-16 bg-[#B87333] mx-auto mt-4"></div>
                     </div>
                     <div className="relative space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
                         {[
@@ -305,16 +304,16 @@ const BrandPackagingPage: React.FC = () => {
                                         )}
                                     </div>
                                     <div className="p-8">
-                                        <div className="flex items-center justify-between mb-2">
+                                        <div className="flex items-center justify-between mb-3">
                                             <h4 className="text-gray-900 font-bold text-lg uppercase tracking-wide">{item.title}</h4>
-                                            <span className="material-icons text-[#B87333]/70">{item.icon}</span>
+                                            <span className="material-icons text-[#B87333]">{item.icon}</span>
                                         </div>
-                                        <p className="text-gray-600 text-sm font-light mb-3">{item.desc}</p>
+                                        <p className="text-gray-700 text-sm leading-relaxed mb-3">{item.desc}</p>
                                         {item.bullets && (
-                                            <ul className="space-y-1.5">
+                                            <ul className="space-y-2">
                                                 {item.bullets.map((b, bIdx) => (
-                                                    <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-500 font-light">
-                                                        <span className="text-[#B87333] mt-0.5">•</span>
+                                                    <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-600">
+                                                        <span className="text-[#B87333] font-bold mt-0.5">•</span>
                                                         <span>{b}</span>
                                                     </li>
                                                 ))}

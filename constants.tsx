@@ -365,8 +365,8 @@ export const THOUGHTS_CAROUSEL_ITEMS = [
 export const PRODUCTS: Product[] = [
   {
     id: 'goi-dong-goi-thuong-hieu',
-    title: 'GÓI MARKETING TỰ VẬN HÀNH',
-    shortDescription: 'Đóng gói thương hiệu và xây dựng quy trình marketing đơn giản hoá, giúp chủ quán tự triển khai marketing nhờ công cụ AI và tài nguyên marketing đã thiết kế sẵn.',
+    title: 'ỨNG DỤNG FNB ĂN LIỀN',
+    shortDescription: 'Đăng bài giới thiệu món mới, thiết kế poster giảm giá hay khám phá ý tưởng marketing cho mùa hè, sở hữu một trợ lý AI Marketing ngay trong điện thoại của chủ quán.',
     description: '',
     thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
     gallery: [

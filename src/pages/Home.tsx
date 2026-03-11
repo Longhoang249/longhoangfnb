@@ -581,6 +581,15 @@ const Home: React.FC = () => {
                 <button disabled className="bg-gray-400 text-white px-10 py-4 rounded-full text-sm font-bold cursor-not-allowed shadow-none flex items-center gap-3 mx-auto w-fit">
                   Sorry bạn, Long kín lịch rùi
                 </button>
+              ) : activeProduct.id === 'goi-dong-goi-thuong-hieu' ? (
+                <a
+                  href="https://app.fnbanlien.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto w-fit"
+                >
+                  Khám phá <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </a>
               ) : (
                 <Link
                   to={`/product/${activeProduct.id}`}

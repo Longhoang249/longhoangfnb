@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { STORY_TABS_CONTENT, RESOURCES, OFFERINGS, BLOG_POSTS, LONG_THOUGHTS_PARAGRAPHS, THOUGHTS_CAROUSEL_ITEMS, PRODUCTS } from '../../constants';
-import AIConsultant from '../../components/AIConsultant';
+
 import SmartImage from '../../components/SmartImage';
 
 const TikTokCarousel = ({ items }: { items: { name: string; image: string }[] }) => {
@@ -755,7 +755,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"><div className="text-lg font-bold tracking-tighter uppercase">LONGHOANG<span className="text-gray-400">.FnB</span></div><div className="text-gray-300 text-[10px] uppercase tracking-widest font-bold">© 2026 Hoang Duy Long</div></div>
       </footer>
 
-      <AIConsultant />
+
 
       <style>{`
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

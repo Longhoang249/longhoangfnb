@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { STORY_TABS_CONTENT, RESOURCES, OFFERINGS, BLOG_POSTS, LONG_THOUGHTS_PARAGRAPHS, THOUGHTS_CAROUSEL_ITEMS, PRODUCTS } from '../../constants';
 
 import SmartImage from '../../components/SmartImage';
+import VideoFacade from '../components/VideoFacade';
 
 const TikTokCarousel = ({ items }: { items: { name: string; image: string }[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -218,7 +219,7 @@ const Home: React.FC = () => {
                       </div>
                       <div className="space-y-4">
                         <div className="aspect-video w-full bg-black rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-gray-100 relative">
-                          <iframe key={activeEventIdx} src={active.videoUrl} title={active.title} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                          <VideoFacade key={activeEventIdx} videoUrl={active.videoUrl} title={active.title} />
                         </div>
                         <div className="flex items-center justify-between px-2">
                           <button onClick={() => setActiveEventIdx((prev) => (prev - 1 + section.items.length) % section.items.length)} className="w-8 h-8 bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:scale-110 active:scale-95 transition-all text-black hover:bg-black hover:text-white"><svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg></button>
@@ -229,6 +230,7 @@ const Home: React.FC = () => {
                           <div>
                             <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1">Chiến dịch</p>
                             <h5 className="text-lg md:text-xl font-bold">{active.title}</h5>
+                            {active.role && <div className="mt-2 mb-2"><span className="text-[9px] md:text-[10px] font-bold text-black bg-gray-100 uppercase tracking-widest px-3 py-1.5 rounded-full inline-block border border-gray-200">{active.role}</span></div>}
                             {active.brand && <p className="text-xs md:text-sm font-medium text-gray-500 mt-1 max-w-xl mx-auto leading-relaxed">{active.brand}</p>}
                           </div>
                           <div className="max-w-md mx-auto">
@@ -254,7 +256,7 @@ const Home: React.FC = () => {
                       <div className="space-y-4">
                         <div className="flex justify-center">
                           <div className="aspect-[9/16] w-56 md:w-72 bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-gray-100">
-                            <iframe key={activeFanpageIdx} src={active.videoUrl} title={active.brand} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                            <VideoFacade key={activeFanpageIdx} videoUrl={active.videoUrl} title={active.brand} />
                           </div>
                         </div>
                         <div className="flex items-center justify-between px-2 max-sm mx-auto">
@@ -290,7 +292,7 @@ const Home: React.FC = () => {
                                         key={logo.id}
                                         className="relative flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 overflow-hidden"
                                       >
-                                        <img src={logo.src} alt={logo.name} className={logo.fill ? "w-full h-full object-cover" : "w-7 h-7 md:w-9 md:h-9 object-contain"} />
+                                        <img src={logo.src} alt={logo.name} loading="lazy" className={logo.fill ? "w-full h-full object-cover" : "w-7 h-7 md:w-9 md:h-9 object-contain"} />
                                       </div>
                                     );
                                   })}
@@ -349,7 +351,7 @@ const Home: React.FC = () => {
                                 <div className="w-full max-w-3xl bg-gray-50/50 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 p-1.5 md:p-2.5">
                                   {item.videoUrl ? (
                                     <div className="w-full aspect-video bg-black rounded-xl md:rounded-[1.5rem] overflow-hidden shadow-inner">
-                                      <iframe src={item.videoUrl} title={item.title} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                                      <VideoFacade videoUrl={item.videoUrl} title={item.title} />
                                     </div>
                                   ) : (
                                     <div className="w-full aspect-[3/2] overflow-hidden rounded-xl md:rounded-[1.5rem] shadow-inner relative group/img">

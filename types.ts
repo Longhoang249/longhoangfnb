@@ -35,6 +35,7 @@ export interface ProjectDetail {
   image: string;
   isVertical?: boolean;
   brand?: string;
+  role?: string;
   subItems?: { name: string; image: string }[];
 }
 

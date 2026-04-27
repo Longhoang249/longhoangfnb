@@ -64,12 +64,13 @@ Long tin vào triết lý IKIGAI: thành công chỉ đơn giản là được *
 
 ### 4.1. Chiến dịch Marketing tiêu biểu
 
-| Thương hiệu | Chiến dịch | Kết quả |
-|-------------|-----------|---------|
-| **Dagi Shark Coffee & Tea** | Chiến dịch trà sữa 9k | Bán được **1.000 ly/ngày** |
-| **Riko Cha ở Bản Tàm Xá** | Chiến dịch Mua 1 tặng 10 | Tạo hàng dài khách xếp hàng cả tối |
-| **Bạch Dương Trà** | Ra mắt món mới | **66% khách hàng quay trở lại** |
-| **Khởi — Autoshop** | Chuỗi sự kiện ngành đồ uống | 2024 Đà Nẵng: 300 khách · 2025 Hà Nội: 900 khách · 2025 TP.HCM: 1.000 khách |
+| Thương hiệu | Chiến dịch | Vai trò | Kết quả |
+|-------------|-----------|---------|---------|
+| **Dagi Shark Coffee & Tea** | Chiến dịch trà sữa 9k | Marketing Manager | Bán được **1.000 ly/ngày** |
+| **Riko Cha ở Bản Tàm Xá** | Chiến dịch Mua 1 tặng 10 | Marketing Manager | Tạo hàng dài khách xếp hàng cả tối |
+| **Bạch Dương Trà** | Ra mắt món mới | Marketing Manager | **66% khách hàng quay trở lại** |
+| **Khởi — Autoshop** | Chuỗi sự kiện ngành đồ uống | PR & Event Marketing Manager | 2024 Đà Nẵng: 300 khách · 2025 Hà Nội: 900 khách · 2025 TP.HCM: 1.000 khách |
+| **FnB Connect 2026** | Autoshop đồng tổ chức | PR & Event Marketing Manager | 1400+ khách, 14 gian hàng, 4 hội thảo |
 
 ### 4.2. Các thương hiệu đã đồng hành
 

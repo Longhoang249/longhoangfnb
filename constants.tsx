@@ -23,26 +23,38 @@ export const STORY_TABS_CONTENT = {
             title: 'Dagi Shark Coffee & Tea',
             videoUrl: 'https://www.youtube.com/embed/Qb2ek3S6kdA?rel=0',
             results: 'Chiến dịch trà sữa 9k bán được 1000 ly 1 ngày',
-            image: 'https://images.unsplash.com/photo-1540575861501-7ad060e39fe6?auto=format&fit=crop&q=80&w=800'
+            image: 'https://images.unsplash.com/photo-1540575861501-7ad060e39fe6?auto=format&fit=crop&q=80&w=800',
+            role: 'Marketing Manager'
           },
           {
             title: 'Riko Cha ở Bản Tàm Xá',
             videoUrl: 'https://www.youtube.com/embed/Oc-z8XSGKcc?rel=0',
             results: 'Chiến dịch Mua 1 tặng 10 tạo hàng dài khách xếp hàng cả tối',
-            image: 'https://images.unsplash.com/photo-1514525253361-bee8718a74a2?auto=format&fit=crop&q=80&w=800'
+            image: 'https://images.unsplash.com/photo-1514525253361-bee8718a74a2?auto=format&fit=crop&q=80&w=800',
+            role: 'Marketing Manager'
           },
           {
             title: 'Bạch Dương Trà',
             videoUrl: 'https://www.youtube.com/embed/0HDYzeFaYOw?rel=0',
             results: 'Chiến dịch ra mắt món mới, đạt 66% khách hàng quay trở lại',
-            image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800'
+            image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800',
+            role: 'Marketing Manager'
           },
           {
             title: 'Khởi - Autoshop',
             brand: 'Chuỗi sự kiện ngành đồ uống quy tụ hàng ngàn chủ quán, đại lý và thương hiệu FnB tham dự.',
             videoUrl: 'https://www.youtube.com/embed/8JhWvZB89J0',
             results: '2024 - Đà Nẵng - 300 khách tham dự\n2025 - Hà Nội - 900 khách tham dự\n2025 - Tp.HCM - 1000 khách tham dự',
-            image: 'https://i.ibb.co/HDfzQnJf/KHOI-2025-Backdrop-2-4x.png'
+            image: 'https://i.ibb.co/HDfzQnJf/KHOI-2025-Backdrop-2-4x.png',
+            role: 'PR & Event Marketing Manager'
+          },
+          {
+            title: 'FnB Connect 2026 - Autoshop đồng tổ chức',
+            brand: 'Sự kiện kết hợp giữa 5 thương hiệu FnB nổi tiếng: Autoshop, Nhất Hương, Boduo, Holyon Tea, Dẻo. là một trong những sự kiện FnB quy mô nhất Việt Nam tới 2026.',
+            videoUrl: 'https://www.youtube.com/embed/oylysZPKmmY?rel=0',
+            results: '1400+ Chủ quán, đại lý\n14 Gian hàng\n4 Chủ đề hội thảo',
+            image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800',
+            role: 'PR & Event Marketing Manager'
           }
         ] as ProjectDetail[]
       },

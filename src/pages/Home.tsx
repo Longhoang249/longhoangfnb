@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { STORY_TABS_CONTENT, RESOURCES, OFFERINGS, BLOG_POSTS, LONG_THOUGHTS_PARAGRAPHS, THOUGHTS_CAROUSEL_ITEMS, PRODUCTS } from '../../constants';
+import { InteractiveIntro } from '../components/InteractiveIntro';
 
 import SmartImage from '../../components/SmartImage';
 import VideoFacade from '../components/VideoFacade';
@@ -120,6 +121,30 @@ const NAV_ITEMS = [
 ];
 
 const Home: React.FC = () => {
+  // Gatekeeper/Intro transition states
+  const [showIntro, setShowIntro] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  const handleExplore = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setIsUnlocked(true);
+      setShowIntro(false);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    if (!isUnlocked) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isUnlocked]);
+
   // Refs để cuộn trang
   const partRef = useRef<HTMLDivElement>(null);
   const windowTopRef = useRef<HTMLDivElement>(null);
@@ -416,7 +441,22 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-white text-[#1a1a1a]" onClick={() => { setSelectedLogoId(null); }}>
+    <>
+      {showIntro && (
+        <div 
+          className="fixed inset-0 w-full h-screen z-[9999] transition-transform duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)]"
+          style={{ transform: isTransitioning ? 'translateY(-100%)' : 'translateY(0)' }}
+        >
+          <InteractiveIntro onExplore={handleExplore} />
+        </div>
+      )}
+
+      <div 
+        className={`min-h-screen font-sans bg-white text-[#1a1a1a] transition-all duration-1000 ease-out ${
+          !isUnlocked ? 'opacity-0 transform translate-y-12 pointer-events-none' : 'opacity-100 transform translate-y-0'
+        }`}
+        onClick={() => { setSelectedLogoId(null); }}
+      >
       {/* Hero Section */}
       <section id="about" className="pt-16 md:pt-24 pb-6 md:pb-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -580,9 +620,13 @@ const Home: React.FC = () => {
             <div className="max-w-4xl mx-auto bg-white rounded-[3rem] border border-gray-200 shadow-xl p-8 md:p-16 text-center animate-fadeIn group">
               <p className="text-base md:text-xl font-medium text-gray-500 mb-10 italic leading-relaxed max-w-2xl mx-auto">{activeProduct.shortDescription}</p>
               {activeProduct.id === 'goi-marketing-tong-the' ? (
-                <button disabled className="bg-gray-400 text-white px-10 py-4 rounded-full text-sm font-bold cursor-not-allowed shadow-none flex items-center gap-3 mx-auto w-fit">
-                  Sorry bạn, Long kín lịch rùi
-                </button>
+                <Link
+                  to={`/product/${activeProduct.id}`}
+                  onClick={() => sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())}
+                  className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto w-fit"
+                >
+                  Xem thêm <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </Link>
               ) : activeProduct.id === 'goi-dong-goi-thuong-hieu' ? (
                 <a
                   href="https://app.fnbanlien.com/"
@@ -769,7 +813,8 @@ const Home: React.FC = () => {
         body { text-wrap: pretty; }
         h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

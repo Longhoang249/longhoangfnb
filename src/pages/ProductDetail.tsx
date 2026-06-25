@@ -4,6 +4,7 @@ import { PRODUCTS } from '../../constants';
 import BrandPackagingQuiz from '../components/BrandPackagingQuiz';
 import BrandPackagingLayout from '../components/BrandPackagingLayout';
 import BrandPackagingPage from '../components/BrandPackagingPage';
+import MarketingPricingPage from '../components/MarketingPricingPage';
 import SmartImage from '../../components/SmartImage';
 
 const ProductDetail = () => {
@@ -30,6 +31,11 @@ const ProductDetail = () => {
     // Render dedicated Brand Packaging page
     if (product.id === 'goi-dong-goi-thuong-hieu') {
         return <BrandPackagingPage />;
+    }
+
+    // Render dedicated Marketing Pricing page
+    if (product.id === 'goi-marketing-tong-the') {
+        return <MarketingPricingPage />;
     }
 
     return (

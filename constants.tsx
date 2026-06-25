@@ -192,7 +192,7 @@ export const STORY_TABS_CONTENT = {
         name: 'Thu Trang',
         role: 'Content Marketing - Marketingnhahang.vn',
         story: 'Haha không biết có khi nào Trang đọc được dòng này không, nhưng thực sự em ấy là người đã "dắt" Long đi những buổi quay chụp "thực địa" đầu tiên, hướng dẫn Long cách viết sao cho hay, ngắt nghỉ câu sao cho đúng, và quan trọng nhất là dạy Long những kiến thức cơ bản nhất để trở thành một người làm truyền thông ngành ăn uống. Đi cùng Trang những ngày học việc, Long thấy mình đã nhận được thật nhiều thứ giá trị từ cô gái này. Từ nét chỉn chu trong từng câu chữ, sự cầu toàn cho mỗi tấm hình tới tinh thần trách nhiệm cao luôn hoàn thành KPI dù còn đang đi học. Đây đều là bài học vỡ lòng mãi không quên được.',
-        image: '/thu_trang_avatar.png'
+        image: '/thu_trang_avatar.webp'
       }
     ] as MentorDetail[]
   },

@@ -7,7 +7,7 @@ const PERSONAS = [
     title: 'MARKETING CHO FNB',
     backgroundText: 'MARKETING',
     description: 'Thay chủ quán thực thi các dịch vụ truyền thông cho quán, đem lại tương tác, khách hàng và doanh thu từ marketing.',
-    src: '/char2.png', // Green shirt leaning on utility pole
+    src: '/char2.webp', // Green shirt leaning on utility pole
     theme: {
       background: '#5DB872',
       accent: '#DDF2C2',
@@ -20,7 +20,7 @@ const PERSONAS = [
     title: 'GIẢI PHÁP AI CHO FNB',
     backgroundText: 'AI SOLUTIONS',
     description: 'Ứng dụng AI vào marketing, kinh doanh, vận hành quán, giúp tăng doanh thu, giảm chi phí, tạo sự khác biệt cho thương hiệu.',
-    src: '/char1.png', // Blue shirt sitting on blue stool with laptop
+    src: '/char1.webp', // Blue shirt sitting on blue stool with laptop
     theme: {
       background: '#5FA7E8',
       accent: '#D8F4FF',
@@ -33,7 +33,7 @@ const PERSONAS = [
     title: 'F&B STARTUP',
     backgroundText: 'F&B STARTUP',
     description: 'Đồng hành cùng chủ quán xây dựng viên gạch đầu tiên, Long không trực tiếp làm nhưng có đủ giải pháp và quy trình đã chứng minh thành công.',
-    src: '/char3.png', // Orange shirt leaning on wooden coffee cart
+    src: '/char3.webp', // Orange shirt leaning on wooden coffee cart
     theme: {
       background: '#F28A45',
       accent: '#FFE3C3',

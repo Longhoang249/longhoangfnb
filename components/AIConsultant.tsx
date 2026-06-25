@@ -6,7 +6,7 @@ import { ChatMessage } from '../types';
 const AIConsultant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Chào bạn! Tôi là trợ lý AI chuyên về Marketing quán Cà phê. Bạn đang gặp khó khăn gì trong việc tìm kiếm khách hàng?' }
+    { role: 'model', text: 'Chào bạn! Mình là Matcha AI 🍵 Mình có thể giúp gì cho hoạt động marketing quán cà phê/trà sữa của bạn?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -39,8 +39,8 @@ const AIConsultant: React.FC = () => {
         <div className="bg-white w-80 md:w-96 h-[500px] rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden">
           <div className="bg-black text-white p-4 flex justify-between items-center">
             <div>
-              <h3 className="font-bold">AI Marketing Expert</h3>
-              <p className="text-xs opacity-75">Tư vấn marketing miễn phí</p>
+              <h3 className="font-bold">Matcha AI 🍵</h3>
+              <p className="text-xs opacity-75">Tư vấn marketing F&B</p>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:opacity-75">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

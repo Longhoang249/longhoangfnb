@@ -593,6 +593,63 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Thoughts Section */}
+      <section id="thoughts" className="py-20 md:py-28 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 md:mb-16"><h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Long và vài tâm sự</h2><p className="text-gray-400 text-xs md:text-sm font-normal leading-relaxed italic max-w-sm mx-auto">Hơi dài, mong là không lê thê</p></div>
+          <div className="max-w-4xl mx-auto">
+            {isThoughtsExpanded ? (
+              <div className="bg-white rounded-[3rem] md:rounded-[4rem] border border-gray-200 shadow-2xl flex flex-col h-auto animate-fadeIn" onClick={(e) => e.stopPropagation()}>
+                <div className="px-8 py-4 border-b border-gray-50 flex items-center justify-between bg-gray-50/50"><div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-red-400"></div><div className="w-3 h-3 rounded-full bg-yellow-400"></div><div className="w-3 h-3 rounded-full bg-green-400"></div></div><div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest leading-none">Vài lời chia sẻ</div></div>
+                <div className="p-8 md:p-16 max-w-2xl mx-auto">
+                  <div className="mb-10 space-y-4">
+                    <div className="w-full aspect-[4/3] bg-gray-100 rounded-[2rem] overflow-hidden shadow-lg relative">
+                      {THOUGHTS_CAROUSEL_ITEMS.map((item, idx) => (
+                        <div key={idx} className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${idx === activeThoughtIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+                          <SmartImage src={item.image} alt={item.title} className="w-full h-full" />
+                        </div>
+                      ))}
+
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+                        {THOUGHTS_CAROUSEL_ITEMS.map((_, idx) => (
+                          <div key={idx} className={`h-1 rounded-full transition-all duration-300 shadow-sm ${activeThoughtIndex === idx ? 'w-6 bg-white' : 'w-1.5 bg-white/40'}`} />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-4">
+                      <button onClick={(e) => { e.stopPropagation(); setActiveThoughtIndex(prev => (prev - 1 + THOUGHTS_CAROUSEL_ITEMS.length) % THOUGHTS_CAROUSEL_ITEMS.length); }} className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center hover:scale-110 hover:border-black transition-all text-gray-400 hover:text-black hover:shadow-md"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg></button>
+                      <button onClick={(e) => { e.stopPropagation(); setActiveThoughtIndex(prev => (prev + 1) % THOUGHTS_CAROUSEL_ITEMS.length); }} className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center hover:scale-110 hover:border-black transition-all text-gray-400 hover:text-black hover:shadow-md"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
+                    </div>
+
+                    <div className="bg-white border border-gray-100 p-5 md:p-6 rounded-[2rem] shadow-sm text-left">
+                      <div className="flex flex-col gap-1.5">
+                        <div className="flex items-center gap-2 flex-wrap mb-1">
+                          {THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].date && <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest bg-gray-50 px-2 py-1 rounded-md border border-gray-100 whitespace-nowrap">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].date}</span>}
+                          <span className="text-xs md:text-sm font-black text-gray-800 uppercase tracking-tight">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].title}</span>
+                        </div>
+                        <p className="text-sm md:text-base font-normal text-gray-600 leading-relaxed">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].description}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center gap-2 my-10 opacity-30">
+                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                  </div>
+
+                  <div className="space-y-8 text-sm md:text-base leading-relaxed text-gray-700 font-normal tracking-normal text-justify">{LONG_THOUGHTS_PARAGRAPHS.map((para, idx) => (<p key={idx} className={idx === 0 ? "first-letter:text-5xl first-letter:text-black first-letter:mr-3 first-letter:float-left" : ""} dangerouslySetInnerHTML={{ __html: para }}></p>))}</div>
+                </div>
+                <div className="p-8 border-t border-gray-50 bg-gray-50/30 flex justify-center"><button onClick={handleCollapseThoughts} className="text-[10px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">rút gọn</button></div>
+              </div>
+            ) : (
+              <div className="max-w-2xl mx-auto bg-white rounded-[3rem] border border-gray-200 shadow-xl p-8 md:p-16 text-center animate-fadeIn group" onClick={(e) => e.stopPropagation()}><p className="text-base md:text-lg font-normal text-gray-500 mb-10 italic leading-relaxed">Long bắt đầu hành trình Làm Marketing Chuyên Biệt Ngành Ăn Uống không phải từ trường lớp bài bản...</p><button onClick={() => setIsThoughtsExpanded(true)} className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto">Khám phá <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button></div>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Offerings Section */}
       <section id="offerings" className="py-24 md:py-32 bg-white relative overflow-hidden border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -649,63 +706,6 @@ const Home: React.FC = () => {
           </div>
 
           <div className="mt-16 text-center"><button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-400 hover:text-black text-xs font-bold uppercase tracking-widest transition-all underline underline-offset-8">Có gói riêng không?</button></div>
-        </div>
-      </section>
-
-      {/* Thoughts Section */}
-      <section id="thoughts" className="py-20 md:py-28 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12 md:mb-16"><h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Long và vài tâm sự</h2><p className="text-gray-400 text-xs md:text-sm font-normal leading-relaxed italic max-w-sm mx-auto">Hơi dài, mong là không lê thê</p></div>
-          <div className="max-w-4xl mx-auto">
-            {isThoughtsExpanded ? (
-              <div className="bg-white rounded-[3rem] md:rounded-[4rem] border border-gray-200 shadow-2xl flex flex-col h-auto animate-fadeIn" onClick={(e) => e.stopPropagation()}>
-                <div className="px-8 py-4 border-b border-gray-50 flex items-center justify-between bg-gray-50/50"><div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-red-400"></div><div className="w-3 h-3 rounded-full bg-yellow-400"></div><div className="w-3 h-3 rounded-full bg-green-400"></div></div><div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest leading-none">Vài lời chia sẻ</div></div>
-                <div className="p-8 md:p-16 max-w-2xl mx-auto">
-                  <div className="mb-10 space-y-4">
-                    <div className="w-full aspect-[4/3] bg-gray-100 rounded-[2rem] overflow-hidden shadow-lg relative">
-                      {THOUGHTS_CAROUSEL_ITEMS.map((item, idx) => (
-                        <div key={idx} className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${idx === activeThoughtIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                          <SmartImage src={item.image} alt={item.title} className="w-full h-full" />
-                        </div>
-                      ))}
-
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
-                        {THOUGHTS_CAROUSEL_ITEMS.map((_, idx) => (
-                          <div key={idx} className={`h-1 rounded-full transition-all duration-300 shadow-sm ${activeThoughtIndex === idx ? 'w-6 bg-white' : 'w-1.5 bg-white/40'}`} />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-center gap-4">
-                      <button onClick={(e) => { e.stopPropagation(); setActiveThoughtIndex(prev => (prev - 1 + THOUGHTS_CAROUSEL_ITEMS.length) % THOUGHTS_CAROUSEL_ITEMS.length); }} className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center hover:scale-110 hover:border-black transition-all text-gray-400 hover:text-black hover:shadow-md"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg></button>
-                      <button onClick={(e) => { e.stopPropagation(); setActiveThoughtIndex(prev => (prev + 1) % THOUGHTS_CAROUSEL_ITEMS.length); }} className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center hover:scale-110 hover:border-black transition-all text-gray-400 hover:text-black hover:shadow-md"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
-                    </div>
-
-                    <div className="bg-white border border-gray-100 p-5 md:p-6 rounded-[2rem] shadow-sm text-left">
-                      <div className="flex flex-col gap-1.5">
-                        <div className="flex items-center gap-2 flex-wrap mb-1">
-                          {THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].date && <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest bg-gray-50 px-2 py-1 rounded-md border border-gray-100 whitespace-nowrap">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].date}</span>}
-                          <span className="text-xs md:text-sm font-black text-gray-800 uppercase tracking-tight">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].title}</span>
-                        </div>
-                        <p className="text-sm md:text-base font-normal text-gray-600 leading-relaxed">{THOUGHTS_CAROUSEL_ITEMS[activeThoughtIndex].description}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center gap-2 my-10 opacity-30">
-                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                    <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                  </div>
-
-                  <div className="space-y-8 text-sm md:text-base leading-relaxed text-gray-700 font-normal tracking-normal text-justify">{LONG_THOUGHTS_PARAGRAPHS.map((para, idx) => (<p key={idx} className={idx === 0 ? "first-letter:text-5xl first-letter:text-black first-letter:mr-3 first-letter:float-left" : ""} dangerouslySetInnerHTML={{ __html: para }}></p>))}</div>
-                </div>
-                <div className="p-8 border-t border-gray-50 bg-gray-50/30 flex justify-center"><button onClick={handleCollapseThoughts} className="text-[10px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">rút gọn</button></div>
-              </div>
-            ) : (
-              <div className="max-w-2xl mx-auto bg-white rounded-[3rem] border border-gray-200 shadow-xl p-8 md:p-16 text-center animate-fadeIn group" onClick={(e) => e.stopPropagation()}><p className="text-base md:text-lg font-normal text-gray-500 mb-10 italic leading-relaxed">Long bắt đầu hành trình Làm Marketing Chuyên Biệt Ngành Ăn Uống không phải từ trường lớp bài bản...</p><button onClick={() => setIsThoughtsExpanded(true)} className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3 mx-auto">Khám phá <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button></div>
-            )}
-          </div>
         </div>
       </section>
 

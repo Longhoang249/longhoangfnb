@@ -107,8 +107,8 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
     if (role === 'center') {
       return {
         zIndex: 3,
-        height: isMobile ? '64vh' : '88vh', // Large center focal point
-        bottom: isMobile ? '20%' : '0', // Grounded to the bottom
+        height: isMobile ? '52vh' : '88vh', // Large center focal point
+        bottom: isMobile ? '210px' : '0', // Grounded to the bottom
         left: '50%',
         transform: 'translateX(-50%) scale(1)', // Pure 1:1 sharp scale
         opacity: 1,
@@ -187,7 +187,7 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
                   fontWeight: 900,
                   lineHeight: 0.8,
                   letterSpacing: '-0.02em', // Airy and modern spacing
-                  top: isMobile ? '25%' : '20%',
+                  top: isMobile ? '16%' : '20%',
                   opacity: opacityVal,
                   transform: transformStr,
                   transition: 'transform 650ms cubic-bezier(0.22, 1, 0.36, 1), opacity 650ms cubic-bezier(0.22, 1, 0.36, 1)',
@@ -255,7 +255,7 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
                 style={{
                   left: isMobile ? '16px' : '8%',
                   right: isMobile ? '16px' : 'auto',
-                  bottom: isMobile ? '96px' : '48px',
+                  bottom: isMobile ? '20px' : '48px',
                   maxWidth: isMobile ? 'none' : '420px',
                   background: 'rgba(255, 255, 255, 0.12)',
                   backdropFilter: 'blur(14px)',
@@ -294,92 +294,155 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
                 >
                   {item.description}
                 </p>
+
+                {/* Mobile Controls (CTA + Arrows) */}
+                {isMobile && (
+                  <div className="flex items-center justify-between mt-5 pt-4 border-t border-white/15">
+                    {/* Navigation Arrows */}
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => navigate('prev')}
+                        className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/5 active:bg-white/20 transition-all cursor-pointer"
+                        aria-label="Previous capability"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.25}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="19" y1="12" x2="5" y2="12"></line>
+                          <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => navigate('next')}
+                        className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/5 active:bg-white/20 transition-all cursor-pointer"
+                        aria-label="Next capability"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.25}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+
+                    {/* CTA Button */}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onExplore();
+                      }}
+                      className="flex items-center gap-1.5 bg-white text-black px-5 py-2.5 rounded-full font-display text-[11px] font-black uppercase tracking-wider shadow-md active:scale-95 transition-all cursor-pointer"
+                    >
+                      <span>KHÁM PHÁ</span>
+                      <span className="font-sans text-xs translate-y-[-1px]">→</span>
+                    </button>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
 
-        {/* 6. Bottom-right Action Cluster (CTA + Navigation Arrows underneath) */}
-        <div
-          className="absolute z-40 flex flex-col items-end gap-5"
-          style={{
-            right: isMobile ? '16px' : '6%',
-            bottom: isMobile ? '24px' : '48px',
-          }}
-        >
-          {/* CTA Link */}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              onExplore();
-            }}
-            className="flex items-center gap-2 sm:gap-4 text-white transition-all duration-200 opacity-95 hover:opacity-100 hover:scale-[1.03] bg-transparent border-0 cursor-pointer p-0 font-display uppercase leading-none"
+        {/* 6. Bottom-right Action Cluster (CTA + Navigation Arrows underneath) - Desktop only */}
+        {!isMobile && (
+          <div
+            className="absolute z-40 flex flex-col items-end gap-5"
             style={{
-              fontSize: isMobile ? 'clamp(14px, 4vw, 18px)' : 'clamp(20px, 2.5vw, 36px)',
-              fontWeight: 900,
-              letterSpacing: '-0.03em',
+              right: '6%',
+              bottom: '48px',
             }}
           >
-            <span>KHÁM PHÁ</span>
-            <span className="font-sans font-normal text-lg sm:text-2xl translate-y-[-1px]">→</span>
-          </button>
+            {/* CTA Link */}
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                onExplore();
+              }}
+              className="flex items-center gap-4 text-white transition-all duration-200 opacity-95 hover:opacity-100 hover:scale-[1.03] bg-transparent border-0 cursor-pointer p-0 font-display uppercase leading-none"
+              style={{
+                fontSize: 'clamp(20px, 2.5vw, 36px)',
+                fontWeight: 900,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              <span>KHÁM PHÁ</span>
+              <span className="font-sans font-normal text-2xl translate-y-[-1px]">→</span>
+            </button>
 
-          {/* Navigation Arrows */}
-          <div className="flex gap-4">
-            <button
-              onClick={() => navigate('prev')}
-              className="rounded-full border-2 flex items-center justify-center text-white bg-[rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-150 cursor-pointer hover:scale-[1.08] hover:bg-[rgba(255,255,255,0.15)] active:scale-95"
-              style={{
-                width: isMobile ? '48px' : '72px',
-                height: isMobile ? '48px' : '72px',
-                borderColor: 'rgba(255, 255, 255, 0.75)',
-              }}
-              aria-label="Previous capability"
-            >
-              {/* Inline ArrowLeft SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={isMobile ? 20 : 26}
-                height={isMobile ? 20 : 26}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.25}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            {/* Navigation Arrows */}
+            <div className="flex gap-4">
+              <button
+                onClick={() => navigate('prev')}
+                className="rounded-full border-2 flex items-center justify-center text-white bg-[rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-150 cursor-pointer hover:scale-[1.08] hover:bg-[rgba(255,255,255,0.15)] active:scale-95"
+                style={{
+                  width: '72px',
+                  height: '72px',
+                  borderColor: 'rgba(255, 255, 255, 0.75)',
+                }}
+                aria-label="Previous capability"
               >
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-              </svg>
-            </button>
-            <button
-              onClick={() => navigate('next')}
-              className="rounded-full border-2 flex items-center justify-center text-white bg-[rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-150 cursor-pointer hover:scale-[1.08] hover:bg-[rgba(255,255,255,0.15)] active:scale-95"
-              style={{
-                width: isMobile ? '48px' : '72px',
-                height: isMobile ? '48px' : '72px',
-                borderColor: 'rgba(255, 255, 255, 0.75)',
-              }}
-              aria-label="Next capability"
-            >
-              {/* Inline ArrowRight SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={isMobile ? 20 : 26}
-                height={isMobile ? 20 : 26}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.25}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                {/* Inline ArrowLeft SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={26}
+                  height={26}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.25}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button
+                onClick={() => navigate('next')}
+                className="rounded-full border-2 flex items-center justify-center text-white bg-[rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-150 cursor-pointer hover:scale-[1.08] hover:bg-[rgba(255,255,255,0.15)] active:scale-95"
+                style={{
+                  width: '72px',
+                  height: '72px',
+                  borderColor: 'rgba(255, 255, 255, 0.75)',
+                }}
+                aria-label="Next capability"
               >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
+                {/* Inline ArrowRight SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={26}
+                  height={26}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.25}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

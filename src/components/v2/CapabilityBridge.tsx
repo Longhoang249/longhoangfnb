@@ -15,14 +15,11 @@ const CapabilityBridge: React.FC = () => {
             <span className="h-2 w-2 bg-[#5DB872]" />
             Long Hoàng FnB
           </p>
-          <h1 className="font-display text-5xl uppercase leading-[1.08] text-[#151515] sm:text-6xl md:text-8xl">
-            Một người, ba
+          <h1 className="font-display text-4xl uppercase leading-[1.08] text-[#151515] sm:text-5xl md:text-7xl">
+            NGƯỜI LÀM TRUYỀN THÔNG
             <br />
-            năng lực cho F&B.
+            NGÀNH ẨM THỰC VÀ ĐỒ UỐNG
           </h1>
-          <p className="mt-8 max-w-xl text-lg font-semibold leading-relaxed text-black/60">
-            Long làm truyền thông chuyên biệt ngành ăn uống bằng ba hướng bổ trợ nhau: marketing thực chiến, AI ứng dụng và tư duy xây mô hình từ những viên gạch đầu tiên.
-          </p>
         </div>
 
         <div className="space-y-8">

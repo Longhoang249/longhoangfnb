@@ -107,8 +107,8 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
     if (role === 'center') {
       return {
         zIndex: 3,
-        height: isMobile ? '52vh' : '88vh', // Large center focal point
-        bottom: isMobile ? '210px' : '0', // Grounded to the bottom
+        height: isMobile ? '68vh' : '92vh', // Large center focal point
+        bottom: isMobile ? '150px' : '0', // Grounded to the bottom (partially behind card on mobile)
         left: '50%',
         transform: 'translateX(-50%) scale(1)', // Pure 1:1 sharp scale
         opacity: 1,

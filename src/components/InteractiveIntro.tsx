@@ -108,7 +108,7 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
       return {
         zIndex: 3,
         height: isMobile ? '65vh' : '92vh', // Large center focal point
-        bottom: isMobile ? '23vh' : '0', // Grounded to the bottom (partially behind card on mobile)
+        bottom: isMobile ? '25vh' : '0', // Grounded to the bottom (partially behind card on mobile)
         left: '50%',
         transform: 'translateX(-50%) scale(1)', // Pure 1:1 sharp scale
         opacity: 1,
@@ -182,11 +182,11 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
                 key={item.id}
                 className="absolute text-center uppercase font-display text-white select-none pointer-events-none"
                 style={{
-                  fontSize: isMobile ? 'clamp(55px, 14vw, 95px)' : 'clamp(120px, 16vw, 300px)',
+                  fontSize: isMobile ? 'clamp(70px, 18vw, 110px)' : 'clamp(120px, 16vw, 300px)',
                   fontWeight: 900,
                   lineHeight: 0.8,
                   letterSpacing: '-0.02em', // Airy and modern spacing
-                  top: isMobile ? '16%' : '20%',
+                  top: '20%',
                   opacity: opacityVal,
                   transform: transformStr,
                   transition: 'transform 650ms cubic-bezier(0.22, 1, 0.36, 1), opacity 650ms cubic-bezier(0.22, 1, 0.36, 1)',

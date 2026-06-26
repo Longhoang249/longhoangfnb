@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/Home';
+import HomeV2 from './src/pages/HomeV2';
 
 // Lazy load ProductDetail for better initial load performance
 const ProductDetail = lazy(() => import('./src/pages/ProductDetail'));
@@ -34,7 +35,8 @@ function App() {
     <Router>
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeV2 />} />
+          <Route path="/v1" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

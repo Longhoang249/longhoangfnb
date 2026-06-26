@@ -107,8 +107,8 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
     if (role === 'center') {
       return {
         zIndex: 3,
-        height: isMobile ? '68vh' : '92vh', // Large center focal point
-        bottom: isMobile ? '150px' : '0', // Grounded to the bottom (partially behind card on mobile)
+        height: isMobile ? '65vh' : '92vh', // Large center focal point
+        bottom: isMobile ? '23vh' : '0', // Grounded to the bottom (partially behind card on mobile)
         left: '50%',
         transform: 'translateX(-50%) scale(1)', // Pure 1:1 sharp scale
         opacity: 1,
@@ -177,13 +177,12 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
               transformStr = 'scale(0.96) translateX(80px)';
               opacityVal = 0;
             }
-
             return (
               <div
                 key={item.id}
                 className="absolute text-center uppercase font-display text-white select-none pointer-events-none"
                 style={{
-                  fontSize: isMobile ? 'clamp(50px, 12vw, 100px)' : 'clamp(120px, 16vw, 300px)',
+                  fontSize: isMobile ? 'clamp(55px, 14vw, 95px)' : 'clamp(120px, 16vw, 300px)',
                   fontWeight: 900,
                   lineHeight: 0.8,
                   letterSpacing: '-0.02em', // Airy and modern spacing
@@ -203,10 +202,10 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
 
         {/* 3. Top-left brand label */}
         <div className="absolute top-6 left-4 sm:top-8 sm:left-8 z-[60] text-white select-none">
-          <div className="font-sans text-xl sm:text-2xl font-bold tracking-tight leading-none uppercase">
+          <div className="font-sans text-lg sm:text-2xl font-bold tracking-tight leading-none uppercase">
             LONGHOANGFNB
           </div>
-          <div className="font-sans text-[10px] sm:text-xs font-normal text-white/80 mt-1.5 max-w-[240px] sm:max-w-none leading-normal">
+          <div className="font-sans text-[9px] sm:text-xs font-normal text-white/80 mt-1.5 max-w-[240px] sm:max-w-none leading-normal">
             Truyền Thông Ngành Ẩm Thực và Đồ Uống
           </div>
         </div>
@@ -247,7 +246,6 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
           {PERSONAS.map((item, index) => {
             const role = getRole(index);
             const isActive = role === 'center';
-
             return (
               <div
                 key={item.id}
@@ -255,7 +253,7 @@ export const InteractiveIntro: React.FC<InteractiveIntroProps> = ({ onExplore })
                 style={{
                   left: isMobile ? '16px' : '8%',
                   right: isMobile ? '16px' : 'auto',
-                  bottom: isMobile ? '20px' : '48px',
+                  bottom: isMobile ? '7vh' : '48px',
                   maxWidth: isMobile ? 'none' : '420px',
                   background: 'rgba(255, 255, 255, 0.12)',
                   backdropFilter: 'blur(14px)',

@@ -37,7 +37,7 @@ export const STORY_TABS_CONTENT = {
             title: 'Bạch Dương Trà',
             videoUrl: 'https://www.youtube.com/embed/0HDYzeFaYOw?rel=0',
             results: 'Chiến dịch ra mắt món mới, đạt 66% khách hàng quay trở lại',
-            image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800',
+            image: '/showcase/photo-1495474472287-4d71bcdd2085.webp',
             role: 'Marketing Manager'
           },
           {
@@ -45,7 +45,7 @@ export const STORY_TABS_CONTENT = {
             brand: 'Chuỗi sự kiện ngành đồ uống quy tụ hàng ngàn chủ quán, đại lý và thương hiệu FnB tham dự.',
             videoUrl: 'https://www.youtube.com/embed/8JhWvZB89J0',
             results: '2024 - Đà Nẵng - 300 khách tham dự\n2025 - Hà Nội - 900 khách tham dự\n2025 - Tp.HCM - 1000 khách tham dự',
-            image: 'https://i.ibb.co/HDfzQnJf/KHOI-2025-Backdrop-2-4x.png',
+            image: '/showcase/KHOI-2025-Backdrop-2-4x.webp',
             role: 'PR & Event Marketing Manager'
           },
           {
@@ -53,7 +53,7 @@ export const STORY_TABS_CONTENT = {
             brand: 'Sự kiện kết hợp giữa 5 thương hiệu FnB nổi tiếng: Autoshop, Nhất Hương, Boduo, Holyon Tea, Dẻo. là một trong những sự kiện FnB quy mô nhất Việt Nam tới 2026.',
             videoUrl: 'https://www.youtube.com/embed/oylysZPKmmY?rel=0',
             results: '1400+ Chủ quán, đại lý\n14 Gian hàng\n4 Chủ đề hội thảo',
-            image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800',
+            image: '/showcase/photo-1492684223066-81342ee5ff30.webp',
             role: 'PR & Event Marketing Manager'
           }
         ] as ProjectDetail[]
@@ -69,13 +69,13 @@ export const STORY_TABS_CONTENT = {
               { title: 'Content Marketing', time: 'Tháng 12/2022 - Tháng 6/2023' }
             ],
             logos: [
-              { id: 'l1', name: 'Nhậu Châm', src: 'https://i.ibb.co/HTVtbMys/312150724-115670824660274-3953477521698005814-n.jpg', note: '', fill: true },
-              { id: 'l2', name: 'Phở Gà Châm', src: 'https://i.ibb.co/nMyzkgwY/280101361-133528069268803-4820212031245662118-n.jpg', note: '', fill: true },
-              { id: 'l3', name: 'Yên Gia Restaurant & Café', src: 'https://i.ibb.co/S71mszkR/ava-01.png', note: '', fill: true },
-              { id: 'l4', name: 'Chuquancafe.com', src: 'https://i.ibb.co/vvYyGKNz/images.jpg', note: '', fill: true },
-              { id: 'l5', name: 'Trendy - Nguyên Liệu pha chế', src: 'https://i.ibb.co/wr6r7Y2w/305804394-209820538052657-8548600830170770875-n.jpg', note: '', fill: true }
+              { id: 'l1', name: 'Nhậu Châm', src: '/showcase/312150724-115670824660274-3953477521698005814-n.webp', note: '', fill: true },
+              { id: 'l2', name: 'Phở Gà Châm', src: '/showcase/280101361-133528069268803-4820212031245662118-n.webp', note: '', fill: true },
+              { id: 'l3', name: 'Yên Gia Restaurant & Café', src: '/showcase/ava-01.webp', note: '', fill: true },
+              { id: 'l4', name: 'Chuquancafe.com', src: '/showcase/images.webp', note: '', fill: true },
+              { id: 'l5', name: 'Trendy - Nguyên Liệu pha chế', src: '/showcase/305804394-209820538052657-8548600830170770875-n.webp', note: '', fill: true }
             ],
-            featuredImage: 'https://i.ibb.co/h5Y4NBj/brandmktnh.png'
+            featuredImage: '/showcase/brandmktnh.webp'
           },
           {
             company: 'AUTOSHOP\nVua Máy Pha Chế',
@@ -84,25 +84,25 @@ export const STORY_TABS_CONTENT = {
               { title: 'Marketing Team Leader', time: 'Tháng 4/2024 - Hiện tại' }
             ],
             logos: [
-              { id: 'a1', name: 'Ceria', src: 'https://i.ibb.co/Ngw2Dx4H/CERIA-LOGO-02-4x.png', note: 'Triển khai chiến dịch truyền thông đa kênh', fill: true },
-              { id: 'a2', name: 'Nuova Era', src: 'https://i.ibb.co/1YHmQrrY/NUOVA-ERA-TACH-NEN.png', note: 'Tăng trưởng nhận diện thương hiệu tại thị trường miền Bắc', fill: true },
-              { id: 'a3', name: 'Promix', src: 'https://i.ibb.co/20VYh7L8/PROMIX-NEN-TRANG.png', note: 'Tổ chức chuỗi workshop chuyên sâu cho chủ quán', fill: true },
-              { id: 'a4', name: 'Autoshop Setup', src: 'https://i.ibb.co/0StjnVt/Autoshop-Setup-7.png', note: 'Đạt cột mốc 10.000 khách hàng tiềm năng', fill: true },
-              { id: 'a5', name: 'Lacilio', src: 'https://i.ibb.co/wrxqXL4P/Lacilio-Coffee-Machine-Logo-1.png', note: 'Tối ưu quy trình vận hành marketing nội bộ', fill: true }
+              { id: 'a1', name: 'Ceria', src: '/showcase/CERIA-LOGO-02-4x.webp', note: 'Triển khai chiến dịch truyền thông đa kênh', fill: true },
+              { id: 'a2', name: 'Nuova Era', src: '/showcase/NUOVA-ERA-TACH-NEN.webp', note: 'Tăng trưởng nhận diện thương hiệu tại thị trường miền Bắc', fill: true },
+              { id: 'a3', name: 'Promix', src: '/showcase/PROMIX-NEN-TRANG.webp', note: 'Tổ chức chuỗi workshop chuyên sâu cho chủ quán', fill: true },
+              { id: 'a4', name: 'Autoshop Setup', src: '/showcase/Autoshop-Setup-7.webp', note: 'Đạt cột mốc 10.000 khách hàng tiềm năng', fill: true },
+              { id: 'a5', name: 'Lacilio', src: '/showcase/Lacilio-Coffee-Machine-Logo-1.webp', note: 'Tối ưu quy trình vận hành marketing nội bộ', fill: true }
             ],
-            featuredImage: 'https://i.ibb.co/209Q6L2M/Untitled-design.png'
+            featuredImage: '/showcase/Untitled-design.webp'
           },
           {
             company: 'MARKETING QUÁN ĐỒ UỐNG',
             roles: [{ title: 'Các thương hiệu nổi bật', time: 'Long đã và đang đồng hành' }],
             logos: [
-              { id: 'f1', name: 'Đảo Matcha Hải Dương', src: 'https://i.ibb.co/gFttDqNm/3.png', note: 'Gói Content cho 2 chi nhánh nhượng quyền Đảo Matcha Hải Dương', fill: true },
-              { id: 'f2', name: 'E-Coffee Ecorivers', src: 'https://i.ibb.co/mF65g9PH/1.png', note: 'Gói Content cho chi nhánh nhượng quyền E-Coffee Hải Dương', fill: true },
-              { id: 'f3', name: 'An House Coffee & Tea', src: 'https://i.ibb.co/fVgVbBBG/2.png', note: 'Gói Marketing tổng thể thương hiệu', fill: true },
-              { id: 'f4', name: 'Dagi Shark Coffee & Tea', src: 'https://i.ibb.co/5g8hcHvm/5.png', note: 'Gói tổ chức sự kiện kích hoạt điểm bán', fill: true },
-              { id: 'f5', name: 'Riko Cha Ở Bản Tàm Xá', src: 'https://i.ibb.co/GQ22mYmG/4.png', note: 'Gói tổ chức sự kiện kích hoạt điểm bán', fill: true }
+              { id: 'f1', name: 'Đảo Matcha Hải Dương', src: '/showcase/matcha_logo.webp', note: 'Gói Content cho 2 chi nhánh nhượng quyền Đảo Matcha Hải Dương', fill: true },
+              { id: 'f2', name: 'E-Coffee Ecorivers', src: '/showcase/1.webp', note: 'Gói Content cho chi nhánh nhượng quyền E-Coffee Hải Dương', fill: true },
+              { id: 'f3', name: 'An House Coffee & Tea', src: '/showcase/2.webp', note: 'Gói Marketing tổng thể thương hiệu', fill: true },
+              { id: 'f4', name: 'Dagi Shark Coffee & Tea', src: '/showcase/dagi_logo.webp', note: 'Gói tổ chức sự kiện kích hoạt điểm bán', fill: true },
+              { id: 'f5', name: 'Riko Cha Ở Bản Tàm Xá', src: '/showcase/riko_logo.webp', note: 'Gói tổ chức sự kiện kích hoạt điểm bán', fill: true }
             ],
-            featuredImage: 'https://i.ibb.co/N2PmnFmd/brand.png'
+            featuredImage: '/showcase/brand.webp'
           }
         ] as LogoGroup[]
       },
@@ -115,13 +115,13 @@ export const STORY_TABS_CONTENT = {
             title: 'Xây Dựng Group Facebook',
             brand: 'Người Làm Quán',
             results: 'Đạt 10.000 thành viên sau 2 tháng',
-            image: 'https://i.ibb.co/G30DzXPP/Screenshot-2025-12-25-at-11-17-09.png',
+            image: '/showcase/Screenshot-2025-12-25-at-11-17-09.webp',
             videoUrl: ''
           },
           {
             title: 'Sản xuất tài liệu Marketing FnB',
             results: 'Sản xuất và hỗ trợ sản xuất 30+ sách, ebook, template ngành FnB, sử dụng làm quà tặng cho hàng ngàn chủ quán.',
-            image: 'https://i.ibb.co/Rk9b9Fc0/Thie-t-ke-chu-a-co-te-n.png',
+            image: '/showcase/Thie-t-ke-chu-a-co-te-n.webp',
             videoUrl: ''
           },
           {
@@ -130,8 +130,8 @@ export const STORY_TABS_CONTENT = {
             image: '',
             videoUrl: '',
             subItems: [
-              { name: 'Webapp đóng gói thương hiệu và định hướng marketing toàn diện cho chủ quán FnB', image: 'https://i.ibb.co/FbW1gQbT/Untitled-1200-x-800-px.png' },
-              { name: 'Webapp đào tạo nội bộ công ty Autoshop - Vuamayphache', image: 'https://i.ibb.co/bR6R2jgb/ai.png' }
+              { name: 'Webapp đóng gói thương hiệu và định hướng marketing toàn diện cho chủ quán FnB', image: '/showcase/Untitled-1200-x-800-px.webp' },
+              { name: 'Webapp đào tạo nội bộ công ty Autoshop - Vuamayphache', image: '/showcase/ai.webp' }
             ]
           },
           {
@@ -140,10 +140,10 @@ export const STORY_TABS_CONTENT = {
             image: '',
             videoUrl: '',
             subItems: [
-              { name: 'Long Mở Quán Cà Phê', image: 'https://i.ibb.co/KpdYkSHV/Screenshot-2025-12-25-at-16-20-24.png' },
-              { name: 'Đức Máy Say', image: 'https://i.ibb.co/jvry3j7j/Screenshot-2025-12-25-at-16-21-42.png' },
-              { name: 'Toàn Mở Quán Cà Phê', image: 'https://i.ibb.co/svfRYbSR/Screenshot-2025-12-25-at-16-20-50.png' },
-              { name: 'Autoshop - Vuamayphache', image: 'https://i.ibb.co/5WgN8VGQ/Screenshot-2025-12-25-at-16-21-22.png' }
+              { name: 'Long Mở Quán Cà Phê', image: '/showcase/Screenshot-2025-12-25-at-16-20-24.webp' },
+              { name: 'Đức Máy Say', image: '/showcase/Screenshot-2025-12-25-at-16-21-42.webp' },
+              { name: 'Toàn Mở Quán Cà Phê', image: '/showcase/Screenshot-2025-12-25-at-16-20-50.webp' },
+              { name: 'Autoshop - Vuamayphache', image: '/showcase/Screenshot-2025-12-25-at-16-21-22.webp' }
             ]
           }
         ] as ProjectDetail[]
@@ -180,13 +180,13 @@ export const STORY_TABS_CONTENT = {
         name: 'Thầy Thông Phan',
         role: 'CMO - Autoshop Vua Máy Pha Chế | Co-Founder Conan School - Trường đào tạo thu hút khách hàng',
         story: 'Anh Thông chính là người Long mang ơn nhiều nhất trên hành trình trưởng thành, cả về tư duy, kiến thức và năng lực hành động. Mình luôn thấy ở anh Thông một sức hút khó tả với năng lượng sáng tạo luôn sục sôi và máu phiêu lưu chả ngán "cha con ai cả". Một người thầy đầy nội lực có sẵn lời giải cho bất kỳ câu hỏi nào mình đưa ra, nhưng sẽ chỉ nói khi Long đã thử, sai và đứng dậy làm lại. Đúng như triết lý của anh: "Khi học trò sẵn sàng, người thầy sẽ xuất hiện"',
-        image: 'https://i.ibb.co/s9ByZqW8/122022-052023.png'
+        image: '/showcase/122022-052023.webp'
       },
       {
         name: 'Bạch Ngọc Quân',
         role: 'Cựu Marketing Team Leader - Autoshop | Digital Leader - iPOS',
         story: 'Quân sinh cách mình 5 ngày thôi, nhưng về sự trưởng thành và tư duy làm nghề, mình luôn tự nhận chậm hơn Quân ít nhất hai năm. Trong Quân tỏ rõ khí chất của một người "làm được việc" - người sẽ gật đầu với bất cứ thử thách nào được giao cho. Và nếu chưa biết làm việc đó, Quân sẽ vừa làm vừa học từ vài người thầy hay ông anh Ấn Độ ngẫu nhiên trên Youtube. Dù phải thức trắng một hay nhiều đêm, nhất định Quân sẽ có lời giải cho bài toán đó. Với mình, Quân vừa là thầy, vừa là bạn, vừa là đối thủ để bản thân nỗ lực chạy đua.',
-        image: 'https://i.ibb.co/Q7YKHqDD/quanngoc.png'
+        image: '/showcase/quanngoc.webp'
       },
       {
         name: 'Thu Trang',
@@ -204,25 +204,25 @@ export const STORY_TABS_CONTENT = {
         name: 'Hoàng Thảo Vân',
         role: 'Sinh viên năm 2 ngành Marketing',
         story: 'Hehe, em ruột và cũng là "trợ thủ" của Long nè. Chưa vào học chuyên ngành, Vân đã "bị" Long ép vừa học vừa làm marketing cho 2 cơ sở nhượng quyền Đảo Matcha Hải Dương và E-Coffee Hải Dương. Và dù còn nhiều non nớt, mình tin em gái sẽ sớm phát triển và sẽ vượt qua Long khi cùng độ tuổi.',
-        image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400'
+        image: '/showcase/photo-1517841905240-472988babdf9.webp'
       },
       {
         name: 'Quang Minh',
         role: 'Sinh viên năm 4 ngành IT',
         story: 'Một thí sinh trái ngành chấp nhận đi làm không lương để học hỏi. Long khâm phục nhóc này ở khoản tư duy và tính thích ứng nhanh, đã "bòn rút" rất nhiều kiến thức mà Long phải mất nhiều thời gian mới tích cóp được.',
-        image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400'
+        image: '/showcase/photo-1506794778202-cad84cf45f1d.webp'
       },
       {
         name: 'Nguyễn Xuân Đức',
         role: 'Content - Autoshop',
         story: 'Là một người trẻ đầy cá tính và rap cũng rất ngầu, Long thấy ở Đức nhiều năng lượng cần được khai phá, và đã cùng Đức xây nên kênh Tiktok Đức Máy Say với những video 100k view đầu tiên.',
-        image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&q=80&w=400'
+        image: '/showcase/photo-1570295999919-56ceb5ecca61.webp'
       },
       {
         name: 'Nguyễn Hiền',
         role: 'Content - Autoshop',
         story: 'Long rất nể chị Hiền về khoản thích nghi, chăm chỉ và dám bắt đầu khi đã nhanh chóng học hỏi, cải tiến không ngừng để biến những video 100-200 view đến hàng loạt video bán hàng 10.000 -20.000 view.',
-        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'
+        image: '/showcase/photo-1573496359142-b8d87734a5a2.webp'
       }
     ] as MentorDetail[]
   }
@@ -262,7 +262,7 @@ export const RESOURCES = [
     id: 'c1',
     title: 'Mẫu Content Plan 1 tháng',
     price: '99k',
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800',
+    image: '/showcase/photo-1495474472287-4d71bcdd2085.webp',
     category: 'Document',
     description: 'File Excel kế hoạch nội dung quán cà phê trong 1 tháng.'
   },
@@ -270,7 +270,7 @@ export const RESOURCES = [
     id: 'c2',
     title: 'Checklist Marketing Khai Trương',
     price: '2.490k',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800',
+    image: '/showcase/photo-1542831371-29b0f74f9713.webp',
     category: 'Document',
     description: 'Các đầu việc cần chuẩn bị để có một ngày khai trương bùng nổ.'
   },
@@ -291,7 +291,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: '404 là gì? Có đáng để đổ tiền cho một campaign về trang 404 không?',
     date: '18/12/2025',
     readTime: '1 min',
-    image: 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?auto=format&fit=crop&q=80&w=800'
+    image: '/showcase/photo-1594322436404-5a0526db4d13.webp'
   },
   {
     id: 'b2',
@@ -299,7 +299,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Một trong những kỹ năng sinh tồn, đặc biệt nếu bạn cực kỳ hạn chế về nguồn lực. Đó là chọn ĐÚNG việc để làm!',
     date: '17/12/2025',
     readTime: '1 min',
-    image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800'
+    image: '/showcase/photo-1501339847302-ac426a4a7cbb.webp'
   },
   {
     id: 'b3',
@@ -307,7 +307,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Cứ cái đà này mình nghĩ rồi khách hàng sẽ "lười" tới mức mà họ thấy quảng cáo của chúng ta trên các nền tảng: họ ko click, cũng chẳng...',
     date: '29/04/2025',
     readTime: '1 min',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'
+    image: '/showcase/photo-1485827404703-89b55fcc595e.webp'
   }
 ];
 
@@ -316,61 +316,61 @@ export const THOUGHTS_CAROUSEL_ITEMS = [
     title: '3SIU KINHCONG COFFEE',
     date: '04/2019',
     description: 'Lần đầu khởi nghiệp bán cà phê dạo',
-    image: 'https://i.ibb.co/ym2bpFqC/3siu.png'
+    image: '/showcase/3siu.webp'
   },
   {
     title: 'ĐI LÀM QUÁN',
     date: 'Nhiều khung thời gian',
     description: 'Đi làm thêm nhiều quán cà phê để tích luỹ kinh nghiệm',
-    image: 'https://i.ibb.co/v4gg89ZF/3.png'
+    image: '/showcase/di_lam_quan.webp'
   },
   {
     title: 'The Bup - Hải Dương',
     date: '11/2021',
     description: 'Nhận job marketing đầu tiên cho một quán ở Hải Dương',
-    image: 'https://i.ibb.co/rRQTTWhD/4.png'
+    image: '/showcase/the_bup.webp'
   },
   {
     title: 'Marketingnhahang.vn',
     date: '12/2022',
     description: 'Lần đầu học làm marketing bài bản và làm content cho Chuquancafe.com, Trendy, Học Viện HQJ Hà Nội',
-    image: 'https://i.ibb.co/qLv33xx3/6.png'
+    image: '/showcase/mktnh.webp'
   },
   {
     title: 'Kênh Tiktok Marketingnhahang.vn',
     date: '3/2022',
     description: 'Được giao xây kênh Tiktok Marketingnhahang.vn và có video >100k view đầu tiên',
-    image: 'https://i.ibb.co/4nnJx82c/5.png'
+    image: '/showcase/tiktok_mktnh.webp'
   },
   {
     title: 'Autoshop - Vua máy pha chế',
     date: '07/2023',
     description: 'Gia nhập Autoshop và đi theo anh Thông Phan, bắt đầu nghiêm túc theo định hướng Marketing FnB expert',
-    image: 'https://i.ibb.co/2HPTFRF/7.png'
+    image: '/showcase/autoshop_join.webp'
   },
   {
     title: 'Autoshop - Vua máy pha chế',
     date: '09/2023',
     description: 'Phụ trách Content cho 4/7 thương hiệu của Autoshop',
-    image: 'https://i.ibb.co/B2t16gjN/phutrach.png'
+    image: '/showcase/phutrach.webp'
   },
   {
     title: 'Autoshop - Vua máy pha chế',
     date: '02/2024',
     description: 'Được tin tưởng giao vị trí Marketing Team Leader',
-    image: 'https://i.ibb.co/TCrDn6z/8.png'
+    image: '/showcase/mkt_team_leader.webp'
   },
   {
     title: 'Tới hết 2025',
     date: '',
     description: 'Thực hiện thành công 7 chiến dịch lớn cùng nhiều chiến dịch vừa và nhỏ, nhiều tháng đạt 150 - 200% KPI doanh số',
-    image: 'https://i.ibb.co/0NhmC6v/10.png'
+    image: '/showcase/year_2025.webp'
   },
   {
     title: 'Định hướng 2026',
     date: '',
     description: 'Đang trên hành trình trở thành người đồng hành có khả năng đúc rút và chia sẻ lại những kinh nghiệm bản thân học hỏi được sau 4 năm làm nghề',
-    image: 'https://i.ibb.co/cSRYzZ9T/11.png'
+    image: '/showcase/direction_2026.webp'
   }
 ];
 
@@ -380,10 +380,10 @@ export const PRODUCTS: Product[] = [
     title: 'ỨNG DỤNG FNB ĂN LIỀN',
     shortDescription: 'Đăng bài giới thiệu món mới, thiết kế poster giảm giá hay khám phá ý tưởng marketing cho mùa hè, sở hữu một trợ lý AI Marketing ngay trong điện thoại của chủ quán.',
     description: '',
-    thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
+    thumbnail: '/showcase/photo-1600880292203-757bb62b4baf.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800'
+      '/showcase/photo-1600880292089-90a7e086ee0c.webp',
+      '/showcase/photo-1542744094-24638eff58bb.webp'
     ],
     detailedServices: [
       // HERO HOOK
@@ -424,7 +424,7 @@ export const PRODUCTS: Product[] = [
       {
         title: 'Giai đoạn 1: Lắng Nghe Chủ Quán',
         type: 'text',
-        image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800',
+        image: '/showcase/photo-1542744094-24638eff58bb.webp',
         description: `Không lập tức nói về các cột mốc phát triển, sự viral hay chỉ số doanh thu, Long sẽ chọn đi từ sự trò chuyện chân thành để nắm bắt được tính cách - mục tiêu - kỳ vọng mà chủ quán hướng đến.
 
 Sự cởi mở từ hai phía là điều kiện tiên quyết để chúng ta "bắt đúng tần số". Có hiểu thật rõ nội tình, chúng ta mới gạt bỏ được những ảo tưởng ban đầu để nhìn thấy bài toán thực tế cần giải quyết.
@@ -453,7 +453,7 @@ Chỉ mặt đặt tên 1-3 nút thắt cốt tử cần tháo gỡ ngay.`,
       {
         title: 'Giai đoạn 2: Xây Dựng Gói Marketing Riêng Biệt',
         type: 'text',
-        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+        image: '/showcase/photo-1552664730-d307ca884978.webp',
         description: `Mỗi quán có một nỗi đau khác nhau. Quán mới thì đau ở chỗ "chưa ai biết". Quán lâu năm thì đau ở chỗ "khách không quay lại". Vì thế, giải pháp không thể nào giống nhau được.
 
 Long sẽ xây dựng riêng cho quán anh chị một bộ giải pháp marketing - không phải template chung, mà là "đơn thuốc" riêng cho chính xác cái "bệnh" của quán.
@@ -480,7 +480,7 @@ Long biến giải pháp thành bộ tài liệu + công cụ để anh chị ho
       {
         title: 'Giai đoạn 3: Hướng Dẫn Và Bàn Giao Công Cụ',
         type: 'text',
-        image: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800',
+        image: '/showcase/photo-1531545514256-b1400bc00f31.webp',
         description: `Đây là giai đoạn quan trọng nhất: Long không chỉ giao tài liệu mà còn ngồi cùng anh chị (hoặc nhân viên của quán) để hướng dẫn chi tiết cách sử dụng từng công cụ.
 
 Mục tiêu: Sau buổi bàn giao, anh chị hoặc nhân viên quán có thể TỰ VẬN HÀNH marketing mà không cần phụ thuộc bên ngoài.
@@ -510,7 +510,7 @@ Nếu anh chị muốn giao cho nhân viên, Long sẽ hướng dẫn cách đà
       {
         title: 'Giai đoạn 4: Đồng Hành Cùng Chủ Quán',
         type: 'text',
-        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800',
+        image: '/showcase/photo-1556761175-5973dc0f32e7.webp',
         description: `Và tất nhiên, Long sẽ không "phủi tay" khi đã bàn giao, mà vẫn tiếp tục đồng hành với chủ quán để hỗ trợ, gỡ rối khi gặp khó khăn.
 
 Long sẽ ở đây như một người "accountability partner" - nhắc nhở anh chị làm đúng cam kết, gỡ rối khi gặp khó khăn, động viên khi nản chí. Vì Long biết: Kế hoạch tốt nhất cũng cần người thực hiện đúng.
@@ -703,10 +703,10 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
       <h3>Quy trình làm việc</h3>
       <p>Khảo sát -> Lên kế hoạch -> Thống nhất -> Triển khai -> Báo cáo & Tối ưu.</p>
     `,
-    thumbnail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
+    thumbnail: '/showcase/photo-1542744173-8e7e53415bb0.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800'
+      '/showcase/photo-1557804506-669a67965ba0.webp',
+      '/showcase/photo-1556761175-5973dc0f32e7.webp'
     ],
     videos: [
       'https://www.youtube.com/embed/Oc-z8XSGKcc?rel=0',
@@ -716,7 +716,7 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
         title: 'Xây dựng chiến lược thương hiệu',
         description: 'Chủ quán biết quán mình mạnh gì, yếu gì, nên truyền thông vào lợi điểm nào và bằng cách gì.',
         gallery: [
-          'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800'
+          '/showcase/photo-1542744173-8e7e53415bb0.webp'
         ]
       },
       {
@@ -724,14 +724,14 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
         description: '• Thiết kế Logo & Brand Guidelines<br/>• Thiết kế Menu, Bao bì, Tem nhãn<br/>• Thiết kế ấn phẩm Social/POSM',
         gallery: [
           'https://images.unsplash.com/photo-1626785774573-4b799312c95d?auto=format&fit=crop&q=80&w=800',
-          'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800'
+          '/showcase/photo-1600880292203-757bb62b4baf.webp'
         ]
       },
       {
         title: 'Kế hoạch Truyền thông',
         description: '• Xây dựng chương trình Promotion<br/>• Lựa chọn kênh truyền thông (Social/Local)<br/>• Phân bổ Ngân sách & KPI<br/>• Timeline chi tiết từng giai đoạn',
         gallery: [
-          'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800'
+          '/showcase/photo-1552664730-d307ca884978.webp'
         ]
       },
       {
@@ -742,9 +742,9 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
             title: 'Chụp ảnh chuyên nghiệp',
             description: '• Chụp ảnh sản phẩm (Food/Drink)<br/>• Chụp ảnh không gian & trải nghiệm<br/>• Chụp ảnh tương tác mẫu',
             gallery: [
-              'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800',
-              'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800',
-              'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800'
+              '/showcase/photo-1516035069371-29a1b244cc32.webp',
+              '/showcase/photo-1504674900247-0877df9cc836.webp',
+              '/showcase/photo-1559339352-11d035aa65de.webp'
             ]
           },
           {
@@ -761,8 +761,8 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
         title: 'Xây dựng & Quản trị kênh',
         description: '• Xây dựng Fanpage, Instagram, TikTok<br/>• Lập kế hoạch Content (Tone & Mood)<br/>• Thiết kế hình ảnh & Viết bài hàng ngày<br/>• Báo cáo hiệu quả định kỳ',
         gallery: [
-          'https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800',
-          'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800'
+          '/showcase/photo-1542435503-956c469947f6.webp',
+          '/showcase/photo-1611162617474-5b21e879e113.webp'
         ]
       },
       {
@@ -776,7 +776,7 @@ Chính những năm tháng "lấm lem" đó đã cho Long nhiều trải nghiệ
         title: 'Quảng cáo Đa nền tảng',
         description: '• Setup tài khoản Ads (FB/TikTok/Google)<br/>• Target đúng đối tượng tiềm năng<br/>• Tối ưu chi phí & Tăng chuyển đổi',
         gallery: [
-          'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'
+          '/showcase/photo-1551288049-bebda4e38f71.webp'
         ]
       }
     ]

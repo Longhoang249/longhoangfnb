@@ -9,51 +9,53 @@ type Product = {
   description: string;
   benefits: string[];
   accent: string;
-  image?: string;
-  imageAlt?: string;
-  visual: 'screen' | 'play';
+  image: string;
+  imageAlt: string;
+  visualBg: string;
 };
 
 const products: Product[] = [
   {
     index: '01',
-    phase: 'Tìm & kéo khách',
+    phase: 'Marketing online',
     domain: 'fnbanlien.com',
     href: 'https://fnbanlien.com/',
-    title: 'Marketing AI cho chủ quán',
+    title: 'Làm marketing quán ở bất cứ đâu',
     description:
-      'Biến DNA thương hiệu thành nội dung, hình ảnh và kế hoạch marketing đủ rõ để một đội ngũ nhỏ vẫn có thể làm đều mỗi ngày.',
-    benefits: ['Ra nội dung nhanh hơn, ít phụ thuộc agency', 'Giữ thương hiệu nhất quán trên mọi điểm chạm', 'Chủ động kế hoạch và ý tưởng kéo khách'],
+      'Từ ý tưởng đến content, hình ảnh và lịch marketing đều có thể thực hiện ngay trên điện thoại, theo đúng DNA của quán.',
+    benefits: ['Chủ động làm marketing ngay trên điện thoại', 'Ra nội dung nhanh hơn, ít phụ thuộc agency', 'Giữ thương hiệu nhất quán để kéo khách'],
     accent: '#F28A45',
-    image: '/ecosystem/fnbanlien-marketing.jpg',
-    imageAlt: 'Màn hình tổng quan các công cụ Marketing AI trên fnbanlien.com',
-    visual: 'screen',
+    image: '/ecosystem/fnbanlien-marketing-mobile.jpg',
+    imageAlt: 'Giao diện mobile thật của bộ công cụ Marketing AI trên fnbanlien.com',
+    visualBg: '#efe8df',
   },
   {
     index: '02',
-    phase: 'Loyalty & giữ chân',
+    phase: 'Chăm khách online',
     domain: 'play.fnbanlien.com',
     href: 'https://play.fnbanlien.com/',
-    title: 'Nuôi dưỡng loyalty, tăng lượt quay lại',
+    title: 'Chăm khách cũ và nuôi dưỡng loyalty',
     description:
-      'Tạo vòng lặp từ mua hàng, tích Xu, đổi ưu đãi đến quay lại quán. Game và nhiệm vụ là những điểm chạm bổ trợ để hành trình loyalty vui hơn.',
-    benefits: ['Tăng tỷ lệ khách quay lại quán', 'Tạo vòng lặp tích điểm – đổi quà rõ ràng', 'Có dữ liệu để tiếp tục chăm sóc khách hàng'],
+      'Đưa chương trình thành viên lên online để khách xem Xu, đổi ưu đãi và có thêm lý do quay lại. Game chỉ là một điểm chạm bổ trợ trong vòng lặp loyalty.',
+    benefits: ['Tạo vòng lặp tích điểm – đổi quà rõ ràng', 'Có dữ liệu để tiếp tục chăm sóc khách hàng', 'Tăng tỷ lệ khách quay lại quán'],
     accent: '#72D6FF',
-    visual: 'play',
+    image: '/ecosystem/fnbanlien-play-mobile.jpg',
+    imageAlt: 'Giao diện mobile thật của chương trình loyalty Đảo Matcha Hải Dương trên Fnbanlien Play',
+    visualBg: '#e9d9cb',
   },
   {
     index: '03',
-    phase: 'Nhân sự & vận hành',
+    phase: 'Vận hành từ xa',
     domain: 'run.fnbanlien.com',
     href: 'https://run.fnbanlien.com/',
-    title: 'Biến tiêu chuẩn thành hành động',
+    title: 'Theo dõi quán khi không có mặt',
     description:
-      'Đưa SOP vào từng ca làm, giao đúng việc, thu bằng chứng và nhìn thấy ngoại lệ để chủ quán quản lý bằng dữ liệu thay vì trí nhớ.',
+      'Theo dõi công việc, lịch ca, sức khỏe đội ngũ và các điểm nóng vận hành ngay trên điện thoại, dù chủ quán đang ở bất cứ đâu.',
     benefits: ['Giảm phụ thuộc vào việc chủ quán có mặt', 'Nhân viên biết đúng việc, đúng chuẩn mỗi ca', 'Phát hiện sớm chậm trễ và điểm yếu đội ngũ'],
     accent: '#82D9B6',
-    image: '/ecosystem/fnbanlien-run.jpg',
-    imageAlt: 'Dashboard vận hành và sức khoẻ đội ngũ trên run.fnbanlien.com',
-    visual: 'screen',
+    image: '/ecosystem/fnbanlien-run-mobile.jpg',
+    imageAlt: 'Giao diện mobile thật của dashboard vận hành và sức khỏe đội ngũ trên run.fnbanlien.com',
+    visualBg: '#efe9e3',
   },
 ];
 
@@ -69,21 +71,21 @@ const FnbEcosystemV2: React.FC = () => {
           <div>
             <p className="mb-5 inline-flex items-center gap-2 border border-white/15 bg-white/[0.06] px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/65">
               <span className="h-2 w-2 bg-[#72D6FF]" />
-              Sản phẩm đang phát triển
+              Hệ sinh thái FNB Ăn Liền
             </p>
             <h2 className="font-display text-5xl uppercase leading-[1.02] sm:text-6xl md:text-8xl">
-              Hệ sinh thái
+              Cả quán trong
               <br />
-              <span className="text-[#72D6FF]">FNB Ăn Liền.</span>
+              <span className="text-[#72D6FF]">một chiếc điện thoại.</span>
             </h2>
           </div>
 
           <div className="border-l-4 border-[#72D6FF] pl-5 md:pl-7">
             <p className="text-xl font-black leading-snug md:text-2xl">
-              Một vòng lặp xuyên suốt từ khách mới đến một quán có thể tự vận hành tốt hơn.
+              Quản lý những việc quan trọng của quán online, kể cả khi bạn không có mặt tại quán.
             </p>
             <p className="mt-4 text-sm font-semibold leading-relaxed text-white/50 md:text-base">
-              Long đang xây ba sản phẩm cho những bài toán sát sườn nhất của quán F&amp;B: thu hút khách, giữ chân khách và biến tiêu chuẩn vận hành thành việc làm mỗi ngày.
+              Từ làm marketing, chăm sóc khách cũ đến giao việc và theo dõi đội ngũ — ba sản phẩm được thiết kế để chủ quán có thể nhìn, làm và kiểm soát ngay trên điện thoại.
             </p>
           </div>
         </div>
@@ -100,20 +102,14 @@ const FnbEcosystemV2: React.FC = () => {
         <div className="grid gap-5 lg:grid-cols-3">
           {products.map((product) => (
             <article key={product.domain} className="group flex min-h-full flex-col overflow-hidden border border-white/10 bg-[#1d1d1d] transition duration-300 hover:-translate-y-1 hover:border-white/25">
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#ececec]">
-                {product.visual === 'play' ? (
-                  <PlayVisual />
-                ) : (
-                  <>
-                    <img
-                      src={product.image}
-                      alt={product.imageAlt}
-                      className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
-                  </>
-                )}
+              <div className="relative aspect-[4/5] overflow-hidden p-4 md:p-5" style={{ backgroundColor: product.visualBg }}>
+                <div className="grain-bg pointer-events-none absolute inset-0 opacity-20" />
+                <img
+                  src={product.image}
+                  alt={product.imageAlt}
+                  className="relative mx-auto h-full w-auto rounded-[1.65rem] border-[7px] border-[#211b19] object-contain shadow-2xl transition duration-700 group-hover:-translate-y-1 group-hover:scale-[1.015]"
+                  loading="lazy"
+                />
 
                 <span className="absolute left-4 top-4 border border-white/20 bg-black/70 px-3 py-2 text-[9px] font-black uppercase tracking-[0.16em] text-white backdrop-blur-md">
                   {product.phase}
@@ -157,50 +153,15 @@ const FnbEcosystemV2: React.FC = () => {
 
         <div className="mt-7 flex flex-col gap-4 border border-white/10 bg-white/[0.035] p-5 md:flex-row md:items-center md:justify-between md:p-6">
           <p className="max-w-3xl text-sm font-semibold leading-relaxed text-white/55">
-            Mục tiêu không phải thêm thật nhiều công cụ. Mục tiêu là nối dữ liệu và hành động để mỗi quán nhỏ có một hệ thống đủ dùng, dễ học và bám sát thực tế.
+            Mục tiêu không phải thêm thật nhiều phần mềm. Mục tiêu là để chủ quán mở điện thoại lên và biết hôm nay cần làm gì để có khách, giữ khách và giữ quán chạy đúng chuẩn.
           </p>
           <p className="shrink-0 font-display text-2xl uppercase tracking-wide text-white md:text-3xl">
-            Kéo khách <span className="text-white/25">→</span> Giữ khách <span className="text-white/25">→</span> Vận hành
+            Marketing <span className="text-white/25">→</span> Loyalty <span className="text-white/25">→</span> Vận hành
           </p>
         </div>
       </div>
     </section>
   );
 };
-
-const PlayVisual = () => (
-  <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_right,#8be0ff_0,#5dbce7_35%,#256e98_100%)] p-4 pt-14">
-    <div className="grain-bg pointer-events-none absolute inset-0 opacity-20" />
-    <div className="relative mx-auto flex h-full max-w-[330px] flex-col rounded-t-[1.6rem] border-[5px] border-[#2b211f] bg-[#fffaf0] px-4 pt-4 shadow-2xl transition duration-700 group-hover:-translate-y-1">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-[8px] font-black uppercase tracking-[0.12em] text-[#8e6f34]">Thành viên của quán</p>
-          <p className="mt-1 text-xl font-black text-[#38251f]">2.480 Xu</p>
-        </div>
-        <span className="rounded-full bg-[#ffe594] px-2 py-1 text-[8px] font-black text-[#6b4d00]">Hạng vàng</span>
-      </div>
-
-      <div className="mt-3 grid grid-cols-4 gap-1">
-        {['Mua hàng', 'Tích Xu', 'Đổi quà', 'Quay lại'].map((step, index) => (
-          <div key={step} className="relative rounded-lg bg-white px-1 py-2 text-center shadow-sm">
-            <span className="mx-auto mb-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#72D6FF] text-[8px] font-black text-[#17384a]">{index + 1}</span>
-            <p className="text-[7px] font-black leading-tight text-[#38251f]">{step}</p>
-            {index < 3 && <span className="absolute -right-1.5 top-1/2 z-10 -translate-y-1/2 text-[8px] text-[#38251f]/40">→</span>}
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-3 flex items-center justify-between rounded-xl bg-[#38251f] px-3 py-2 text-white">
-        <div>
-          <p className="text-[7px] font-bold text-white/55">Sắp nhận được</p>
-          <p className="text-[9px] font-black">Voucher ưu đãi</p>
-        </div>
-        <span className="rounded-lg bg-[#ffca4b] px-2 py-1.5 text-[8px] font-black text-[#38251f]">Đổi quà</span>
-      </div>
-
-      <p className="mt-2 text-center text-[7px] font-bold text-[#38251f]/45">Game &amp; nhiệm vụ là điểm chạm bổ trợ trong vòng lặp loyalty</p>
-    </div>
-  </div>
-);
 
 export default FnbEcosystemV2;

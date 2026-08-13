@@ -8,7 +8,7 @@ import ThoughtsTimelineV2 from '../components/v2/ThoughtsTimelineV2';
 import OfferingsContactV2 from '../components/v2/OfferingsContactV2';
 
 const V2_TITLE = 'Long Hoàng FnB — Marketing, AI và xây dựng mô hình F&B';
-const V2_DESCRIPTION = 'Marketing thực chiến và hệ sinh thái FnB Ăn Liền giúp quán thu hút khách, giữ chân khách, quản lý nhân sự và vận hành.';
+const V2_DESCRIPTION = 'Hệ sinh thái FnB Ăn Liền giúp chủ quán làm marketing, chăm sóc khách hàng và quản lý vận hành online ngay trên điện thoại.';
 
 const HomeV2: React.FC = () => {
   useEffect(() => {

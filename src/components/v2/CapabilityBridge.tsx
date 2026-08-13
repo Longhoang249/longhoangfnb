@@ -27,7 +27,7 @@ const CapabilityBridge: React.FC = () => {
             {capabilities.map((capability) => (
               <a
                 key={capability.id}
-                href="#journey"
+                href={capability.id === 'ai' ? '#ecosystem' : '#journey'}
                 className="group relative min-h-[230px] overflow-hidden border border-black/10 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-xl md:p-6"
                 style={{ backgroundColor: capability.accentSoft, borderTop: `6px solid ${capability.accent}` }}
               >

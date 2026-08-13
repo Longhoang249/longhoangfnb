@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { InteractiveIntro } from '../components/InteractiveIntro';
 import CapabilityBridge from '../components/v2/CapabilityBridge';
+import FnbEcosystemV2 from '../components/v2/FnbEcosystemV2';
 import JourneyProofV2 from '../components/v2/JourneyProofV2';
 import PrinciplesMentorsV2 from '../components/v2/PrinciplesMentorsV2';
 import ThoughtsTimelineV2 from '../components/v2/ThoughtsTimelineV2';
 import OfferingsContactV2 from '../components/v2/OfferingsContactV2';
 
 const V2_TITLE = 'Long Hoàng FnB — Marketing, AI và xây dựng mô hình F&B';
-const V2_DESCRIPTION = 'Marketing thực chiến, giải pháp AI ứng dụng và đồng hành xây dựng mô hình cho thương hiệu F&B.';
+const V2_DESCRIPTION = 'Marketing thực chiến và hệ sinh thái FnB Ăn Liền giúp quán thu hút khách, giữ chân khách, quản lý nhân sự và vận hành.';
 
 const HomeV2: React.FC = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const HomeV2: React.FC = () => {
 
       <CapabilityBridge />
       <JourneyProofV2 />
+      <FnbEcosystemV2 />
       <PrinciplesMentorsV2 />
       <ThoughtsTimelineV2 />
       <OfferingsContactV2 />
